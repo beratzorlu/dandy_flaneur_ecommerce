@@ -62,6 +62,14 @@ a {
     animation-iteration-count: infinite;
 }
 
+#navbar-primary:hover {
+    border: 2px dashed #1B1212 ;
+}
+
+#navbar-secondary:hover {
+    border: 2px dashed #1B1212 ;
+}
+
 .border-bottom-dark,
 .border-top-dark {
     border-color: #1B1212 !important;
