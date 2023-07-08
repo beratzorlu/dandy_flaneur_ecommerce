@@ -34,3 +34,11 @@ html {
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 975px) {
+    #navbar-primary,
+    #navbar-secondary {
+        float: inline-start !important;
+        margin: 2px 2px !important;
+    }
+}
