@@ -33,6 +33,11 @@ html {
     animation-iteration-count: infinite;
 }
 
+.border-bottom-dark,
+.border-top-dark {
+    border-color: #1B1212 !important;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 975px) {

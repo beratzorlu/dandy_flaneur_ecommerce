@@ -52,9 +52,9 @@
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
-
+    <!-- Navbar -->
     <nav
-        class="navbar border-bottom border-bottom-dark border-top border-top-dark navbar-expand-lg bg-body-tertiary my-3">
+        class="navbar border-1 border-bottom border-bottom-dark border-top border-top-dark navbar-expand-lg bg-body-tertiary my-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="#" width="30" height="24"
@@ -101,18 +101,21 @@
 
     {% block content %}
     {% endblock %}
+
+    <!-- Footer -->
+
+
     {% block postloadjs %}
-    
     <script>
         // Adds scale-up animation to navbar buttons when clicked.
         $(document).ready(function () {
             $('#navbar-primary, #navbar-secondary').click(toggleActiveClass);
+
             function toggleActiveClass() {
                 $(this).toggleClass('active');
             }
         });
     </script>
-
     {% endblock %}
 
 </body>
