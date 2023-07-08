@@ -184,22 +184,21 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Looking For Us? <i class="fa-solid fa-map-location-dot"></i></h5>
+                        <h5 class="text-uppercase">Our Services <i class="fa-solid fa-paintbrush"></i></h5>
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <p>14 Dandy Building,</p>
+                                <a href="{% url 'home' %}" class="text-white">Orders</a>
                             </li>
                             <li>
-                                <p>Dandy Street,</p>
+                                <a href="#" class="text-white">Workshops</a>
                             </li>
                             <li>
-                                <p>Flaneur Road,</p>
+                                <a href="#" class="text-white">Store</a>
                             </li>
                             <li>
-                                <p>Dublin,</p>
+                                <a href="#" class="text-white">Blog</a>
                             </li>
                             <li>
-                                <p>Ireland</p>
                             </li>
                         </ul>
                     </div>
@@ -246,7 +245,7 @@
     </footer>
 
     {% block postloadjs %}
-    
+
     <script>
         // Adds scale-up animation to navbar buttons when clicked.
         $(document).ready(function () {
