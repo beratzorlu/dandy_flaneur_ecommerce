@@ -7,6 +7,7 @@ html {
 :root {
     --dandy-white: #FAF9F6;
     --dandy-black: #1B1212;
+    --dandy-black-faded: #1b121240;
     --dandy-gold: #FFD700;
 }
 
@@ -46,7 +47,7 @@ a {
 }
 
 .dandy-border {
-    border-top: 3px solid var(--dandy-gold)
+    border-top: 2px solid var(--dandy-gold)
 }
 
 #navbar-primary {
@@ -79,6 +80,24 @@ a {
 .border-bottom-dark,
 .border-top-dark {
     border-color: var(--dandy-black) !important;
+}
+
+/* INDEX.HTML */
+
+#banner-image {
+    height: 50vh;
+    min-height: 500px;
+    background-image: url('/media/banner-image1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 16px;
+  }
+
+.banner-card {
+    background-color: var(--dandy-black-faded);
+    width: 100vh;
+    z-index: 99999;
 }
 
 /* MEDIA QUERIES */

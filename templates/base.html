@@ -39,7 +39,6 @@
     </script>
     {% endblock %}
 
-
     {% block extra_js %}
     {% endblock %}
 
@@ -47,11 +46,14 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header class="container-fluid fixed-top"></header>
 
+    <!-- Toasts -->
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
+
     <!-- Navbar -->
     <nav
         class="navbar border-1 border-bottom border-bottom-dark border-top border-top-dark navbar-expand-lg bg-body-tertiary my-3">
@@ -245,7 +247,6 @@
     </footer>
 
     {% block postloadjs %}
-
     <script>
         // Adds scale-up animation to navbar buttons when clicked.
         $(document).ready(function () {
@@ -256,7 +257,6 @@
             }
         });
     </script>
-
     {% endblock %}
 </body>
 
