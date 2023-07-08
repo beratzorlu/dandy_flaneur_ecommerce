@@ -4,6 +4,23 @@ html {
     height: 100%;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+.text-override {
+    text-align: justify !important;
+}
+
+.footer-link:hover {
+    border: 2px solid #FAF9F6;
+  }
+
+  #newletter-email:hover {
+    border-bottom: 3px solid #FFD700
+  }
+
+
 /* ANIMATIONS */
 @keyframes navButtonAnimation {
     100% {
@@ -13,6 +30,18 @@ html {
 
 
 /* BASE.HTML */
+
+.dandy-bg {
+    background-color: #1B1212;
+}
+
+.dandy-bg-alt {
+    background-color: #FFD700;
+}
+
+.dandy-border {
+    border-top: 3px solid #FFD700
+}
 
 #navbar-primary {
     background-color: #1B1212;

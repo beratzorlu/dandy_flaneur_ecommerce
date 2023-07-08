@@ -32,7 +32,7 @@
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/f561b9867c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fb44c063ae.js" crossorigin="anonymous"></script>
     <!-- Boostrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
@@ -103,9 +103,150 @@
     {% endblock %}
 
     <!-- Footer -->
+    <footer class="dandy-bg text-center text-white dandy-border">
+        <div class="container p-4">
+            <!-- Social Media Links -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+                <!-- Instagram -->
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+                <!-- Github -->
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
 
+            <!-- Newsletter Header -->
+            <section>
+                <div class="container p4">
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Join Our Newsletter! <i class="fa-solid fa-feather-pointed"></i></strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Form -->
+            <section>
+                <form action="">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-5 col-12">
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="newletter-email" class="form-control rounded-0"
+                                    placeholder="Email Address" /> </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-light mb-4 rounded-0">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Site Links -->
+            <section>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links <i class="fa-solid fa-link"></i></h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="{% url 'home' %}" class="text-white">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Store</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Workshops</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Our Message <i class="fa-regular fa-handshake"></i></h5>
+                        <p>
+                            Dandy Flaneur is dedicated to offer a diverse
+                            collection of captivating artworks crafted by talented artists. Immerse yourself in a world
+                            of artistic expression as you explore our gallery, where every stroke of the brush tells a
+                            unique story. Discover your perfect masterpiece at Dandy Flaneur.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Looking For Us? <i class="fa-solid fa-map-location-dot"></i></h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <p>14 Dandy Building,</p>
+                            </li>
+                            <li>
+                                <p>Dandy Street,</p>
+                            </li>
+                            <li>
+                                <p>Flaneur Road,</p>
+                            </li>
+                            <li>
+                                <p>Dublin,</p>
+                            </li>
+                            <li>
+                                <p>Ireland</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Get in touch! <i class="fa-solid fa-phone"></i></h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                Phone: +353 4244242
+                            </li>
+                            <li>
+                                Email: dandyflaneur@gmail.com
+                            </li>
+                            <li>
+                                Fax: +01 234 567 89
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </section>
+        </div>
+
+        <!-- Copyright Information -->
+        <div class="text-center p-1">
+            © 2023 Copyright: Developed By <a href="https://github.com/beratzorlu"
+                class="footer-link text-black dandy-bg-alt link-offset-2 p-1" target="_blank" rel="nofollow">Berat
+                Zorlu</a> for
+            Code Institute's Portfolio Project 5*
+        </div>
+        <div class="text-center p-1 fst-italic">
+            <small> Disclaimer: All external intellectual property used (including but not limited to blog content,
+                images etc.) are featured strictly for academic purposes and do not represent any commerical motivations
+                by the
+                developer of this project.</small>
+        </div>
+        <div class="container">
+            <!-- Social Media Links -->
+            <div class="mb-1">
+                <a class="btn btn-floating m-1" href="https://github.com/beratzorlu" target="_blank" rel="nofollow"
+                    role="button"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 
     {% block postloadjs %}
+    
     <script>
         // Adds scale-up animation to navbar buttons when clicked.
         $(document).ready(function () {
@@ -116,8 +257,8 @@
             }
         });
     </script>
-    {% endblock %}
 
+    {% endblock %}
 </body>
 
 </html>
