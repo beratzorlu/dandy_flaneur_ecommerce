@@ -1,0 +1,12 @@
+/* GLOBAL SETTINGS */
+
+html {
+    height: 100%;
+}
+
+/* BASE.HTML */
+
+#navbar-login {
+    background-color: #1B1212;
+    border: 2px solid #FFD700;
+}
