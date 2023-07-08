@@ -4,9 +4,33 @@ html {
     height: 100%;
 }
 
+/* ANIMATIONS */
+@keyframes navButtonAnimation {
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+
 /* BASE.HTML */
 
-#navbar-login {
+#navbar-primary {
     background-color: #1B1212;
     border: 2px solid #FFD700;
+    color: #FAF9F6;
 }
+
+#navbar-secondary {
+    background-color: #FAF9F6;
+    border: 2px solid #1B1212;
+    color: #1B1212;
+}
+
+#navbar-primary.active,
+#navbar-secondary.active {
+    animation-name: navButtonAnimation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+/* MEDIA QUERIES */
