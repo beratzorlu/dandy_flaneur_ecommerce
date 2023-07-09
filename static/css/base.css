@@ -116,3 +116,9 @@ a {
         margin: 2px 2px !important;
     }
 }
+
+@media (min-width: 1200px) {
+    .ms-4 {
+        margin-left: 4.5rem !important;
+    }
+}
