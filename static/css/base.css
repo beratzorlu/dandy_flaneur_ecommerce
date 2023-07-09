@@ -7,7 +7,7 @@ html {
 :root {
     --dandy-white: #FAF9F6;
     --dandy-black: #1B1212;
-    --dandy-black-faded: #1b121240;
+    --dandy-black-faded: #1b121299;
     --dandy-gold: #FFD700;
 }
 
@@ -26,6 +26,11 @@ a {
   #newletter-email:hover {
     border-bottom: 3px solid var(--dandy-gold);
   }
+
+.divider {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
 
 
 /* ANIMATIONS */
@@ -47,7 +52,7 @@ a {
 }
 
 .dandy-border {
-    border-top: 2px solid var(--dandy-gold)
+    border-top: 2px solid var(--dandy-gold) !important;
 }
 
 #navbar-primary {
@@ -63,7 +68,8 @@ a {
 }
 
 #navbar-primary.active,
-#navbar-secondary.active {
+#navbar-secondary.active,
+.dandy-border:active {
     animation-name: navButtonAnimation;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -92,12 +98,13 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 16px;
+    border: 2px 2px solid var(--dandy-black);
   }
 
 .banner-card {
     background-color: var(--dandy-black-faded);
-    width: 100vh;
     z-index: 99999;
+    border: 1px solid var(--dandy-white)
 }
 
 /* MEDIA QUERIES */

@@ -2,14 +2,67 @@
 {% load static %}
 
 {% block content %}
+<!-- Banner Section -->
 <div id="banner-image">
-    <div class="container h-100">
+    <div class="container h-100 w-75">
         <div class="row h-100 align-items-center">
-            <div class="col-12 text-center text-white">
-                <h1 class="fw-light">Welcome to Dander Flaneur!</h1>
-                <p class="lead">Shop Now</p>
+            <div class="col-12 text-center text-white banner-card">
+                <h1 class="fw-light mt-3 mb-3">Welcome to Dander Flaneur!</h1>
+                <a href="#" class="btn btn-lg btn-dark border border-white rounded-0 mb-3">Explore</a>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<!-- Content Introduction Cards -->
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ms-4">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="image1.jpg" class="card-img-top" alt="Blog Link">
+                <div class="card-body">
+                    <h5 class="card-title">Our Blog</h5>
+                    <p class="card-text">Have a look at our blog to learn about many interesting topics about arts and
+                        crafts. Be sure to have a look!</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-dark border dandy-border rounded-0 mb-3">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="image2.jpg" class="card-img-top" alt="Workshops Link">
+                <div class="card-body">
+                    <h5 class="card-title">Workshops</h5>
+                    <p class="card-text">We believe in taking an active part in the creation of art.
+                        Take a look at our available workshops to learn about the many aspects of painting.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-dark border dandy-border rounded-0 mb-3">Workshops</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="image3.jpg" class="card-img-top" alt="Contact Us Link">
+                <div class="card-body">
+                    <h5 class="card-title">Connect With Us</h5>
+                    <p class="card-text">We are dedicated to build a community around painting. Many of our local
+                        artists are dedicated to establish a career around this craft.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-dark border dandy-border rounded-0 mb-3">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
 {% endblock %}
