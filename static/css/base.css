@@ -1,15 +1,25 @@
-/* GLOBAL SETTINGS */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=EB+Garamond&display=swap');
 
-html {
-    height: 100%;
-}
+/* GLOBAL SETTINGS */
 
 :root {
     --dandy-white: #FAF9F6;
     --dandy-black: #1B1212;
     --dandy-black-faded: #1b121299;
     --dandy-gold: #FFD700;
+    --main-font: "Bodoni Moda", sans-serif;
+    --alt-font: "EB Garamond", serif;
 }
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+
 
 a {
     text-decoration: none !important;
