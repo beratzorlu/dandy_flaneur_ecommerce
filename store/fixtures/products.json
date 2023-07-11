@@ -1,48 +1,45 @@
 [{
         "pk": 1,
-        "model": "products.product",
+        "model": "store.product",
         "fields": {
             "upc": "P-8472635MonLisa",
-            "type": "Renaissance Portrait",
             "artist": "Leonardo da Vinci",
             "name": "Mona Lisa",
             "description": "The Mona Lisa is a half-length portrait painting by the Italian artist Leonardo da Vinci.",
             "price": 999.99,
             "category": 1,
             "rating": 4.8,
-            "image": "products/product-mona-lisa.jpg",
+            "image": "media/mona_lisa_VqH9u8l.jpg",
             "country": "Italy"
         }
     },
     {
         "pk": 2,
-        "model": "products.product",
+        "model": "store.product",
         "fields": {
             "upc": "P-9365417StarryNight",
-            "type": "Post-Impressionist",
             "artist": "Vincent van Gogh",
             "name": "The Starry Night",
             "description": "The Starry Night is an oil-on-canvas painting by the Dutch post-impressionist painter Vincent van Gogh.",
             "price": 799.99,
             "category": 2,
             "rating": 4.7,
-            "image": "products/product-starry-night.jpg",
+            "image": "media/starry_night_ZC1yrVt.jpg",
             "country": "Netherlands"
         }
     },
     {
         "pk": 3,
-        "model": "products.product",
+        "model": "store.product",
         "fields": {
             "upc": "P-4521896Guernica",
-            "type": "Cubism",
             "artist": "Pablo Picasso",
             "name": "Guernica",
             "description": "Guernica is a large mural painting by the Spanish artist Pablo Picasso. It is one of his most famous works.",
             "price": 1299.99,
             "category": 3,
             "rating": 4.9,
-            "image": "products/product-guernica.jpg",
+            "image": "media/PicassoGuernica_11kq5yA.jpg",
             "country": "Spain"
         }
     }
