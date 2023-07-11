@@ -31,11 +31,11 @@ a {
 
 .footer-link:hover {
     border: 2px solid var(--dandy-white);
-  }
+}
 
-  #newletter-email:hover {
+#newletter-email:hover {
     border-bottom: 3px solid var(--dandy-gold);
-  }
+}
 
 .divider {
     margin-top: 4rem;
@@ -78,19 +78,18 @@ a {
 }
 
 #navbar-primary.active,
-#navbar-secondary.active,
-.dandy-border:active {
+#navbar-secondary.active {
     animation-name: navButtonAnimation;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
 }
 
 #navbar-primary:hover {
-    border: 2px dashed var(--dandy-black) ;
+    border: 2px dashed var(--dandy-black);
 }
 
 #navbar-secondary:hover {
-    border: 2px dashed var(--dandy-black) ;
+    border: 2px dashed var(--dandy-black);
 }
 
 .border-bottom-dark,
@@ -109,7 +108,7 @@ a {
     background-repeat: no-repeat;
     margin-bottom: 16px;
     border: 2px 2px solid var(--dandy-black);
-  }
+}
 
 .banner-card {
     background-color: var(--dandy-black-faded);
@@ -120,6 +119,7 @@ a {
 /* MEDIA QUERIES */
 
 @media (max-width: 975px) {
+
     #navbar-primary,
     #navbar-secondary {
         float: inline-start !important;
@@ -132,3 +132,6 @@ a {
         margin-left: 4.5rem !important;
     }
 }
+
+/* PRODUCTS LIST */
+
