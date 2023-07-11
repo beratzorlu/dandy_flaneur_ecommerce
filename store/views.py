@@ -1,14 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.core.paginator import Paginator
+from .models import Product, Category
 
 
 def products_list(request):
     """View for listing all products and sorting."""
 
     products = Product.objects.all()
-    categories_list = Category.objects.all()
+    all_categories = Category.objects.all()
     query = None
     category = None
     sort = None
@@ -40,7 +41,7 @@ def products_list(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "Please input search criteria")
-                return redirect(reverse('products'))
+                return redirect(reverse('store'))
 
             queries = Q(name__icontains=query) | Q(
                 description__icontains=query)
@@ -50,9 +51,48 @@ def products_list(request):
 
     context = {
         'products': products,
-        'categories_list': categories_list,
+        'all_categories': all_categories,
         'search_term': query,
         'current_sort': current_sort
     }
 
     return render(request, 'store/store_products.html', context)
+
+
+def store_detail(request, product_id):
+    """Shows detailed information of a chosen product item"""
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'store/store_detail.html', context)
+
+
+@login_required
+def add_product(request):
+    """Add new product object to store"""
+
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'New product added to store successfully.')
+            return redirect(reverse('store_detail', args=[product.id]))
+        else:
+            messages.error(request, 'A problem occured when trying to add new product. Please ensure details are correct.')
+    else:
+        form = ProductForm()
+
+    template = 'products/add_store.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
