@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.decorators import login_required
 from django.core.validators import MinValueValidator
 
 
