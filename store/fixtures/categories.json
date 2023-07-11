@@ -1,0 +1,27 @@
+[
+    {
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+        "name": "renaissance_portraits",
+        "friendly_name": "Renaissance Portraits"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+        "name": "post_impressionist",
+        "friendly_name": "Post-Impressionist"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+        "name": "cubism",
+        "friendly_name": "cubism"
+      }
+    }
+  ]
+  
