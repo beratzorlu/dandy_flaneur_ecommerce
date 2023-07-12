@@ -20,7 +20,7 @@
       "model": "store.category",
       "fields": {
         "name": "cubism",
-        "friendly_name": "cubism"
+        "friendly_name": "Cubism"
       }
     }
   ]
