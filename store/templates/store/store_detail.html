@@ -25,10 +25,12 @@
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
                     <a href="{% url 'store' %}?category={{ product.category.name }}" class="text-muted"><i
-                            class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                     </a>
                 </p>
                 {% endif %}
+                <p class="mb-0">Artist: {{ product.artist }}</p>
+                <p class="mb-0">Country: {{ product.country }}</p>
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
