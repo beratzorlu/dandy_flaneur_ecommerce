@@ -1,9 +1,13 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.contrib import messages
+from django.db.models import Q  # is used to generate a search query
 from django.core.paginator import Paginator
+from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
+
 from .models import Product, Category
+from .forms import ItemForm
 
 
 def products_list(request):
@@ -73,7 +77,7 @@ def store_detail(request, product_id):
 
 
 @login_required
-def add_product(request):
+def add_store(request):
     """Add new product object to store"""
 
     if not request.user.is_superuser:
@@ -81,7 +85,7 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+        form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'New product added to store successfully.')
@@ -89,9 +93,9 @@ def add_product(request):
         else:
             messages.error(request, 'A problem occured when trying to add new product. Please ensure details are correct.')
     else:
-        form = ProductForm()
+        form = ItemForm()
 
-    template = 'products/add_store.html'
+    template = 'store/add_store.html'
     context = {
         'form': form,
     }
