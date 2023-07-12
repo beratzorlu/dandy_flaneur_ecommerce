@@ -49,7 +49,9 @@ def products_list(request):
                 return redirect(reverse('store'))
 
             queries = Q(name__icontains=query) | Q(
-                description__icontains=query)
+                description__icontains=query) | Q(
+                    country__icontains=query) | Q(
+                        artist__icontains=query)
             products = products.filter(queries)
 
     current_sort = f'{sort}_{direction}'
