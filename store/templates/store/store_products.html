@@ -150,12 +150,14 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+    // Back-to-top button
     $(".btt-link").click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 
 <script type="text/javascript">
+    // Allows directional content sorting and sort reset.
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);

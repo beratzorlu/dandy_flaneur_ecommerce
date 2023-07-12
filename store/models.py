@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib import messages
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 
 
@@ -31,3 +33,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def clean(self):
+        if self.rating is not None and (self.rating < 0 or self.rating > 5):
+            raise ValidationError("Rating value must be between 0 and 5")
+
+    def save(self, *args, **kwargs):
+        try:
+            self.full_clean()
+            super().save(*args, **kwargs)
+        except ValidationError as e:
+            messages.error(None, e.message)
