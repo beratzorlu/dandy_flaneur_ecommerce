@@ -91,13 +91,55 @@ def add_store(request):
             messages.success(request, 'New product added to store successfully.')
             return redirect(reverse('store_detail', args=[product.id]))
         else:
-            messages.error(request, 'A problem occured when trying to add new product. Please ensure details are correct.')
+            messages.error(request, 'A problem occured when trying to add new item. Please ensure details are correct.')
     else:
         form = ItemForm()
 
     template = 'store/add_store.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_store(request, product_id):
+    """Delete product from store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, f'Product (ID: {product.id}) successfully deleted!')
+    return redirect(reverse('store'))
+
+
+@login_required
+def edit_store(request, product_id):
+    """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item details edited successfully.')
+            return redirect(reverse('store_detail', args=[product.id]))
+        else:
+            messages.error(request, 'A problem occured when trying to edit item. Please ensure details are valid.')
+    else:
+        form = ItemForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'store/edit_store.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)
