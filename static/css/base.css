@@ -68,6 +68,10 @@ a {
     border-top: 2px solid var(--dandy-gold) !important;
 }
 
+.dandy-border-alt {
+    border: 2px solid var(--dandy-black) !important;
+}
+
 #navbar-primary {
     background-color: var(--dandy-black);
     border: 2px solid var(--dandy-gold);
@@ -174,4 +178,17 @@ a {
 
 .toast-capper {
     height: 2px;
+}
+
+/* BASKET.HTML */
+
+.dandy-border-alt:hover {
+    background-color: var(--dandy-black);
+    border: 2px solid var(--dandy-gold) !important;
+    color: var(--dandy-white) !important;
+}
+
+.dandy-border-alt:active {
+    border: 2px dashed var(--dandy-gold) !important;
+    color: var(--dandy-white) !important;
 }
