@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <!-- Content Divider -->
+    <div class="divider"></div>
+
+    <!-- Page Header -->
+    <div class="text-center w-100">
+        <h1 class="mb-3">~ Your Basket ~</h1>
+        <hr>
+    </div>
+    <div class="row bg-light p-3 rounded">
+        <div class="col">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card rounded-0 dandy-border">
+                        <div class="card-header">
+                            <h3>Your Items</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-sm-12 text-center">
+                                {% if basket_items %}
+                                <div class="table-responsive rounded">
+                                    <table class="table table-sm table-responsive">
+                                        <thead class="text-success">
+                                            <tr>
+                                                <th scope="col">Product Info</th>
+                                                <th scope="col">Qty</th>
+                                            </tr>
+                                        </thead>
+                                        {% for item in basket_items %}
+                                        <tr>
+                                            <td class="p-3 w-25">
+                                                {% if item.product.image %}
+                                                <img class="w-100" src="{{ item.product.image.url }}"
+                                                    alt="{{ item.product.name }}">
+                                                {% else %}
+                                                <img class="w-100" src="{{ MEDIA_URL }}/products/noimage.jpg"
+                                                    alt="{{ item.product.name }}">
+                                                {% endif %}
+                                            </td>
+                                            <td class="py-3">
+                                                <p class="my-0 text-success">{{ item.product.brand }}</p>
+                                                <p class="my-0">{{ item.product.name }}</p>
+                                                <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
+                                                <p class="my-0"><strong>Size:</strong> {{ item.size|upper }}</p>
+                                                <p class="my-0"><strong>Subtotal:
+                                                        €</strong>
+                                                </p>
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        {% endfor %}
+                                        <tr>
+                                            <td colspan="5" class="pt-5 text-right">
+                                                <h4><strong>Basket Total: €{{ total|floatformat:2 }}</strong></h4>
+                                                <h5>Shipping: €{{ delivery|floatformat:2 }}</h5>
+                                                <h5 class="mt-4"><strong>Grand Total:
+                                                        €{{ grand_total|floatformat:2 }}</strong></h5>
+                                                {% if free_delivery_delta > 0 %}
+                                                <p class="mb-1 text-danger">
+                                                    Spend <strong>€{{ free_delivery_delta }}</strong> to get free
+                                                    shipping!
+                                                </p>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" class="text-right">
+                                                <a href="{% url 'store' %}"
+                                                    class="btn btn-outline-secondary rounded btn-lg m-2">
+                                                    <span class="icon">
+                                                        <i class="fas fa-arrow-left"></i>
+                                                    </span>
+                                                    <span class="text-uppercase">Back</span>
+                                                </a>
+                                                <a href="" class="btn btn-success rounded btn-lg m-2">
+                                                    <span class="text-uppercase">Secure Checkout</span>
+                                                    <span class="icon">
+                                                        <i class="fas fa-lock"></i>
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                {% else %}
+                                    <h5 class="fst-italic fw-light mb-3"><strong>Your basket is currently empty.</strong>
+                                        </h5>
+                                    <a href="{% url 'store' %}" class="dandy-bg-alt text-black dandy-border-alt p-1 mt-4">Return to
+                                        Shop</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Divider -->
+    <div class="divider"></div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script>
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/basket/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
+{% endblock %}
