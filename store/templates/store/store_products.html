@@ -104,7 +104,7 @@
                                         {% endif %}
 
                                         <div class="col">
-                                            <a class="btn mt-3 rounded-0" href="#" id="navbar-primary">Buy Now</a>
+                                            <a class="btn mt-3 rounded-0" href="{% url 'store_detail' product.id %}" id="navbar-primary">View</a>
                                         </div>
                                         <div class="col">
                                             {% if request.user.is_superuser %}
