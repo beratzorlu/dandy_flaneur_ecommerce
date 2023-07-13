@@ -99,3 +99,8 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'store/includes/item_quantity_input.js' %}
+{% endblock %}
