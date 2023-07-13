@@ -122,7 +122,7 @@ def delete_store(request, product_id):
 @login_required
 def edit_store(request, product_id):
     """ Edit a product in the store """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'You do not have administrator previliges to perform this action.')
         return redirect(reverse('home'))
