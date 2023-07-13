@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.contrib import messages
+from store.models import Product
 
-# Create your views here.
+
+def view_basket(request):
+    """Renders the basket contents page"""
+
+    return render(request, 'basket/basket.html')
