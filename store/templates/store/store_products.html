@@ -92,18 +92,28 @@
                                         </p>
                                         {% endif %}
                                         {% if product.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i> {{ product.rating }}
+                                        <small class="text-muted"><i class="fas fa-star mr-1 text-warning"></i>
+                                            {{ product.rating }}
                                             /
                                             5</small>
                                         {% else %}
                                         <small class="text-muted">No Rating</small>
                                         {% endif %}
-                                        {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_store' product.id %}">Edit</a> |
-                                            <a href="{% url 'delete_store' product.id %}" class="text-danger">Delete</a>
-                                        </small>
-                                        {% endif %}
+
+                                        <div class="col">
+                                            <a class="btn mt-3 rounded-0" href="#" id="navbar-primary">Buy Now</a>
+                                        </div>
+                                        <div class="col">
+                                            {% if request.user.is_superuser %}
+                                            <div class="w-100">
+                                                <small class="mt-1 float-end">
+                                                    <a href="{% url 'edit_store' product.id %}">Edit</a> |
+                                                    <a href="{% url 'delete_store' product.id %}"
+                                                        class="text-danger">Delete</a>
+                                                </small>
+                                                {% endif %}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
