@@ -12,12 +12,15 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
-                {% for c in current_categories %}
-                <a href="{% url 'store' %}?category={{ c.name }}" class="category-badge text-decoration-none"><span
-                        class="p-2 m-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span></a>
-                {% endfor %}
-            </div>
+            <h3 class="text-center">~ Categories ~</h4>
+                <div class="col text-center mt-2">
+                    {% for c in all_categories %}
+                    <a href="{% url 'store' %}?category={{ c.name }}" class="category-badge"><span
+                            class="p-2 m-2 badge badge-white text-black rounded-0 border-bottom border-dark">{{ c.friendly_name }}</span></a>
+                    {% endfor %}
+                    <a href="{% url 'store' %}" class="category-badge"><span
+                            class="p-2 m-2 badge badge-black bg-dark text-white text-black rounded-0 border border-dark">Reset</span></a>
+                </div>
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
@@ -52,9 +55,9 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">
+                        <p class="text-muted mt-3 text-start text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'store' %}">Products Home</a> | </span>
+                            <span class="small"><a href="{% url 'store' %}">Reset</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for
                             <strong>"{{ search_term }}"</strong>{% endif %}
@@ -106,10 +109,12 @@
                                         <div class="col">
                                             {% if request.user.is_superuser %}
                                             <div class="w-100">
-                                                <small class="mt-1 float-end">
-                                                    <a href="{% url 'edit_store' product.id %}">Edit</a> |
-                                                    <a href="{% url 'delete_store' product.id %}"
-                                                        class="text-danger">Delete</a>
+                                                <small class="w-0 border p-1 mt-1 float-end">
+                                                    <a href="{% url 'edit_store' product.id %}">Edit <i
+                                                            class="fa-regular fa-pen-to-square ms-1 text-success"></i></a>
+                                                    |
+                                                    <a href="{% url 'delete_store' product.id %}">Delete <i
+                                                            class="ms-1 fa-regular fa-trash-can text-danger"></i></a>
                                                 </small>
                                                 {% endif %}
                                             </div>

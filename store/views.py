@@ -132,7 +132,7 @@ def edit_store(request, product_id):
         form = ItemForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Item details edited successfully.')
+            messages.success(request, 'Item edit form submitted successfully.')
             return redirect(reverse('store_detail', args=[product.id]))
         else:
             messages.error(request, 'A problem occured when trying to edit item. Please ensure details are valid.')

@@ -20,7 +20,9 @@ body {
     font-family: var(--main-font);
 }
 
-
+h4 {
+    font-family: var(--alt-font);
+}
 
 a {
     text-decoration: none !important;
@@ -144,6 +146,18 @@ a {
     right: 10px;
     cursor: pointer;
     background-color: var(--dandy-gold-faded);
+}
+
+.category-badge > .badge-white:hover {
+    border: none !important;
+}
+
+.category-badge > .badge-black:hover {
+    border-color: var(--dandy-gold) !important;
+}
+
+.category-badge > .badge-black:active {
+    transform: scale(-1.0);
 }
 
 /* TOASTS */
