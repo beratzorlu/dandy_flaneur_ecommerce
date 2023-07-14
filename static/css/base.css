@@ -60,6 +60,10 @@ a {
     background-color: var(--dandy-black);
 }
 
+.dandy-bg-faded {
+    background-color: var(--dandy-black-faded);
+}
+
 .dandy-bg-alt {
     background-color: var(--dandy-gold);
 }
