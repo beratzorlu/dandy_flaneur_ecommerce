@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404, HttpResponse)
 from django.contrib import messages
 from store.models import Product, Category
 
@@ -96,3 +97,30 @@ def edit_basket(request, item_id):
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
 
+
+def remove_basket(request, item_id):
+    """Remove the items from basket"""
+
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        dimentions = None
+        if 'item_dimentions' in request.POST:
+            size = request.POST['item_dimentions']
+        basket = request.session.get('basket', {})
+
+        if dimentions:
+            del basket[item_id]['items_by_size'][dimentions]
+            if not basket[item_id]['items_by_size']:
+                basket.pop(item_id)
+                messages.success(request, f'Removed size\
+                     {dimentions.upper()} {product.name} from your basket')
+        else:
+            basket.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your\
+                 basket')
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
