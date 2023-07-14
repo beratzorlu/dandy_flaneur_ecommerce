@@ -23,24 +23,24 @@ def add_to_basket(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
+    dimentions = None
 
     if 'item_dimentions' in request.POST:
-        size = request.POST['item_dimentions']
+        dimentions = request.POST['item_dimentions']
     basket = request.session.get('basket', {})
 
-    if size:
+    if dimentions:
         if item_id in list(basket.keys()):
-            if size in basket[item_id]['items_by_size'].keys():
-                basket[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f'Updated size {size.upper()} {product.name} to {basket[item_id]["items_by_size"][size]}')
+            if dimentions in basket[item_id]['items_by_size'].keys():
+                basket[item_id]['items_by_size'][dimentions] += quantity
+                messages.success(request, f'Updated size {dimentions.upper()} {product.name} to {basket[item_id]["items_by_size"][dimentions]}')
             else:
-                basket[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added size {size.upper()} {product.name} to your basket')
+                basket[item_id]['items_by_size'][dimentions] = quantity
+                messages.success(request, f'Added size {dimentions.upper()} {product.name} to your basket')
 
         else:
-            basket[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'Added size {size.upper()} {product.name} to your basket')
+            basket[item_id] = {'items_by_size': {dimentions: quantity}}
+            messages.success(request, f'Added size {dimentions.upper()} {product.name} to your basket')
     else:
         if item_id in list(basket.keys()):
             basket[item_id] += quantity
@@ -51,3 +51,48 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def edit_basket(request, item_id):
+    """
+    Edit quantity of selected items and remove items from the basket
+    """
+
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    dimentions = None
+    if 'item_dimentions' in request.POST:
+        dimentions = request.POST['item_dimentions']
+    basket = request.session.get('basket', {})
+
+    if not product:
+        messages.error(request, 'Product does not exist')
+        return redirect(reverse('view_basket'))
+
+    if dimentions:
+        if quantity > 0:
+            basket[item_id]['items_by_size'][dimentions] = quantity
+            messages.success(
+                request, f'Updated size {dimentions.upper()} {product.name} quantity\
+                     to {basket[item_id]["items_by_size"][dimentions]}')
+        else:
+            del basket[item_id]['items_by_size'][dimentions]
+            if not basket[item_id]['items_by_size']:
+                basket.pop(item_id)
+                messages.success(
+                    request, f'Removed size {dimentions.upper()} {product.name} from\
+                         your basket')
+    else:
+        if quantity > 0:
+            basket[item_id] = quantity
+            messages.success(
+                request, f'Updated {product.name} quantity to\
+                     {basket[item_id]}')
+        else:
+            basket.pop(item_id)
+            messages.success(
+                request, f'Removed {product.name} from your basket')
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
+
