@@ -25,6 +25,7 @@ h4 {
 }
 
 a {
+    cursor: pointer !important;
     text-decoration: none !important;
 }
 
@@ -195,4 +196,8 @@ a {
 .dandy-border-alt:active {
     border: 2px dashed var(--dandy-gold) !important;
     color: var(--dandy-white) !important;
+}
+
+.remove-item {
+    cursor: pointer;
 }
