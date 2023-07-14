@@ -148,16 +148,16 @@
                     <!-- Shopping Basket -->
                     <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
                         <li class="nav-item">
-                            <a class="text-center border {% if grand_total %}text-warning font-weight-bold{% else %}text-dark{% endif %} nav-link"
+                            <a class="text-center border text-dark nav-link"
                                 href="{% url 'view_basket' %}">
                                 <div>
-                                    <div><i class="fa-solid fa-basket-shopping {% if grand_total %}text-success{% endif %}"
+                                    <div><i class="fa-solid fa-basket-shopping {% if grand_total %}bg-warning p-2 border border-dark {% endif %}"
                                             aria-hidden="true"></i></div>
-                                    <p class="my-0">
+                                    <p class="my-0 pt-1">
                                         {% if grand_total %}
                                         €{{ grand_total|floatformat:2 }}
                                         {% else %}
-                                        €0.00
+                                        ~ €0.00 ~
                                         {% endif %}
                                     </p>
                                 </div>
