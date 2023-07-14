@@ -12,17 +12,14 @@
         <h1 class="mb-3">~ Your Basket ~</h1>
         <hr>
     </div>
-    <div class="row bg-light p-3 rounded">
+    <div class="row dandy-bg-faded px-2 py-3 rounded-0">
         <div class="col">
             <div class="row">
                 <div class="col-12">
                     <div class="card rounded-0 dandy-border">
-                        <div class="card-header">
-                            <h3>Your Items</h3>
-                        </div>
                         <div class="card-body">
                             <div class="col-sm-12 text-center">
-                                {% if basket_items %}
+                                {% if basket_contents %}
                                 <div class="table-responsive rounded">
                                     <table class="table table-sm table-responsive">
                                         <thead class="text-success">
@@ -31,7 +28,7 @@
                                                 <th scope="col">Qty</th>
                                             </tr>
                                         </thead>
-                                        {% for item in basket_items %}
+                                        {% for item in basket_contents %}
                                         <tr>
                                             <td class="p-3 w-25">
                                                 {% if item.product.image %}
@@ -47,8 +44,7 @@
                                                 <p class="my-0">{{ item.product.name }}</p>
                                                 <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
                                                 <p class="my-0"><strong>Size:</strong> {{ item.size|upper }}</p>
-                                                <p class="my-0"><strong>Subtotal:
-                                                        €</strong>
+                                                <p class="my-0"><strong>Subtotal: €</strong>
                                                 </p>
                                             </td>
                                             <td>
@@ -81,7 +77,7 @@
                                                     </span>
                                                     <span class="text-uppercase">Back</span>
                                                 </a>
-                                                <a href="" class="btn btn-success rounded btn-lg m-2">
+                                                <a href="#" class="btn btn-success rounded btn-lg m-2">
                                                     <span class="text-uppercase">Secure Checkout</span>
                                                     <span class="icon">
                                                         <i class="fas fa-lock"></i>
@@ -111,6 +107,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
+{% include 'store/includes/item_quantity_input.html' %}
 
 <script>
     // Update quantity on click
@@ -123,11 +120,11 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
+        var dimentions = $(this).data('item_dimentions');
         var url = `/basket/remove/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
-            'product_size': size
+            'item_dimentions': dimentions
         };
 
         $.post(url, data)
