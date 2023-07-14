@@ -106,8 +106,8 @@
                                         <div class="col">
                                             <a class="btn mt-3 rounded-0" href="{% url 'store_detail' product.id %}" id="navbar-primary">View</a>
                                         </div>
+                                        {% if request.user.is_superuser %}
                                         <div class="col">
-                                            {% if request.user.is_superuser %}
                                             <div class="w-100">
                                                 <small class="w-0 border p-1 mt-1 float-end">
                                                     <a href="{% url 'edit_store' product.id %}">Edit <i
@@ -116,9 +116,9 @@
                                                     <a href="{% url 'delete_store' product.id %}">Delete <i
                                                             class="ms-1 fa-regular fa-trash-can text-danger"></i></a>
                                                 </small>
-                                                {% endif %}
                                             </div>
                                         </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
