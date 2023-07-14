@@ -40,6 +40,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
+        // Renders notification when a new image is added in the edit form.
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Uploaded item image: ${file.name}`);
