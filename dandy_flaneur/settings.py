@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'workshop',
     'basket',
     'checkout',
+    'profiles',
 
     # Django Allauth
     'allauth',
@@ -58,6 +59,8 @@ INSTALLED_APPS = [
 
     # Misc.
     'crispy_forms',
+    'crispy_bootstrap5',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dandy_flaneur.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 TEMPLATES = [
     {
@@ -86,6 +94,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'basket.contexts.basket_items',
             ],
             'builtins': [
@@ -96,7 +105,6 @@ TEMPLATES = [
     },
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
