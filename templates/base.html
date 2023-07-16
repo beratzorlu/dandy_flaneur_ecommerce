@@ -28,7 +28,8 @@
 
     {% block corejs %}
     <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Bootstrap Popper (for dropdowns, popovers, or tooltips) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
@@ -144,10 +145,10 @@
                     </ul>
 
                     <!-- Shopping Basket -->
-                    <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+                    <ul
+                        class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
                         <li class="nav-item">
-                            <a class="text-center border text-dark nav-link"
-                                href="{% url 'view_basket' %}">
+                            <a class="text-center border text-dark nav-link" href="{% url 'view_basket' %}">
                                 <div>
                                     <div><i class="fa-solid fa-basket-shopping {% if grand_total %}bg-warning p-2 border border-dark {% endif %}"
                                             aria-hidden="true"></i></div>
@@ -312,7 +313,7 @@
     <!-- Back to Top Button -->
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a href="" class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+            <i class="fa-solid fa-chevron-up text-black mx-auto my-auto"></i>
         </a>
     </div>
 
