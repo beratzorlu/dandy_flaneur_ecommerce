@@ -24,13 +24,13 @@
                                     <table class="table table-sm table-responsive">
                                         <thead class="text-success">
                                             <tr>
-                                                <th scope="col">Product Info</th>
-                                                <th scope="col">Qty</th>
+                                                <th scope="col">Product Image</th>
+                                                <th scope="col">Product Details</th>
                                             </tr>
                                         </thead>
                                         {% for item in basket_contents %}
                                         <tr>
-                                            <td class="p-3 w-25">
+                                            <td class="p-3 w-25 dandy-border">
                                                 {% if item.product.image %}
                                                 <img class="w-100" src="{{ item.product.image.url }}"
                                                     alt="{{ item.product.name }}">
@@ -39,16 +39,16 @@
                                                     alt="{{ item.product.name }}">
                                                 {% endif %}
                                             </td>
-                                            <td class="py-3">
+                                            <td class="py-3 dandy-border">
                                                 <p class="my-0 text-success">{{ item.product.brand }}</p>
                                                 <p class="my-0">{{ item.product.name }}</p>
                                                 <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
-                                                <p class="my-0"><strong>Size:</strong> {{ item.size|upper }}</p>
+                                                <p class="my-0"><strong>Size:</strong> {{ item.dimentions|upper }}</p>
                                                 <p class="my-0"><strong>Subtotal: €</strong>
                                                 </p>
                                             </td>
                                             <td>
-
+                                                {% include "basket/item_quantity_form.html" %}
                                             </td>
                                             <td></td>
                                             <td></td>
@@ -71,13 +71,13 @@
                                         <tr>
                                             <td colspan="5" class="text-right">
                                                 <a href="{% url 'store' %}"
-                                                    class="btn btn-outline-secondary rounded btn-lg m-2">
+                                                    class="btn rounded-0 btn-lg m-2" id="navbar-secondary">
                                                     <span class="icon">
                                                         <i class="fas fa-arrow-left"></i>
                                                     </span>
                                                     <span class="text-uppercase">Back</span>
                                                 </a>
-                                                <a href="#" class="btn btn-success rounded btn-lg m-2">
+                                                <a href="#" class="btn dandy-border-alt dandy-bg-alt rounded-0 btn-lg m-2">
                                                     <span class="text-uppercase">Secure Checkout</span>
                                                     <span class="icon">
                                                         <i class="fas fa-lock"></i>
@@ -108,20 +108,20 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'store/includes/item_quantity_input.html' %}
-
 <script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
-
+</script>
+<script>
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var dimentions = $(this).data('item_dimentions');
-        var url = `/basket/remove/${itemId}/`;
+        var url = `/basket/remove_basket/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
             'item_dimentions': dimentions
