@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'store',
     'workshop',
     'basket',
+    'checkout',
 
     # Django Allauth
     'allauth',
