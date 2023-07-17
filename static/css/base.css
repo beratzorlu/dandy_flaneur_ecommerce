@@ -207,19 +207,3 @@ a {
 }
 
 /* CHECKOUT.HTML */
-.fieldset-label {
-    position: relative;
-    right: .5rem;
-}
-
-#payment-form .form-control,
-#card-element {
-    color: #000;
-    border: 1px dashed var(--dandy-black);
-    border-radius: 0 !important;
-}
-
-#payment-form .form-control:not(:placeholder-shown),
-#card-element:not(:placeholder-shown) {
-    border-style: solid;
-}
