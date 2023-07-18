@@ -7,6 +7,8 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from store.models import Product
 from basket.contexts import basket_items
+from profiles.forms import AccountProfileForm
+from profiles.models import AccountProfile
 
 import stripe
 import json
@@ -101,7 +103,26 @@ def store_checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        # Attempt to prefill the form with any info the user maintains
+        # in their profile
+        if request.user.is_authenticated:
+            try:
+                profiles = AccountProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profiles.user.get_full_name(),
+                    'email': profiles.user.email,
+                    'phone_number': profiles.default_phone_number,
+                    'country': profiles.default_country,
+                    'eircode': profiles.default_eircode,
+                    'town_or_city': profiles.default_town_or_city,
+                    'street_address1': profiles.default_street_address1,
+                    'street_address2': profiles.default_street_address2,
+                    'county': profiles.default_county,
+                })
+            except AccountProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -126,6 +147,27 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
+
+    if request.user.is_authenticated:
+        profiles = AccountProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.account_profile = profiles
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_eircode': order.eircode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            account_profile_form = AccountProfileForm(profile_data, instance=profiles)
+            if account_profile_form.is_valid():
+                account_profile_form.save()
 
     if 'basket' in request.session:
         del request.session['basket']
