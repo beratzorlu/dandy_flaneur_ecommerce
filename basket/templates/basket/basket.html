@@ -43,6 +43,7 @@
                                             <td class="py-3 dandy-border">
                                                 <p class="my-0 text-success">{{ item.product.brand }}</p>
                                                 <p class="my-0">{{ item.product.name }}</p>
+                                                <p class="my-0"><small>PSU: {{ item.product.upc }}</small></p>
                                                 <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
                                                 <p class="my-0"><strong>Size:</strong> {{ item.dimentions|upper }}</p>
                                                 <p class="my-0"><strong>Subtotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</strong>
@@ -78,7 +79,7 @@
                                                     </span>
                                                     <span class="text-uppercase">Back</span>
                                                 </a>
-                                                <a href="{% url 'storeCheckout' %}" class="btn dandy-border-alt dandy-bg-alt rounded-0 btn-lg m-2">
+                                                <a href="{% url 'store_checkout' %}" class="btn dandy-border-alt dandy-bg-alt rounded-0 btn-lg m-2">
                                                     <span class="text-uppercase">Secure Checkout</span>
                                                     <span class="icon">
                                                         <i class="fas fa-lock"></i>
