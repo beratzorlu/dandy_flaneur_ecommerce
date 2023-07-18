@@ -114,18 +114,34 @@
                                     class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </ul>
-                    <ul
-                        class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
-                        {% if user.is_authenticated %}
-
+                    <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
                         <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="#" id="navbar-secondary">Signed in as:
+                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-secondary">Signed in as:
                                 {{ user.username }}</a>
                         </li>
+
+                        {% if user.is_authenticated and user.is_staff %}
 
                         <li class="nav-item">
                             <a class="btn me-2 rounded-0 float-end" href="{% url 'add_store' %}"
                                 id="navbar-primary">Manage</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}"
+                                id="navbar-primary">My Profile</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
+                                id="navbar-primary">Logout</a>
+                        </li>
+
+                        {% elif user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}"
+                                id="navbar-primary">My Profile</a>
                         </li>
 
                         <li class="nav-item">
