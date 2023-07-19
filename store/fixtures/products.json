@@ -2,7 +2,7 @@
         "pk": 1,
         "model": "store.product",
         "fields": {
-            "upc": "P-8472635MonLisa",
+            "upc": "P8472635",
             "artist": "Leonardo da Vinci",
             "name": "Mona Lisa",
             "description": "The Mona Lisa is a half-length portrait painting by the Italian artist Leonardo da Vinci.",
@@ -17,7 +17,7 @@
         "pk": 2,
         "model": "store.product",
         "fields": {
-            "upc": "P-9365417StarryNight",
+            "upc": "P9365417",
             "artist": "Vincent van Gogh",
             "name": "The Starry Night",
             "description": "The Starry Night is an oil-on-canvas painting by the Dutch post-impressionist painter Vincent van Gogh.",
@@ -32,7 +32,7 @@
         "pk": 3,
         "model": "store.product",
         "fields": {
-            "upc": "P-4521896Guernica",
+            "upc": "P4521896",
             "artist": "Pablo Picasso",
             "name": "Guernica",
             "description": "Guernica is a large mural painting by the Spanish artist Pablo Picasso. It is one of his most famous works.",
