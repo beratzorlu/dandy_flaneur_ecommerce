@@ -222,6 +222,13 @@ DEFAULT_FROM_EMAIL = 'dandyflaneur@email.com'
 # AWS Configs
 
 if 'USE_AWS' in os.environ:
+
+    # AWS Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     # S3 Bucket Configs
     AWS_STORAGE_BUCKET_NAME = 'dandy-flaneur'
     AWS_S3_REGION_NAME = 'eu-west-1'
