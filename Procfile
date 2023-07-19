@@ -1,0 +1,1 @@
+web: gunicorn dandy_flaneur.wsgi:application
