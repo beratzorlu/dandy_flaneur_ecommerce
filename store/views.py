@@ -93,7 +93,10 @@ def add_store(request):
             messages.success(request, 'New product added to store successfully.')
             return redirect(reverse('store_detail', args=[product.id]))
         else:
-            messages.error(request, 'A problem occured when trying to add new item. Please ensure details are correct.')
+            if 'rating' in form.errors:
+                messages.error(request, form.errors['rating'][0])
+            else: 
+                messages.error(request, 'A problem occured when trying to add new item. Please ensure details are correct.')
     else:
         form = ItemForm()
 
