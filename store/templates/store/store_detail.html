@@ -20,17 +20,18 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                <p class="fs-6 fs-lighter"><small>UPC: {{ product.upc }}</small></p>
+                <p class="display-5">{{ product.name }}</p>
+                <p class="lead text-left font-weight-bold">${{ product.price }}</p>
                 {% if product.category %}
-                <p class="small mt-1 mb-0">
+                <p class="small mt-1">
                     <a href="{% url 'store' %}?category={{ product.category.name }}" class="text-muted"><i
-                            class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
+                            class="fa-solid fa-object-group"></i> {{ product.category.friendly_name }}
                     </a>
                 </p>
                 {% endif %}
-                <p class="mb-0">Artist: {{ product.artist }}</p>
-                <p class="mb-0">Country: {{ product.country }}</p>
+                <p>Artist: {{ product.artist }}</p>
+                <p>Country: {{ product.country }}</p>
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1 text-warning"></i>{{ product.rating }} / 5</small>
                 {% else %}
@@ -61,7 +62,7 @@
                                     <option value="large" selected>Large</option>
                                     <option value="oversize">Oversize</option>
                                 </select>
-                                
+
                             </div>
                             {% endif %}
                             <div class="col-12">
@@ -97,7 +98,8 @@
                                     </span>
                                     <span class="text-uppercase">Browse Art</span>
                                 </a>
-                                <input type="submit" class="btn btn-black border border-black rounded-0 text-uppercase mt-5"
+                                <input type="submit"
+                                    class="btn btn-black border border-black rounded-0 text-uppercase mt-5"
                                     value="Add to Basket">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
