@@ -23,7 +23,7 @@ class Product(models.Model):
     upc = models.CharField(max_length=50, null=True, blank=True)  # universal product code
     artist = models.CharField(max_length=50, null=True, blank=True)
     country = models.CharField(max_length=254, unique=False, null=True, blank=True)
-    name = models.CharField(max_length=254, unique=True, null=True, blank=True)
+    name = models.CharField(max_length=254, unique=True)
     description = models.TextField()
     has_dimentions = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -36,7 +36,7 @@ class Product(models.Model):
 
     def clean(self):
         if self.rating is not None and (self.rating < 0 or self.rating > 5):
-            raise ValidationError("Rating value must be between 0 and 5")
+            raise ValidationError({'rating': 'Rating value must be between 0 and 5'})
 
     def save(self, *args, **kwargs):
         try:
