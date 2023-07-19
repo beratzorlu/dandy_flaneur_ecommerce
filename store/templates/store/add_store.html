@@ -2,6 +2,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'store/css/store.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="overlay"></div>
@@ -43,7 +46,7 @@
         // Renders notification when a new image is added in the edit form.
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Uploaded item image: ${file.name}`);
+            $('#filename').text(`Item image will be changed to: ${file.name}`);
         });
     </script>
 {% endblock%}
