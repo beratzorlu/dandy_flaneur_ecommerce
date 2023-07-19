@@ -1,6 +1,6 @@
+from store.widgets import CustomClearableFileInput
 from django import forms
 from .models import Product, Category
-from .widgets import NewClearableFileInput
 
 
 class ItemForm(forms.ModelForm):
@@ -9,7 +9,7 @@ class ItemForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=NewClearableFileInput)
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -18,4 +18,4 @@ class ItemForm(forms.ModelForm):
 
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black rounded-0'
+            field.widget.attrs['class'] = 'dandy-border-alt rounded-0'
