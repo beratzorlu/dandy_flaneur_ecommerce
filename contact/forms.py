@@ -9,10 +9,38 @@ class UserContactForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
+   
+        placeholders = {
+            'sender_name': 'Your Name',
+            'phone_num': 'Phone Number',
+            'email_address': 'Email Address',
+            'message': 'Your Message',
+        }
 
-    phone_num = PhoneNumberField(widget=forms.TextInput(
-        attrs={'placeholder': ('+353001112233')}))
+        self.fields['sender_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'border-black rounded-0'
+            self.fields[field].label = False
+
+    phone_num = PhoneNumberField(
+        error_messages={
+            'invalid': 'Please enter a valid phone number in international format (eg. +353 87 000 00 00).',
+            'required': 'This field is required.',
+        },
+        widget=forms.TextInput(attrs={'placeholder': '+353001112233'}),
+    )
 
     class Meta:
         model = Contact
         fields = ('sender_name', 'phone_num', 'email_address', 'message')
+        labels = {
+            'sender_name': 'Your Name',
+            'phone_num': 'Phone Number',
+            'email_address': 'Email Address',
+            'message': 'Your Message'
+            }
