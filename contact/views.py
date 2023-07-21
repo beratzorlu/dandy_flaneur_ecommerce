@@ -69,7 +69,7 @@ class contactView(View):
 
 def retrieve_user_details(request):
     """
-    Queries logged-in user data if they have an account.
+    Queries logged-in user data to check if they have an account.
     """
 
     account_email = request.user.email
