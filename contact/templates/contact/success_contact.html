@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<div class=".full-width-container">
+    <div class="row">
+        <div class="col text-center mt-4 rounded-0 ">
+            <h1>~ Contact Us ~</h1>
+        </div>
+    </div>
+
+    <div class="row my-5 p-3 rounded-0">
+        <div class="col">
+            <div class="row d-flex justify-content-center rounded-0">
+                <div class="row my-5">
+                    <div class="col-12 col-md-8 col-xl-5 mx-auto d-block">
+                        <div class="row">
+                            <div class="col-12 p-5 rounded-0 dandy-border bg-light rounded send-message text-white">
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <p><i class="fa-solid fa-check fa-bounce fa-2xl dandy-black"></i></p>
+                                        <h2 class="fw-bold mt-3">Your Message Has Been Submitted!</h2>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="justify-content-center">
+                                        <p class="dandy-black fst-italic">Thank you for getting in touch with us. One of our team members will be in
+                                            touch with you soon.</p>
+                                        <hr>
+                                        <div class="d-grid gap-2 col-6 mx-auto">
+                                            <a href="{% url 'store' %}" id="navbar-primary" class="btn dandy-bg-alt rounded-0">Back to Store</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+{% endblock %}
