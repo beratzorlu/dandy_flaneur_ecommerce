@@ -279,3 +279,11 @@ a {
     margin-right: auto;
     margin-left: auto;
 }
+
+.dandy-black {
+    color: var(--dandy-black)
+}
+
+.border-black-dashed {
+    border: 1px dashed var(--dandy-black)
+}
