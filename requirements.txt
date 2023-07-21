@@ -7,10 +7,14 @@ Django==3.2.20
 django-allauth==0.41.0
 django-countries==7.2.1
 django-crispy-forms==1.14.0
+django-daterangefilter==1.0.0
+django-phonenumber-field==7.1.0
+django-phonenumbers==1.0.1
 django-storages==1.13.2
 gunicorn==21.2.0
 jmespath==1.0.1
 oauthlib==3.2.2
+phonenumbers==8.13.16
 Pillow==10.0.0
 psycopg2==2.9.6
 python3-openid==3.2.0
