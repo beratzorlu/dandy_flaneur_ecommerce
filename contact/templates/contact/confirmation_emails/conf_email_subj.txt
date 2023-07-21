@@ -1,1 +1,1 @@
-Dandy Flaneur Confirmation for Order Number {{ order.order_number }}
+Dandy Flaneur Confirmation For Your Message
