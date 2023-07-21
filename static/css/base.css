@@ -20,6 +20,10 @@ body {
     font-family: var(--main-font);
 }
 
+h2 {
+    color: var(--dandy-black);
+}
+
 h4 {
     font-family: var(--alt-font);
 }
@@ -210,7 +214,7 @@ a {
     margin-top: 6rem !important;
 }
 
-/* ALLAUTH */
+/* ALLAUTH - From Code Institute's Boutique Ado Walkthrough Project */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
@@ -265,4 +269,13 @@ a {
 .allauth-form-inner-content a {
     color: #17a2b8;
     /* text-info */
+}
+
+/* CONTACT.HTML */
+.full-width-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
