@@ -2,6 +2,7 @@ from django import forms
 from .models import Contact
 from crispy_forms.helper import FormHelper
 from phonenumber_field.formfields import PhoneNumberField
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
 
 class UserContactForm(forms.ModelForm):
@@ -32,7 +33,6 @@ class UserContactForm(forms.ModelForm):
             'invalid': 'Please enter a valid phone number in international format (eg. +353 87 000 00 00).',
             'required': 'This field is required.',
         },
-        widget=forms.TextInput(attrs={'placeholder': '+353001112233'}),
     )
 
     class Meta:
