@@ -1,18 +1,21 @@
-from django.shortcuts import render
+from django.conf import settings
 from django.views import View
-from django.contrib.auth.models import User
+from django.shortcuts import render
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
+from .models import Contact
 from .forms import UserContactForm
 from store.models import Product, Category
 
 
 class contactView(View):
-    """ View for rending the contact u page """
-
     """
-    This view displays the contact form and if the user
-    is registered and inserts the user email into the
-    email field
+    *Displays contact form.
+    *checks for saved user data and injects into form.
+    *Displays pop-up notification.
+    *Sends automated confirmation email.
     """
     def get(self, request, *args, **kwargs):
         """
@@ -42,7 +45,28 @@ class contactView(View):
         user_contact_form = UserContactForm(data=request.POST)
 
         if user_contact_form.is_valid():
+
             user_contact = user_contact_form.save(commit=False)
+            user_email = user_contact.email_address
+
+            subject = render_to_string(
+                'contact/confirmation_emails/conf_email_subj.txt')
+
+            body = render_to_string(
+                'contact/confirmation_emails/conf_email_body.txt',
+                {'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [user_email]
+            )
+
+            messages.success(request, 'Success! Your message has been sent.')
+
+            return render(request, 'contact/success_contact.html')
+
             if len(user_contact.message) < 20:
                 messages.error(
                     request, 'Message must be at least 20 characters long')
@@ -53,11 +77,6 @@ class contactView(View):
                         'user_contact_form': user_contact_form
                     }
                 )
-
-            user_contact.user = request.user
-            user_contact.save()
-            messages.success(request, 'Success! Your message has been sent.')
-            return render(request, 'contact/success_contact.html')
 
         return render(request, 'contact/contact.html',
                       {'user_contact_form': user_contact_form})
