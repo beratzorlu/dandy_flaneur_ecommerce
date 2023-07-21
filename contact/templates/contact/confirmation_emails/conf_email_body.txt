@@ -1,0 +1,20 @@
+Hello {{ contact.sender_name }}!
+
+This is a confirmation that your message has reached us! Someone from our communications team will be in touch with you soon. Please find you contact summary below:
+
+Your Message
+____________
+
+{{ contact.message }}
+
+
+
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your query!
+
+
+Sincerely,
+
+Boutique Ado

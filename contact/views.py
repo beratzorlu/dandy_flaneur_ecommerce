@@ -14,9 +14,6 @@ class contactView(View):
     is registered and inserts the user email into the
     email field
     """
-    template_name = 'contact/contact.html'
-    success_message = 'Success! Your message has been sent.'
-
     def get(self, request, *args, **kwargs):
         """
         Retrieves users email and inputs into email input
@@ -59,11 +56,10 @@ class contactView(View):
 
             user_contact.user = request.user
             user_contact.save()
-            messages.success(
-                request, 'Success! Your message has been sent.')
-            return render(request, 'home/index.html')
+            messages.success(request, 'Success! Your message has been sent.')
+            return render(request, 'contact/success_contact.html')
 
-        return render(request, 'contact/success_contact.html',
+        return render(request, 'contact/contact.html',
                       {'user_contact_form': user_contact_form})
 
 
