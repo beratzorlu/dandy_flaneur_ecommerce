@@ -69,6 +69,8 @@ INSTALLED_APPS = [
     'storages',
     'phonenumber_field',
     'phonenumbers',
+    'daterangefilter',
+    'babel',
 ]
 
 MIDDLEWARE = [
