@@ -26,11 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-beratzorlu-dandyflaneur-swk1h6l4lmf.ws-eu101.gitpod.io',
     '8000-beratzorlu-dandyflaneur-gzpivg5i470.ws-eu101.gitpod.io',
+    '8000-beratzorlu-dandyflaneur-gzpivg5i470.ws-eu102.gitpod.io',
     'dandy-flaneur-08cda80edeb8.herokuapp.com',
     'localhost',
 ]
@@ -65,6 +67,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_countries',
     'storages',
+    'phonenumber_field',
+    'phonenumbers',
 ]
 
 MIDDLEWARE = [
@@ -241,6 +245,8 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
+
+# Gmail emails configs 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'dandyflaneurcommerce@gmail.com'
@@ -252,3 +258,4 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
