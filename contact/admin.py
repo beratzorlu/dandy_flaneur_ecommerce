@@ -7,8 +7,13 @@ from .models import Contact
 class ContactAdmin(admin.ModelAdmin):
     list_filter = ('user', 'sender_name', 'email_address',
                    'phone_num', 'date_created')
+
     list_display = ('form_id', 'user', 'sender_name',
                     'message', 'phone_num', 'date_created')
 
-    search_fields = ['sender_name']
-    list_filter = (('sender_name', DateRangeFilter),)
+    search_fields = ['date_created', 'sender_name']
+
+    list_filter = (('date_created', DateRangeFilter), 'sender_name', 'user')
+
+    list_display_links = ('form_id', 'user', 'sender_name',
+                          'message', 'phone_num', 'date_created')
