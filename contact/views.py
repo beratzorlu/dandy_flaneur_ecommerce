@@ -24,8 +24,8 @@ class contactView(View):
         categories_list = Category.objects.all()
 
         if request.user.is_authenticated:
-            user_email = request.user.email
-            user_contact_form = UserContactForm(initial={'user_email': user_email})
+            email_address = request.user.email
+            user_contact_form = UserContactForm(initial={'email_address': email_address})
         else:
             user_contact_form = UserContactForm()
 
@@ -60,10 +60,10 @@ class contactView(View):
             user_contact.user = request.user
             user_contact.save()
             messages.success(
-                request, "Success! Your message has been sent")
-            return render(request, 'contact/received.html')
+                request, 'Success! Your message has been sent.')
+            return render(request, 'home/index.html')
 
-        return render(request, 'contact/contact.html',
+        return render(request, 'contact/success_contact.html',
                       {'user_contact_form': user_contact_form})
 
 
