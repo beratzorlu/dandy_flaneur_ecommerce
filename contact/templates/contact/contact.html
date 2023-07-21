@@ -1,2 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<div class=".full-width-container">
+    <div class="row">
+        <div class="col text-center mt-4 rounded-0 ">
+            <h1>~ Contact Us ~</h1>
+        </div>
+    </div>
+
+    <div class="row my-5 p-3 rounded-0">
+        <div class="col">
+            <div class="row d-flex justify-content-center rounded-0">
+                <div class="row my-5">
+                    <div class="col-12 col-md-8 col-xl-5 mx-auto d-block">
+                        <div class="row">
+                            <div class="col-12 p-5 rounded-0 dandy-border bg-light rounded send-message text-white">
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <h2 class="fw-bold mt-3">We Would Love To Hear From You!</h2>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <form method="POST" class="dandy-black" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ user_contact_form | crispy }}
+
+                                    <button id="navbar-primary" class="btn dandy-bg-alt w-100 rounded-0" type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+{% endblock %}
