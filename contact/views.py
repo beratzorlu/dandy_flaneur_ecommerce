@@ -38,48 +38,39 @@ class contactView(View):
                       context)
 
     def post(self, request):
-        """
-        Checks that the provided info is valid format
-        and then posts to database
-        """
         user_contact_form = UserContactForm(data=request.POST)
 
         if user_contact_form.is_valid():
-
             user_contact = user_contact_form.save(commit=False)
+
+            if len(user_contact.message) < 20:
+                messages.error(request, 'Message must be at least 20 characters long')
+                return render(request, 'contact/contact.html', {'user_contact_form': user_contact_form})
+
+            user_contact.save()
+
             user_email = user_contact.email_address
 
-            subject = render_to_string(
-                'contact/confirmation_emails/conf_email_subj.txt')
+            subject = render_to_string('contact/confirmation_emails/conf_email_subj.txt')
 
             body = render_to_string(
                 'contact/confirmation_emails/conf_email_body.txt',
-                {'contact_email': settings.DEFAULT_FROM_EMAIL})
+                {'contact_email': settings.DEFAULT_FROM_EMAIL}
+            )
 
             send_mail(
                 subject,
                 body,
                 settings.DEFAULT_FROM_EMAIL,
-                [user_email]
+                [user_email],
+                fail_silently=True
             )
 
             messages.success(request, 'Success! Your message has been sent.')
 
             return render(request, 'contact/success_contact.html')
 
-            if len(user_contact.message) < 20:
-                messages.error(
-                    request, 'Message must be at least 20 characters long')
-                return render(
-                    request,
-                    'contact/contact.html',
-                    {
-                        'user_contact_form': user_contact_form
-                    }
-                )
-
-        return render(request, 'contact/contact.html',
-                      {'user_contact_form': user_contact_form})
+        return render(request, 'contact/contact.html', {'user_contact_form': user_contact_form})
 
 
 def retrieve_user_details(request):
