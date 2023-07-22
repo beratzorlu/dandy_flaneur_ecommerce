@@ -10,74 +10,39 @@ from .forms import UserContactForm
 from store.models import Product, Category
 
 
-class contactView(View):
-    """
-    *Displays contact form.
-    *checks for saved user data and injects into form.
-    *Displays pop-up notification.
-    *Sends automated confirmation email.
-    """
-    def get(self, request, *args, **kwargs):
-        """
-        Retrieves users email and inputs into email input
-        """
-        categories_list = Category.objects.all()
-
-        if request.user.is_authenticated:
-            email_address = request.user.email
-            user_contact_form = UserContactForm(initial={'email_address': email_address})
-        else:
-            user_contact_form = UserContactForm()
-
-        context = {
-            'categories_list': categories_list,
-            'user_contact_form': user_contact_form
-        }
-
-        return render(request, 'contact/contact.html',
-                      context)
-
-    def post(self, request):
-        user_contact_form = UserContactForm(data=request.POST)
-
+def contactView(request):
+    """ Handle contact form """
+    if request.method == 'POST':
+        user_contact_form = UserContactForm(request.POST)
         if user_contact_form.is_valid():
-            user_contact = user_contact_form.save(commit=False)
+            complete_form = user_contact_form.save()
+            messages.info(request, 'Message sent!')
 
-            if len(user_contact.message) < 20:
-                messages.error(request, 'Message must be at least 20 characters long')
-                return render(request, 'contact/contact.html', {'user_contact_form': user_contact_form})
-
-            user_contact.save()
-
-            user_email = user_contact.email_address
-
-            subject = render_to_string('contact/confirmation_emails/conf_email_subj.txt')
-
+            """Send the user a confirmation email"""
+            user_email = complete_form.email_address
+            subject = render_to_string(
+                'contact/confirmation_emails/conf_email_subj.txt')
             body = render_to_string(
                 'contact/confirmation_emails/conf_email_body.txt',
-                {'contact_email': settings.DEFAULT_FROM_EMAIL}
-            )
+                {'contact_email': settings.DEFAULT_FROM_EMAIL})
 
             send_mail(
                 subject,
                 body,
                 settings.DEFAULT_FROM_EMAIL,
-                [user_email],
-                fail_silently=True
+                [user_email]
             )
 
-            messages.success(request, 'Success! Your message has been sent.')
-
             return render(request, 'contact/success_contact.html')
+        else:
+            messages.error(request, 'Failed to send message. \
+            Try again.')
+    else:
+        user_contact_form = UserContactForm()
 
-        return render(request, 'contact/contact.html', {'user_contact_form': user_contact_form})
+    template = 'contact/contact.html'
+    context = {
+        'user_contact_form': user_contact_form,
+    }
 
-
-def retrieve_user_details(request):
-    """
-    Queries logged-in user data to check if they have an account.
-    """
-
-    account_email = request.user.email
-    account_user = User.objects.filter(email=account_email).first()
-    return account_user
+    return render(request, template, context)
