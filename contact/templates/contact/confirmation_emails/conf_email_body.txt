@@ -1,11 +1,11 @@
-Hello {{ contact.sender_name }}!
+Hello {{ user_contact_form.sender_name }}!
 
 This is a confirmation that your message has reached us! Someone from our communications team will be in touch with you soon. Please find you contact summary below:
 
 Your Message
 ____________
 
-{{ contact.message }}
+{{ user_contact_form.message }}
 
 
 
@@ -17,4 +17,4 @@ Thank you for your query!
 
 Sincerely,
 
-Boutique Ado
+Dandy Flaneur Co.
