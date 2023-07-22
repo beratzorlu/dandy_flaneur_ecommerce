@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-class Contact(models.Model):
+class ContactForm(models.Model):
     """
     Contact form model
     """

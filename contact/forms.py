@@ -1,5 +1,5 @@
 from django import forms
-from .models import Contact
+from .models import ContactForm
 from crispy_forms.helper import FormHelper
 from phonenumber_field.formfields import PhoneNumberField
 
@@ -35,7 +35,7 @@ class UserContactForm(forms.ModelForm):
     )
 
     class Meta:
-        model = Contact
+        model = ContactForm
         fields = ('sender_name', 'phone_num', 'email_address', 'message')
         labels = {
             'sender_name': 'Your Name',

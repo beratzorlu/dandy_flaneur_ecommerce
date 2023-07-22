@@ -1,9 +1,9 @@
 from django.contrib import admin
 from daterangefilter.filters import DateRangeFilter
-from .models import Contact
+from .models import ContactForm
 
 
-@admin.register(Contact)
+@admin.register(ContactForm)
 class ContactAdmin(admin.ModelAdmin):
     list_filter = ('user', 'sender_name', 'email_address',
                    'phone_num', 'date_created')
