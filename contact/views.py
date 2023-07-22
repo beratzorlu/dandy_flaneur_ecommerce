@@ -16,7 +16,7 @@ def contact_view(request):
         user_contact_form = UserContactForm(request.POST)
         if user_contact_form.is_valid():
             complete_form = user_contact_form.save()
-            messages.info(request, 'Message sent!')
+            messages.info(request, 'Your message was successfuly sent!')
 
             """Send the user a confirmation email"""
             user_email = complete_form.email_address
@@ -35,8 +35,8 @@ def contact_view(request):
 
             return render(request, 'contact/success_contact.html')
         else:
-            messages.error(request, 'Failed to send message. \
-            Try again.')
+            messages.error(request, 'Looks like something went wrong. \
+            Please try again.')
     else:
         user_contact_form = UserContactForm()
 
