@@ -1,11 +1,11 @@
-Hello {{ user_contact_form.sender_name }}!
+Hello {{ complete_form.sender_name }}!
 
 This is a confirmation that your message has reached us! Someone from our communications team will be in touch with you soon. Please find you contact summary below:
 
 Your Message
 ____________
 
-{{ user_contact_form.message }}
+{{ complete_form.message }}
 
 
 
