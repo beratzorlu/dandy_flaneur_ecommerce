@@ -5,7 +5,10 @@ This is a confirmation that your message has reached us! Someone from our commun
 Your Message
 ____________
 
+
 {{ complete_form.message }}
+
+____________
 
 
 
