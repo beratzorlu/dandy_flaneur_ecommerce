@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'phonenumbers',
     'daterangefilter',
     'babel',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
