@@ -11,7 +11,7 @@ from .forms import UserContactForm
 from store.models import Product, Category
 
 
-def send_email_confirmation(user_email):
+def send_email_confirmation(user_email, user_contact_form):
     """
     Handles the confirmation email evet.
     *Defines the subject and body content of the email.
@@ -53,14 +53,14 @@ def contact_view(request):
 
                 messages.info(request, 'Your message was successfuly sent!')
 
-                send_email_confirmation(complete_form.email_address)
+                send_email_confirmation(complete_form.email_address, user_contact_form)
 
                 return render(request, 'contact/success_contact.html')
         if not user.is_authenticated:
             complete_form = user_contact_form.save()
             messages.info(request, 'Your message was successfuly sent!')
 
-            send_email_confirmation(complete_form.email_address)
+            send_email_confirmation(complete_form.email_address, user_contact_form)
 
             return render(request, 'contact/success_contact.html')
         else:
