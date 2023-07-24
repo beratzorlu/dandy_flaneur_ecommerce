@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('blog/', views.blogList.as_view(), name='blog')
+    path('', views.BlogList.as_view(), name='blog_list'),
+    path('summernote/', include('django_summernote.urls')),
 ]
