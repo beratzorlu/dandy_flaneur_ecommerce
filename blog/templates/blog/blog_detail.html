@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<!-- Blog Post -->
+<div class="container">
+    <div class="row">
+        {% if post.image %}
+        <div class="col-md-12 d-flex justify-content-center mb-5">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} image" class="img-fluid">
+            <div></div>
+        </div>
+        {% else %}
+        <div class="col-md-12 d-flex justify-content-center mb-5">
+            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ post.title }} image" class="img-fluid">
+            <div></div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="w-100 p-4 p-md-5 mb-4 rounded-0 dandy-border">
+                <h1 class="display-4">{{ post.title }}</h1>
+                <p class="lead my-3 fst-italic">Posted by <span
+                        class="dandy-bg-alt dandy-black px-2">{{ post.author }}</span></p>
+                <span></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="w-100 p-4 p-md-5 mb-4 text-black dandy-border-alt">
+                <p class="lead my-3 text-break">{{ post.excerpt }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="d-grid gap-1 d-md-flex justify-content-md-start mb-2">
+                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Like</a>
+                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Comment</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-grid gap-1 d-md-flex justify-content-md-end mb-5">
+                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Edit</a>
+                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-text">
+            {{ post.content | safe }}
+        </div>
+    </div>
+</div>
+
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+
+{% endblock %}
