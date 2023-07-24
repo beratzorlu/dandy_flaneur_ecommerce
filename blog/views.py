@@ -2,10 +2,16 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
 from django.core.paginator import Paginator
+from .models import Post
 
 
-class blogList(generic.ListView):
-    """ View for rending the contact page """
-
-    def get(self, request):
-        return render(request, 'blog/blog.html')
+class BlogList(generic.ListView):
+    """
+    *View for rendering the contact page
+    *Paginates after 6 posts
+    """
+    model = Post
+    queryset = Post.objects.filter(is_published=True).order_by('-created_on')
+    template_name = 'blog/blog.html'
+    paginate_by = 6
+    context_object_name = "blog_list"
