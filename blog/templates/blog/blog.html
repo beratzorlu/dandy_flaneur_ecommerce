@@ -1,15 +1,78 @@
 {% extends "base.html" %}
 {% load static %}
 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+
 {% block content %}
-   {% if blog_list %}
-        {% for post in blog_list %}
-            <h2>{{ post.title }}</h2>
-            <p>Author: {{ post.author }}</p>
-            <p>{{ post.content | safe }}</p>
-            <hr>
-        {% endfor %}
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<div class="row">
+    <div class="col text-center">
+        <h2 class="logo-font mb-4">~ Blog ~</h2>
+        <hr>
+    </div>
+</div>
+
+<div class="container mt-4">
+    {% if blog_list %}
+    {% for post in blog_list %}
+    <div class="card p-3 my-5 shadow-sm rounded-0 dandy-blog">
+        <div class="row">
+            <div class="col-md-2">
+                {% if post.image %}
+                <div class="position-relative">
+                    <img src="{{ post.image.url }}" class="rounded img-fluid img-responsive"
+                        alt="{{ post.title }} image">
+                </div>
+                {% else %}
+                <div class="position-relative">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="rounded img-fluid img-responsive"
+                        alt="{{ post.title }} image">
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-1 dandy-bg-alt p-1 dandy-black fw-bold">{{ post.title }}</h5>
+                        <span><i class="fa fa-heart text-danger"></i> </span>
+                    </div>
+                    <div class="d-flex justify-content-md-start justify-content-between views-content mt-2">
+                        <div class="d-flex flex-row align-items-center">
+                            <small class="ms-1 .text-secondary"><i class="fa-solid fa-feather-pointed dandy-black"></i>
+                                Posted: {{ post.created_on }}</small>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center ms-2">
+                            <small class="ms-1 .text-secondary"><i class="fa-solid fa-palette dandy-black"></i> Updated:
+                                {{ post.updated_on }}</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row mt-3">
+                        <img src="https://i.imgur.com/rvQ3LAt.jpg" width="50" class="rounded-circle">
+                        <div class="ms-2 d-flex flex-column">
+                            <div class="d-flex flex-row align-items-center">
+                                <h6>{{ post.author }}</h6>
+                            </div>
+                            <div class="d-flex flex-row align-items-center">
+                                <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
     {% else %}
-        <p>It's a bit quiet here at the moment... <i class="fa-solid fa-wind fa-fade"></i></p>
+    <p>It's a bit quiet here at the moment... <i class="fa-solid fa-wind fa-fade"></i></p>
     {% endif %}
+</div>
 {% endblock %}
