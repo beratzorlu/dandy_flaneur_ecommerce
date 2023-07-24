@@ -11,16 +11,20 @@ from .forms import UserContactForm
 from store.models import Product, Category
 
 
-def send_email_confirmation(user_email, user_contact_form):
+def send_email_confirmation(complete_form):
     """
     Handles the confirmation email evet.
     *Defines the subject and body content of the email.
     *Utilizes Django email framework to target and send
         an email to the specified email address.
     """
+    user_email = complete_form.email_address
+
     subject = render_to_string('contact/confirmation_emails/conf_email_subj.txt')
     body = render_to_string('contact/confirmation_emails/conf_email_body.txt',
-                            {'contact_email': settings.DEFAULT_FROM_EMAIL})
+                            {'contact_email': settings.DEFAULT_FROM_EMAIL,
+                             'complete_form': complete_form}
+                            )
 
     send_mail(
         subject,
@@ -37,6 +41,8 @@ def contact_view(request):
         *If not, it will present an empty form.
     """
     user = request.user
+    complete_form = None
+
     if user.is_authenticated:
         profile = get_object_or_404(AccountProfile, user=user)
     else:
@@ -45,6 +51,7 @@ def contact_view(request):
     if request.method == 'POST':
 
         user_contact_form = UserContactForm(request.POST)
+
         if user.is_authenticated:
             if user_contact_form.is_valid():
                 complete_form = user_contact_form.save(commit=False)
@@ -53,16 +60,18 @@ def contact_view(request):
 
                 messages.info(request, 'Your message was successfuly sent!')
 
-                send_email_confirmation(complete_form.email_address, user_contact_form)
+                send_email_confirmation(complete_form)
 
                 return render(request, 'contact/success_contact.html')
+
         if not user.is_authenticated:
-            complete_form = user_contact_form.save()
-            messages.info(request, 'Your message was successfuly sent!')
+            if user_contact_form.is_valid():
+                complete_form = user_contact_form.save()
+                messages.info(request, 'Your message was successfuly sent!')
 
-            send_email_confirmation(complete_form.email_address, user_contact_form)
+                send_email_confirmation(complete_form)
 
-            return render(request, 'contact/success_contact.html')
+                return render(request, 'contact/success_contact.html')
         else:
             messages.error(request, 'Looks like something went wrong. \
                                      Please try again.')
@@ -76,6 +85,7 @@ def contact_view(request):
     template = 'contact/contact.html'
     context = {
         'user_contact_form': user_contact_form,
+        'complete_form': complete_form,
         'profile': profile,
     }
 
