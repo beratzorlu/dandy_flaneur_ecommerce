@@ -15,3 +15,35 @@ class BlogList(generic.ListView):
     template_name = 'blog/blog.html'
     paginate_by = 6
     context_object_name = "blog_list"
+
+
+class PostDetail(View):
+    """
+    *View for rendering the content of a blog post.
+    *Renders the detailed post page once clicked on
+        associated url.
+    """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(is_published=True)
+        post = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "blog/blog_detail.html",
+            {
+                "post": post,
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(is_published=True)
+        post = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "blog/blog_detail.html",
+            {
+                "post": post,
+
+            },
+        )
