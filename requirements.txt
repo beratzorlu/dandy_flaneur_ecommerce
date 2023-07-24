@@ -12,6 +12,7 @@ django-daterangefilter==1.0.0
 django-phonenumber-field==7.1.0
 django-phonenumbers==1.0.1
 django-storages==1.13.2
+django-summernote==0.8.20.0
 gunicorn==21.2.0
 jmespath==1.0.1
 oauthlib==3.2.2
