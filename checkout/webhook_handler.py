@@ -118,7 +118,7 @@ class StripeWH_Handler:
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
-                    postcode=shipping_details.address.postal_code,
+                    eircode=shipping_details.address.postal_code,
                     town_or_city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
