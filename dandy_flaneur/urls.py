@@ -16,10 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.shortcuts import redirect
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def redirect_admin(request):
+    return redirect('/admin/blog/post/')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('redirect-admin/', redirect_admin, name='redirect_admin'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
