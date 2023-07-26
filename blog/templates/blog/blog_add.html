@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+
+<div class="d-flex flex-column align-items-center">
+
+    <div class="row w-100">
+        <div class="col w-100 text-center">
+            <h2 class="logo-font mb-4">~ Blog Editor ~</h2>
+            <h6 class="logo-font mb-4">Use the fields and tools available below to create a blog post.</h6>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'blog_add' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="text-right">
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'blog_list' %}">Go Back</a>
+                    <button class="btn btn-black rounded-0" type="submit">Publish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+        // Display notification for new image on form.
+        $('#new-image').change(function () {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
+{% endblock %}

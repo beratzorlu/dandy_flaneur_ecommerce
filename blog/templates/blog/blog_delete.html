@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form action="{% url 'blog_delete' post.slug %}" method="POST">
+    {% csrf_token %}
+    <button type="button" class="btn btn-outline-dark rounded-0" data-bs-dismiss="modal">No, go
+        back!</button>
+    <button type="submit" class="btn btn-outline-danger rounded-0">Yes, delete</button>
+</form>
+
+
+{% endblock %}
