@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Post, Comment
+from django.utils.safestring import mark_safe
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -27,5 +28,10 @@ class PostAdmin(SummernoteModelAdmin):
 class CommentAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     search_fields = ('name', 'author', 'content')
-    list_display = ('author', 'name', 'post', 'content', 'created_on', 'is_approved')
+    list_display = ('author', 'name', 'post', 'content_field', 'created_on', 'is_approved')
     list_filter = ('name', 'post', 'author', 'content', 'created_on', 'is_approved')
+
+    def content_field(self, obj):
+        return mark_safe(obj.content)
+
+    content_field.short_description = 'Content'
