@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -13,11 +13,19 @@ class PostAdmin(SummernoteModelAdmin):
 
     def make_published(modeladmin, request, queryset):
         queryset.update(is_published=True)
-    
+
     def make_unpublished(modeladmin, request, queryset):
         queryset.update(is_published=False)
-        
+
     make_published.short_description = "Publish"
     make_unpublished.short_description = "Unpublish"
 
     actions = [make_published, make_unpublished]
+
+
+@admin.register(Comment)
+class CommentAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content')
+    search_fields = ('name', 'author', 'content')
+    list_display = ('author', 'name', 'post', 'content', 'created_on', 'is_approved')
+    list_filter = ('name', 'post', 'author', 'content', 'created_on', 'is_approved')
