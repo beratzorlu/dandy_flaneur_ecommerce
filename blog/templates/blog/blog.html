@@ -15,6 +15,7 @@
 <div class="row">
     <div class="col text-center">
         <h2 class="logo-font mb-4">~ Blog ~</h2>
+        <h5>Explore the Canvas of Expression: Curated Blogs by Our Artistic Writers.</h5>
         <hr>
     </div>
 </div>
@@ -85,8 +86,12 @@
                                 <a href="{% url 'blog_detail' post.slug %}"
                                     class="btn btn-sm rounded-0 mx-2 dandy-border-alt">View</a>
                                 {% if user.is_authenticated and user.is_superuser %}
-                                <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt">Edit</a>
-                                <a href="{% url 'blog_delete' post.slug %}" class="btn btn-sm rounded-0 mx-2 dandy-border-alt">Delete</a>
+                                <a href="{% url 'blog_edit' post.slug %}" class="btn btn-sm rounded-0 mx-2 dandy-border-alt">Edit</a>
+                                <button class="btn btn-sm rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                                <!-- delete post modal -->
+                                {% block blog_delete %}
+                                {% include 'blog/blog_delete.html' %}
+                                {% endblock blog_delete %}
                                 {% endif %}
                             </div>
                         </div>
