@@ -1,10 +1,11 @@
-from django.views import generic, View
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.views import generic, View
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+
 from .models import Post
 from .forms import BlogForm, EditForm
 
@@ -45,11 +46,17 @@ class PostDetail(View):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
 
+        is_liked = False
+
+        if post.is_liked.filter(id=self.request.user.id).exists():
+            is_liked = True
+
         return render(
             request,
             "blog/blog_detail.html",
             {
                 "post": post,
+                "is_liked": is_liked,
             },
         )
 
@@ -57,12 +64,17 @@ class PostDetail(View):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
 
+        is_liked = False
+
+        if post.is_liked.filter(id=self.request.user.id).exists():
+            is_liked = True
+
         return render(
             request,
             "blog/blog_detail.html",
             {
                 "post": post,
-
+                "is_liked": is_liked,
             },
         )
 
@@ -103,7 +115,7 @@ class DeleteBlog(LoginRequiredMixin, generic.DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser  # noqa
+        return self.request.user == post.author or self.request.user.is_superuser
 
     def get_queryset(self, *args, **kwargs):
         return Post.objects.filter(is_published=True)
@@ -111,7 +123,7 @@ class DeleteBlog(LoginRequiredMixin, generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         post = self.get_object()
         if self.request.user == post.author or self.request.user.is_superuser:
-            messages.success(self.request, 'Success! Blog has been successfully deleted.')  # noqa
+            messages.success(self.request, 'Success! Blog has been successfully deleted.')
             return super(DeleteBlog, self).delete(request, *args, **kwargs)
         else:
             messages.warning(self.request, "You do not have the privileges to \
@@ -121,7 +133,12 @@ class DeleteBlog(LoginRequiredMixin, generic.DeleteView):
 
 class EditBlog(LoginRequiredMixin, generic.UpdateView):
     """
-    Class-based view for editing and updating blog posts.
+    *Get Post object from the instance.
+    *Filter data to only include published posts.
+    *Check if edit blog form is valid.
+    *Check if user is adequately authenticated.
+    *Save edits and redirect to blog list page.
+    *Else, display error message and reverse to homepage.
     """
     model = Post
     template_name = 'blog/blog_edit.html'
@@ -143,8 +160,30 @@ class EditBlog(LoginRequiredMixin, generic.UpdateView):
         post = form.save(commit=False)
         if self.request.user == post.author or self.request.user.is_superuser:
             post.save()
-            messages.success(self.request, 'Success! Your changes have been saved.')
+            messages.success(self.request, 'Success! Your changes have been \
+                                            saved.')
             return redirect(reverse("blog_list"))
         else:
-            messages.warning(self.request, 'You are not authorized to edit the posts of other users.')
+            messages.warning(self.request, 'You are not authorized to edit \
+                                            the posts of other users.')
             return redirect(reverse("home"))
+
+
+class LikeBlog(View):
+    """
+    *Get Post object from the instance.
+    *Check if the blog post is liked already.
+    *If so, toggle liked to unliked once clicked.
+    *Otherwise, add a like to the blog post.
+    """
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.is_liked.filter(id=request.user.id).exists():
+            post.is_liked.remove(request.user)
+            messages.info(request, 'You removed your like.')
+        else:
+            post.is_liked.add(request.user)
+            messages.success(request, 'You liked this post.')
+
+        return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
