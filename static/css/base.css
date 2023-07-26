@@ -93,6 +93,10 @@ a {
     color: var(--dandy-black);
 }
 
+.fs-7 {
+    font-size: 0.9rem !important;
+}
+
 #navbar-primary {
     background-color: var(--dandy-black);
     border: 2px solid var(--dandy-gold);
@@ -109,7 +113,7 @@ a {
 #navbar-secondary.active {
     animation-name: navButtonAnimation;
     animation-duration: 0.5s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 
 #navbar-primary:hover {
@@ -286,7 +290,12 @@ a {
     border-bottom-left-radius: 10% !important;
 }
 
-.dandy-blog:hover {
+.dandy-blog-alt {
+    border-top: 2px solid var(--dandy-gold) !important;
+    border-bottom-left-radius: 10% !important;
+}
+
+.dandy-blog:hover, .dandy-blog-alt:hover {
     border: 2px solid var(--dandy-gold) !important;
     border-bottom-left-radius: 0% !important;
 }
@@ -350,6 +359,12 @@ a {
 @media (min-width: 1200px) {
     .ms-4 {
         margin-left: 4.5rem !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .justify-content-sm-center  {
+        justify-content: center !important;
     }
 }
 
