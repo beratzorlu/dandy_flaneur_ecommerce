@@ -51,10 +51,10 @@
                     <div class="border border-light text-center p-1">
                         {% if is_liked %}
                         <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-heart">
-                            <i class="fa-solid fa-heart fa-bounce fa-xl" style="color: #ff0000;"></i> </button>
+                            <i class="fa-solid fa-heart fa-bounce fa-xl" style="color: #ff0000; --fa-animation-iteration-count: 5;"></i> </button>
                         {% else %}
                         <button class="btn-heart">
-                            <i class="fa-regular fa-heart fa-beat dandy-black fa-xl"></i>
+                            <i class="fa-regular fa-heart fa-flip dandy-black fa-xl" style="--fa-animation-iteration-count: 5; --fa-animation-duration: 1s;"></i>
                         </button>
                         {% endif %}
                         <span class=" align-self-center dandy-black fw-bold">~{{ post.number_of_likes }}~</span>
@@ -72,10 +72,12 @@
                 <a href="{% url 'blog_edit' post.slug %}" class="btn rounded-0 mx-2 dandy-border-alt">Edit</a>
                 <button class="btn rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Delete</button>
-                <!-- delete post modal -->
+
+                <!-- Delete Post Modal -->
                 {% block blog_delete %}
                 {% include 'blog/blog_delete.html' %}
                 {% endblock blog_delete %}
+
             </div>
         </div>
         {% endif %}
@@ -86,6 +88,10 @@
         </div>
     </div>
 </div>
+
+{% block blog_comments %}
+{% include 'blog/blog_comments.html' %}
+{% endblock blog_comments %}
 
 
 <!-- Content Divider -->
