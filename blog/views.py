@@ -1,8 +1,11 @@
-from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from .models import Post
+from .forms import BlogForm
 
 
 class BlogList(generic.ListView):
@@ -47,3 +50,24 @@ class PostDetail(View):
 
             },
         )
+
+
+class AddBlog(LoginRequiredMixin, generic.CreateView):
+    """
+    Class-based view for creating new blog posts.
+    """
+    model = Post
+    template_name = 'blog/blog_add.html'
+    form_class = BlogForm
+
+    def form_valid(self, form):
+        user = self.request.user
+        form.instance.author = user
+        if user.is_authenticated:
+            messages.success(self.request, "Success! Your blog has been \
+                                            submitted.")
+            return super(AddBlog, self).form_valid(form)
+        else:
+            messages.warning(self.request, "You do not have the privileges to \
+                                            perform this action")
+            return HttpResponseRedirect(reverse('blog_list'))
