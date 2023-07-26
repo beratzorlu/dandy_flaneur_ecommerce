@@ -128,11 +128,17 @@
                                 {{ user.username }}</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'add_store' %}"
-                                id="navbar-primary">Manage</a>
-                        </li>
-
+                        <div class="dropdown-center">
+                            <button id="navbar-primary" class="btn me-2 rounded-0 float-end"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Manage
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark rounded-0 dandy-bg dandy-border fs-7">
+                              <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
+                            </ul>
+                        </div>
+                        
                         <li class="nav-item">
                             <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
                                 Profile</a>
