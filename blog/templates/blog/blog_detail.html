@@ -43,15 +43,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div class="d-grid gap-1 d-md-flex justify-content-md-start mb-2">
-                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Like</a>
-                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Comment</a>
+        <div class="col-12 col-md-6">
+            <div class="d-grid gap-1 d-md-flex justify-content-md-start align-items-center mb-2">
+                {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'blog_like' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    <div class="border border-light text-center p-1">
+                        {% if is_liked %}
+                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                            <i class="fa-solid fa-heart fa-bounce fa-xl" style="color: #ff0000;"></i> </button>
+                        {% else %}
+                        <button class="btn-like">
+                            <i class="fa-regular fa-heart fa-beat dandy-black fa-xl"></i>
+                        </button>
+                        {% endif %}
+                        <span class=" align-self-center dandy-black fw-bold">~{{ post.number_of_likes }}~</span>
+                    </div>
+                </form>
+                {% endif %}
+
             </div>
         </div>
+
         <div class="col-md-6">
             {% if user.is_superuser %}
             <div class="d-grid gap-1 d-md-flex justify-content-md-end mb-5">
+                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Comment</a>
                 <a href="{% url 'blog_edit' post.slug %}" class="btn rounded-0 mx-2 dandy-border-alt">Edit</a>
                 <button class="btn rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Delete</button>
