@@ -50,11 +50,18 @@
             </div>
         </div>
         <div class="col-md-6">
+            {% if user.is_superuser %}
             <div class="d-grid gap-1 d-md-flex justify-content-md-end mb-5">
-                <a href="#" class="btn rounded-0 mx-2 dandy-border-alt">Edit</a>
-                <a href="{% url 'blog_delete' post.slug %}" class="btn rounded-0 mx-2 dandy-border-alt">Delete</a>
+                <a href="{% url 'blog_edit' post.slug %}" class="btn rounded-0 mx-2 dandy-border-alt">Edit</a>
+                <button class="btn rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Delete</button>
+                <!-- delete post modal -->
+                {% block blog_delete %}
+                {% include 'blog/blog_delete.html' %}
+                {% endblock blog_delete %}
             </div>
         </div>
+        {% endif %}
     </div>
     <div class="row">
         <div class="card-text">
