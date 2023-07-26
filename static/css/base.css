@@ -345,6 +345,15 @@ a {
     color: var(--dandy-white);
 }
 
+/* BLOG_DETAIL.HTML */
+
+.btn-heart {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+
 /* MEDIA QUERIES */
 
 @media (max-width: 975px) {
