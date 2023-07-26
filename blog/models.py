@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_blog")
-    likes = models.ManyToManyField(User, related_name='post_like', blank=True)
+    is_liked = models.ManyToManyField(User, related_name='post_like', blank=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     image = models.ImageField(null=True, blank=True)
@@ -25,4 +25,4 @@ class Post(models.Model):
         return reverse('blog_list')
 
     def number_of_likes(self):
-        return self.likes.count()
+        return self.is_liked.count()
