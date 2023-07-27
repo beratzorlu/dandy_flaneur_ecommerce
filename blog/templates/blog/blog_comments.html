@@ -87,7 +87,15 @@
         </div>
     </div>
 </div>
-{% else %}
+{% elif not commented %}
+<div class="container">
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <div>
+            <i class="fa-solid fa-triangle-exclamation"></i> It looks like there is an issue with the submitted content. Please ensure the form is valid.
+        </div>
+    </div>
+</div>
+{% endif %}
 {% if user.is_authenticated %}
 <div class="container" id="comment-form">
     <h4>Leave a comment:</h4>
@@ -108,7 +116,6 @@
         leave a comment.
     </h4>
 </div>
-{% endif %}
 {% endif %}
 
 {% endblock blog_comments %}
