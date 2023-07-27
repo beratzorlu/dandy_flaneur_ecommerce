@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 from .models import Post, Comment
-from .forms import BlogForm, EditForm, CommentForm
+from .forms import BlogForm, EditForm, CommentForm, CommentEditForm
 
 
 class BlogList(generic.ListView):
@@ -211,9 +211,43 @@ class LikeBlog(View):
 
 
 @login_required
+def comment_edit(request, comment_id):
+    """
+    *Check if the edit form is valid.
+    *If so, save the data input by the user.
+        -Display success message
+        -Redirect to detail page.
+    *Otherwise, display an error message.
+    """
+    template = "blog/blog_comments_edit.html"
+    comment = get_object_or_404(Comment, id=comment_id, author=request.user)
+    comment_form = CommentEditForm(request.POST or None, instance=comment)
+
+    if request.method == "POST":
+        if comment_form.is_valid():
+            comment_form.save()
+            messages.success(request, "Successfully saved your changes.")
+            return redirect(reverse("blog_detail", args=[comment.post.slug]))
+        messages.error(request, "Sorry, something went wrong. Please try \
+                                    again.")
+
+    context = {
+        "comment": comment,
+        "comment_form": comment_form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def comment_delete(request, comment_id):
     """
-    Function-based view for deleting comments.
+    *Check if the name attribute of the comment
+        matches the username of the user.
+    *If so, remove the comment from the database
+        and display success message.
+    *Otherwise, display an error message and redirect
+        users to homepage.
     """
     comment = get_object_or_404(Comment, id=comment_id, author=request.user)
 
