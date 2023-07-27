@@ -1,0 +1,111 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block blog_comments %}
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h4 class="mb-3">Comments</h4>
+            {% if comments %}
+            {% for comment in comments %}
+            <div class="card mb-3 border border-dark-subtle rounded-0 dandy-blog-alt">
+                <div class="card-body">
+                    {% if comment.author.is_superuser %}
+                    <p class="fs-6">Posted by
+                        <a href="{% if user.is_authenticated %} {% url 'profiles' %} {% endif %}"
+                            class="p-1 dandy-bg-alt text-black">{{ comment.name }} <i
+                                class="fa-solid fa-palette fa-fade"
+                                style="--fa-animation-iteration-count: 100; --fa-animation-duration: 2s;"></i></a>
+                        on <span class="fst-italic">{{ comment.created_on }}</span></p>
+                    {% else %}
+                    <p class="fs-6">Posted by
+                        <a href="#" class="p-1 dandy-bg-alt text-black">{{ comment.name }}</a>
+                        on <span class="fst-italic">{{ comment.created_on }}</span></p>
+                    {% endif %}
+                    <p class="card-text">{{ comment.content | safe }}</p>
+                    {% if user.is_authenticated and comment.name == user.username %}
+
+                    <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal"
+                        data-bs-target="#modal-{{ comment.id }}"><i class="fa-solid fa-fill-drip"></i> Delete</a>
+                    <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt"><i class="fa-solid fa-paintbrush"></i> Edit</a>
+
+                    <div class="modal fade" id="modal-{{ comment.id }}" data-bs-backdrop="static" tabindex="-1"
+                        aria-labelledby="modal-{{ comment.id }}Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content rounded-0 dandy-border-alt">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal-{{ comment.id }}Label">Delete Comment By <span
+                                            class="text-danger">{{ comment.name }}</span>?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>
+                                        Are you sure you want to <strong class="text-italic text-danger">delete</strong>
+                                        your
+                                        blog post?
+                                    </h4>
+                                    <p class="fst-italic">
+                                        <i class="fas fa-exclamation-circle"></i> Warning: Once deleted, you <strong
+                                            class="text-danger">cannot</strong> retrieve your content.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-dark rounded-0"
+                                        data-bs-dismiss="modal">No, Go
+                                        Back!</button>
+                                    <a href="{% url 'comment_delete' comment_id=comment.id %}"
+                                        class="btn btn-outline-danger rounded-0">Yes, Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h6 class="fw-bolder">No comments yet. Be the first one to comment!</h6>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<hr>
+{% if commented %}
+<div class="container">
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <div>
+            <i class="fas fa-info-circle"></i> Success! Your comment has been submitted and waiting admin approval.
+        </div>
+    </div>
+</div>
+{% else %}
+{% if user.is_authenticated %}
+<div class="container" id="comment-form">
+    <h4>Leave a comment:</h4>
+    <p>Logged in as: <strong class="default-card-text">{{ user.username }}</strong></p>
+    <form method="post" style="margin-top: 1.3em;">
+        {% csrf_token %}
+        {{ comment_form | crispy }}
+        <div id="comment-button">
+            <button class="btn btn-dark rounded-0 mx-4 dandy-border-alt float-end" type="submit">Submit
+                Comment</button>
+        </div>
+    </form>
+</div>
+{% else %}
+<div class="container">
+    <h4 class="fst-italic">Please <a href="{% url 'account_login' %}"
+            class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">login</a> to leave a comment.
+    </h4>
+</div>
+{% endif %}
+{% endif %}
+
+{% endblock blog_comments %}
