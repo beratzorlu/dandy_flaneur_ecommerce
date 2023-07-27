@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Post
-from .forms import BlogForm, EditForm
+from .forms import BlogForm, EditForm, CommentForm
 
 
 class BlogList(generic.ListView):
@@ -45,7 +45,7 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
-
+        comments = post.comments.filter(is_approved=True).order_by("-created_on")
         is_liked = False
 
         if post.is_liked.filter(id=self.request.user.id).exists():
@@ -57,17 +57,34 @@ class PostDetail(View):
             {
                 "post": post,
                 "is_liked": is_liked,
+                "comments": comments,
+                "commented": False,
+                "comment_form": CommentForm()
             },
         )
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
-
+        comments = post.comments.filter(is_approved=True).order_by("-created_on")
+        comment_form = CommentForm(data=request.POST)
         is_liked = False
 
         if post.is_liked.filter(id=self.request.user.id).exists():
             is_liked = True
+
+        if comment_form.is_valid():
+            comment_form.instance.author = self.request.user
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+            messages.success(request, "Success! Your comment has been \
+                                        submitted for admin review.")
+        else:
+            comment_form = CommentForm()
+            messages.error(request, "Looks like something went wrong. Please \
+                                        try again.")
 
         return render(
             request,
@@ -75,6 +92,9 @@ class PostDetail(View):
             {
                 "post": post,
                 "is_liked": is_liked,
+                "comments": comments,
+                "commented": True,
+                "comment_form": CommentForm()
             },
         )
 
