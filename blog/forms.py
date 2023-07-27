@@ -53,3 +53,18 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('content', )
+
+
+class CommentEditForm(forms.ModelForm):
+    """
+    Renders form for editing and publishing a post.
+    """
+    def __init__(self, *args, **kwargs):
+        super(CommentEditForm, self).__init__(*args, **kwargs)
+        self.fields['content'].label = False
+
+    class Meta:
+        model = Comment
+        fields = ('content', )
+
+    content = forms.CharField(widget=SummernoteWidget())
