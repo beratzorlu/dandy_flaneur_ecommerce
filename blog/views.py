@@ -81,11 +81,14 @@ class PostDetail(View):
             comment.post = post
             comment.save()
             commented = True
+            error_message = None
             messages.success(request, "Success! Your comment has been \
                                         submitted for admin review.")
         else:
-            comment_form = CommentForm()
             commented = False
+            error_message = "It looks like there is an issue with the \
+                            submitted content. Please ensure the form \
+                            is valid."
             messages.error(request, "Looks like something went wrong. Please \
                                         try again.")
 
@@ -97,7 +100,8 @@ class PostDetail(View):
                 "is_liked": is_liked,
                 "comments": comments,
                 "commented": commented,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                "error_message": error_message,
             },
         )
 

@@ -81,18 +81,16 @@
 <hr>
 {% if commented %}
 <div class="container">
-    <div class="alert alert-success d-flex align-items-center" role="alert">
+    <div class="alert alert-success d-flex align-items-center dandy-black" role="alert">
         <div>
-            <i class="fas fa-info-circle"></i> Success! Your comment has been submitted and waiting admin approval.
+            <i class="fa-regular fa-circle-check fa-fade me-1" style="--fa-animation-iteration-count: 5;"></i>Success! Your comment has been submitted and is waiting admin approval.
         </div>
     </div>
 </div>
-{% elif not commented %}
+{% elif not commented and error_message %}
 <div class="container">
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
-        <div>
-            <i class="fa-solid fa-triangle-exclamation"></i> It looks like there is an issue with the submitted content. Please ensure the form is valid.
-        </div>
+    <div class="alert alert-danger d-flex align-items-center dandy-black" role="alert">
+            <i class="fa-solid fa-triangle-exclamation fa-shake me-1" style="--fa-animation-iteration-count: 5;"></i>{{ error_message }}
     </div>
 </div>
 {% endif %}
