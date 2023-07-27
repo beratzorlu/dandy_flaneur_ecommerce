@@ -35,3 +35,14 @@ class CommentAdmin(SummernoteModelAdmin):
         return mark_safe(obj.content)
 
     content_field.short_description = 'Content'
+
+    def make_published(modeladmin, request, queryset):
+        queryset.update(is_approved=True)
+
+    def make_unpublished(modeladmin, request, queryset):
+        queryset.update(is_approved=False)
+
+    make_published.short_description = "Publish"
+    make_unpublished.short_description = "Unpublish"
+
+    actions = [make_published, make_unpublished]
