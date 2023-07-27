@@ -5,8 +5,9 @@ from django.views import generic, View
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
-from .models import Post
+from .models import Post, Comment
 from .forms import BlogForm, EditForm, CommentForm
 
 
@@ -207,3 +208,20 @@ class LikeBlog(View):
             messages.success(request, 'You liked this post.')
 
         return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
+
+
+@login_required
+def comment_delete(request, comment_id):
+    """
+    Function-based view for deleting comments.
+    """
+    comment = get_object_or_404(Comment, id=comment_id, author=request.user)
+
+    if comment.name == request.user.username:
+        comment.delete()
+        messages.success(request, "You have successfully deleted your \
+                                    comment.")
+        return redirect(reverse("blog_detail", args=[comment.post.slug]))
+    else:
+        messages.error(request, "Looks like something went wrong.")
+        return redirect(request.META.get('HTTP_REFERER', reverse('home')))
