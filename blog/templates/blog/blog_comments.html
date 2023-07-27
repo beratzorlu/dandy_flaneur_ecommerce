@@ -32,7 +32,9 @@
 
                     <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt" data-bs-toggle="modal"
                         data-bs-target="#modal-{{ comment.id }}"><i class="fa-solid fa-fill-drip"></i> Delete</a>
-                    <a href="#" class="btn btn-sm rounded-0 mx-2 dandy-border-alt"><i class="fa-solid fa-paintbrush"></i> Edit</a>
+                    <a href="{% url 'comment_edit' comment_id=comment.id %}"
+                        class="btn btn-sm rounded-0 mx-2 dandy-border-alt"><i class="fa-solid fa-paintbrush"></i>
+                        Edit</a>
 
                     <div class="modal fade" id="modal-{{ comment.id }}" data-bs-backdrop="static" tabindex="-1"
                         aria-labelledby="modal-{{ comment.id }}Label" aria-hidden="true">
@@ -71,7 +73,7 @@
             </div>
             {% endfor %}
             {% else %}
-            <h6 class="fw-bolder">No comments yet. Be the first one to comment!</h6>
+            <h6 class="fw-bolder">It's a bit quiet here. Be the first one to comment! </h6>
             {% endif %}
         </div>
     </div>
@@ -102,7 +104,8 @@
 {% else %}
 <div class="container">
     <h4 class="fst-italic">Please <a href="{% url 'account_login' %}"
-            class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">login</a> to leave a comment.
+            class="link dandy-bg-alt dandy-black link-underline-opacity-0 link-underline-opacity-100-hover">login</a> to
+        leave a comment.
     </h4>
 </div>
 {% endif %}
