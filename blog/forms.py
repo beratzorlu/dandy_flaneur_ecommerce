@@ -1,5 +1,5 @@
 from store.widgets import CustomClearableFileInput
-from .models import Post
+from .models import Post, Comment
 from django_summernote.widgets import SummernoteWidget
 from django_summernote.fields import SummernoteTextFormField
 from django import forms
@@ -7,7 +7,7 @@ from django import forms
 
 class BlogForm(forms.ModelForm):
     """
-    Renders form for editing and publishing a post.
+    Renders form for publishing a post.
     """
     class Meta:
         model = Post
@@ -26,7 +26,7 @@ class BlogForm(forms.ModelForm):
 
 class EditForm(forms.ModelForm):
     """
-    Defines the model for the blog edit form
+    Renders form for editing a post.
     """
     class Meta:
         model = Post
@@ -40,3 +40,16 @@ class EditForm(forms.ModelForm):
 
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
     content = forms.CharField(widget=SummernoteWidget())
+
+
+class CommentForm(forms.ModelForm):
+    """
+    Renders form for editing and publishing a post.
+    """
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.fields['content'].label = False
+
+    class Meta:
+        model = Comment
+        fields = ('content', )
