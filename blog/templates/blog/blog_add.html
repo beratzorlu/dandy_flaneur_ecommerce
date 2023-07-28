@@ -18,19 +18,22 @@
         </div>
     </div>
 
-    <div class="row w-100 justify-content-center">
-        <div class="text-center text-center d-flex justify-content-center pt-4 pb-4">
+    <div class="row col-12 col-md-9 col-sm-12 col-lg-6 justify-content-center">
+        <div class="text-center justify-content-center pt-4 pb-4">
             <form method="POST" action="{% url 'blog_add' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
+                {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
                 {% endfor %}
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'blog_list' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update Post</button>
+                <div class="text-right mt-5">
+                    <hr>
+                    <a class="w-100 btn btn-return rounded-0 mt-5 mb-3" href="{% url 'blog_list' %}">Cancel</a>
+                    <button class="w-100 btn dandy-border-alt rounded-0" type="submit">Publish</button>
+                </div>
             </form>
         </div>
     </div>
