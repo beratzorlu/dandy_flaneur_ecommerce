@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'store/css/store.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
@@ -96,13 +100,13 @@
                             </div>
                         </div>
                         <div class="col{% if s %}-12 mt-2{% endif %}">
-                            <a href="{% url 'store' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <a href="{% url 'store' %}" class="btn btn-return rounded-0 mt-5">
                                 <span class="icon">
                                     <i class="fa-solid fa-caret-left"></i>
                                 </span>
                                 <span class="text-uppercase">Browse Art</span>
                             </a>
-                            <input type="submit" class="btn btn-black border border-black rounded-0 text-uppercase mt-5"
+                            <input type="submit" class="btn dandy-border-alt rounded-0 text-uppercase mt-5"
                                 value="Add to Basket">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
