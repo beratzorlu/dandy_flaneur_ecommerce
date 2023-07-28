@@ -300,6 +300,21 @@ a {
     border-bottom-left-radius: 0% !important;
 }
 
+.btn-return {
+    border-top: none !important;
+    background-color: var(--dandy-white);
+}
+
+.btn-return:hover {
+    border-top: 2px solid var(--dandy-gold) !important;
+    background-color: var(--dandy-black) !important;
+    color: var(--dandy-white) !important;
+}
+
+.btn-return:active {
+    border-top: 2px dashed var(--dandy-gold) !important;
+}
+
 /* Mailchimp */
 #mc_embed_signup {
     background: var(--dandy-black);
@@ -376,4 +391,3 @@ a {
         justify-content: center !important;
     }
 }
-
