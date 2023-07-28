@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'store/css/store.css' %}">
+{% endblock %}
+
+
 {% block content %}
+<!-- Content Divider -->
 <div class="divider"></div>
 
 <div class="text-center">
@@ -25,39 +31,38 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
-                    <div
-                        class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                        <div class="sort-select-wrapper w-50">
+                    <div class="col-12 col-md-3 my-auto order-md-first d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-100">
                             <select id="sort-selector"
-                                class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort
+                                class="w-100 custom-select custom-select-sm rounded-0 border-1 border-{% if current_sort != 'None_None' %}warning{% else %}2 border-black{% endif %}">
+                                <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort
                                     by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
+                                <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>
                                     Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
+                                <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>
                                     Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                                <option value="rating_asc" {% if current_sort == 'rating_asc' %}selected{% endif %}>
                                     Rating (low to high)</option>
                                 <option value="rating_desc"
-                                    {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)
+                                    {% if current_sort == 'rating_desc' %}selected{% endif %}>Rating (high to low)
                                 </option>
-                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                <option value="name_asc" {% if current_sort == 'name_asc' %}selected{% endif %}>Name
                                     (A-Z)</option>
-                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
+                                <option value="name_desc" {% if current_sort == 'name_desc' %}selected{% endif %}>
                                     Name (Z-A)</option>
                                 <option value="category_asc"
-                                    {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)
+                                    {% if current_sort == 'category_asc' %}selected{% endif %}>Category (A-Z)
                                 </option>
                                 <option value="category_desc"
-                                    {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)
+                                    {% if current_sort == 'category_desc' %}selected{% endif %}>Category (Z-A)
                                 </option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-start text-md-left">
-                            {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'store' %}">Reset</a> | </span>
+                    <div class="col-12 col-md-9 order-md-last">
+                        <p class="mt-3 text-end text-md-right dandy-black text-xs-center text-sm-center text-md-end text-lg-end">
+                            {% if search_term or current_categories or current_sort != 'None_None' %}
+                            <span class="small"><a href="{% url 'store' %}" class="dandy-bg-alt dandy-black p-1">Reset</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for
                             <strong>"{{ search_term }}"</strong>{% endif %}
@@ -67,7 +72,7 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-25 border-0">
+                        <div class="card h-25 border-0 store-item">
                             {% if product.image %}
                             <a href="{% url 'store_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -109,12 +114,10 @@
                                         {% if request.user.is_superuser %}
                                         <div class="col">
                                             <div class="w-100">
-                                                <small class="w-0 border p-1 mt-1 float-end">
-                                                    <a href="{% url 'edit_store' product.id %}">Edit <i
-                                                            class="fa-regular fa-pen-to-square ms-1 text-success"></i></a>
+                                                <small class="w-0 border p-1 mt-1 float-end dandy-bg-alt">
+                                                    <a href="{% url 'edit_store' product.id %}" class="dandy-black">Edit <i class="fa-solid fa-fill-drip fa-flip" style="--fa-animation-iteration-count: 1;"></i></a>
                                                     |
-                                                    <a href="{% url 'delete_store' product.id %}">Delete <i
-                                                            class="ms-1 fa-regular fa-trash-can text-danger"></i></a>
+                                                    <a href="{% url 'delete_store' product.id %}" class="dandy-black">Delete <i class="fa-solid fa-paintbrush fa-flip" style="--fa-animation-iteration-count: 1;"></i></a>
                                                 </small>
                                             </div>
                                         </div>
