@@ -6,18 +6,26 @@
 
 <!-- Content Divider -->
 <div class="divider"></div>
+<div class="row">
+   <div class="mb-2 text-center">
+      <h1 class="mt-2">Edit Comment</h1>
+      <h6 class="logo-font mb-4 fw-light fst-itali6">Use the fields and tools available below to edit your comment.</h6>
+      <hr>
+   </div>
+</div>
 
-<h1 class="mt-2 text-center">Edit Comment</h1>
-
-<div class="text-center">
-   <form action="{% url 'comment_edit' comment_id=comment.id %}" method="POST">
-      {% csrf_token %}
-      {{ comment_form.as_p }}
-   <button class="btn rounded-0 mx-2 dandy-border-alt" type="submit">Submit
-         Changes</button>
-   </form>
-</div>  
-
+<div class="d-flex flex-column align-items-center">
+   <div class="row col-12 col-md-9 col-sm-12 col-lg-6 justify-content-center">
+      <div class="text-center justify-content-center pt-4 pb-4">
+         <form action="{% url 'comment_edit' comment_id=comment.id %}" method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button class="btn rounded-0 mx-2 dandy-border-alt" type="submit">Submit
+               Changes</button>
+         </form>
+      </div>
+   </div>
+</div>
 <!-- Content Divider -->
 <div class="divider"></div>
 
