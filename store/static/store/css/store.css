@@ -25,3 +25,21 @@
     border-radius: 0;
 }
 
+.store-item {
+    border-top: 5px solid var(--dandy-black) !important;
+}
+
+.store-item:hover {
+    border-top: 5px solid var(--dandy-gold) !important;
+}
+
+.store-item:active {
+    border-top: 2px solid var(--dandy-white) !important;
+}
+
+@media (max-width: 575px) {
+    .text-xs-center {
+        text-align: center !important;
+    }
+    
+}
