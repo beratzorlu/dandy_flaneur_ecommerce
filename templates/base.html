@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Explore Dandy Flaneur - Your Art Haven & Enthusiast's Delight! Discover exquisite paintings from talented artists worldwide. Engage with insightful blogs, inspiring artistry, and join our vibrant community. Unleash your passion for art today">
+    <meta name="keywords" content="paintings, artworks, artistry, creativity, masterpieces, art collection, fine art, canvas, dandy flaneur, art enthusiast, art blog, art genres, contemporary art, classic art, abstract art, landscape, portraits, still life, oil paintings, watercolor, acrylics, mixed media, sculptures, art gallery, art dealers, art collectors, artistic expression, creative inspiration, art appreciation, artistic journey, art buying, online art shop, artistic community, art education, art insights, art discussions, art trends">
+    <meta name="author" content="Berat Zorlu">
     {% endblock %}
 
     {% block extra_meta %}
@@ -126,16 +129,20 @@
                         </li>
 
                         <div class="dropdown-center">
-                            <button id="navbar-primary" class="btn me-2 rounded-0 float-end"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Manage
+                            <button id="navbar-primary" class="btn me-2 rounded-0 float-end" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark rounded-0 dandy-bg dandy-border fs-7">
-                              <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
+                                <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
                             </ul>
                         </div>
-                        
+
                         <li class="nav-item">
                             <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
                                 Profile</a>
@@ -210,13 +217,13 @@
             <!-- Social Media Links -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button"><i
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button" rel="nofollow"><i
                         class="fab fa-facebook-f"></i></a>
                 <!-- Instagram -->
-                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button"><i
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button" rel="nofollow"><i
                         class="fab fa-instagram"></i></a>
                 <!-- Github -->
-                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button"><i
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="https://github.com/beratzorlu" role="button" rel="nofollow"><i
                         class="fab fa-github"></i></a>
             </section>
 
