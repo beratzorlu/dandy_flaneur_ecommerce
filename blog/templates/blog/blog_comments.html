@@ -83,14 +83,16 @@
 <div class="container">
     <div class="alert alert-success d-flex align-items-center dandy-black" role="alert">
         <div>
-            <i class="fa-regular fa-circle-check fa-fade me-1" style="--fa-animation-iteration-count: 5;"></i>Success! Your comment has been submitted and is waiting admin approval.
+            <i class="fa-regular fa-circle-check fa-fade me-1" style="--fa-animation-iteration-count: 5;"></i>Success!
+            Your comment has been submitted and is waiting admin approval.
         </div>
     </div>
 </div>
 {% elif not commented and error_message %}
 <div class="container">
     <div class="alert alert-danger d-flex align-items-center dandy-black" role="alert">
-            <i class="fa-solid fa-triangle-exclamation fa-shake me-1" style="--fa-animation-iteration-count: 5;"></i>{{ error_message }}
+        <i class="fa-solid fa-triangle-exclamation fa-shake me-1"
+            style="--fa-animation-iteration-count: 5;"></i>{{ error_message }}
     </div>
 </div>
 {% endif %}
@@ -101,9 +103,11 @@
     <form method="post" style="margin-top: 1.3em;">
         {% csrf_token %}
         {{ comment_form | crispy }}
-        <div id="comment-button">
-            <button class="btn btn-dark rounded-0 mx-4 dandy-border-alt float-end" type="submit">Submit
+        <div class="row">
+            <div class="col-12 col-md-12">
+            <button class="btn btn-dark rounded-0 dandy-border-alt float-end" type="submit">Submit
                 Comment</button>
+            </div>
         </div>
     </form>
 </div>
