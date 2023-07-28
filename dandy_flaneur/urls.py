@@ -29,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('redirect-admin/', redirect_admin, name='redirect_admin'),
     path('summernote/', include('django_summernote.urls')),
+    path('editor/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
