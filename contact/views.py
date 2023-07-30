@@ -6,8 +6,8 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from .models import ContactForm
-from profiles.models import AccountProfile
 from .forms import UserContactForm
+from profiles.models import AccountProfile
 from store.models import Product, Category
 
 
