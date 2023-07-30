@@ -495,7 +495,7 @@ That being said, these features remain relevant to the overall scope of the proj
 
 | Scope | Screenshot | Result |
 | --- | --- | --- |
-| Global | ![screenshot](docs/validation/python/unittest.png) | Pass |
+| Global | ![screenshot](docs/coverage-2.png) ![screenshot](docs/coverage-1.png) | Pass |
 
 ### Manual Testing
 
@@ -768,116 +768,28 @@ DevTools.
 
 | Source | Title | URL |
 | --- | --- | --- |
-| Stack Overflow | delete button | [here](https://stackoverflow.com/questions/68008514/how-i-can-create-a-delete-button-in-django-python) |
-| Stack Overflow | delete button #2 | [here](https://stackoverflow.com/questions/46003056/how-to-make-delete-button-in-django) |
-| Stack Overflow | backport version issue | [here](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta) |
-| Stack Overflow | bootstrap header width | [here](https://stackoverflow.com/questions/72279036/why-is-my-boostrap-card-header-not-filling-entire-width-of-the-card) |
-| Stack Overflow | bootstrap grid and aside usage | [here](https://stackoverflow.com/questions/36161615/bootstrap-grid-with-html5-sections-and-aside ) |
-| Stack Overflow | ajax for liking without page refresh | [here](https://stackoverflow.com/questions/21791037/implement-a-like-this-button-in-django-without-refreshing-page) |
-| Stack Overflow | django import js documents | [here](https://stackoverflow.com/questions/30313314/django-how-to-include-javascript-in-template) |
-| Stack Overflow | centering cards | [here](https://stackoverflow.com/questions/39031224/how-to-center-cards-in-bootstrap-4) |
-| Stack Overflow | center button | [here](https://stackoverflow.com/questions/41664991/bootstrap-4-how-do-i-center-align-a-button) |
-| Stack Overflow | prepopulate author dropdown on addpost | [here](https://stackoverflow.com/questions/45221097/add-data-to-django-form-before-it-is-saved/45221181#45221181) |
-| Stack Overflow | best image size for bootstrap | [here](https://stackoverflow.com/questions/25554020/bootstrap-carousel-with-photos-optimal-image-size) |
-| Stack Overflow | django dropdown | [here](https://stackoverflow.com/questions/31130706/dropdown-in-django-model) |
-| Stack Overflow | HTTP referrer | [here](https://stackoverflow.com/questions/4406377/django-request-to-find-previous-referrer) |
-| Stack Overflow | unittests | [here](https://stackoverflow.com/questions/51560850/how-to-unit-test-a-post-method-in-python) |
-| Stack Overflow | django phonenumberfield | [here](https://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-a-phone-number-in-django-models) |
-| Stack Overflow | remove crispyforms labels | [here](https://stackoverflow.com/questions/11472495/remove-labels-in-a-django-crispy-forms) |
-| Stack Overflow | carousel not working fix | [here](https://stackoverflow.com/questions/48824568/bootstrap-4-carousel-sliders-not-working) |
-| Stack Overflow | import django forms | [here](https://stackoverflow.com/questions/56785003/attribute-error-module-django-forms-forms-has-no-attribute-modelform) |
-| Stack Overflow | django equalto method | [here](https://stackoverflow.com/questions/20529234/how-to-select-reduce-a-list-of-dictionaries-in-flask-jinja) |
-| Stack Overflow | django count of list item | [here](https://stackoverflow.com/questions/40006617/get-count-of-list-items-that-meet-a-condition-with-jinja2) |
-| Stack Overflow | only available as class instances issue | [here](https://stackoverflow.com/questions/48613146/python-error-this-method-is-only-available-to-the-class-not-on-instances) |
-| Stack Overflow | editing posts on django blog | [here](https://stackoverflow.com/questions/60042351/editing-posts-in-a-django-blog) |
-| Stack Overflow | default value set on form | [here](https://stackoverflow.com/questions/70559902/django-how-do-i-set-a-default-value-in-a-form-to-be-the-current-user) |
-| Stack Overflow | tuple error indices | [here](https://stackoverflow.com/questions/35359969/typeerror-tuple-indices-must-be-integers-not-str) |
-| Stack Overflow | assign default value | [here](https://stackoverflow.com/questions/23718484/django-assign-default-value-to-field-in-modelform) |
-| Stack Overflow | placeholder charfield | [here](https://stackoverflow.com/questions/4101258/how-do-i-add-a-placeholder-on-a-charfield-in-django) |
-| Stack Overflow | change date format field | [here](https://stackoverflow.com/questions/67538930/how-to-change-date-format-in-a-form-field-django) |
-| Stack Overflow | date placeholder | [here](https://stackoverflow.com/questions/39025926/dateinput-how-to-show-placeholder) |
-| Stack Overflow | date picker widget | [here](https://stackoverflow.com/questions/41645030/django-date-picker-for-date-of-birth) |
-| Stack Overflow | limit blog posts per account – class context method – Django pagination | [here](https://stackoverflow.com/questions/68405198/adding-a-maximum-limit-to-the-number-of-post-using-python) |
-| Stack Overflow | dispatch - loginrequired | [here](https://stackoverflow.com/questions/71782596/why-loginrequiredmixin-dont-stop-my-dispatch-flow-when-user-is-not-authenticat) |
-| Stack Overflow | delete success message with obj value | [here](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) |
-| Stack Overflow | how to add custom error pages | [here](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page) |
-| Stack Overflow | how to use css in django forms | [here](https://stackoverflow.com/questions/5827590/css-styling-in-django-forms) |
-| Stack Overflow | bootstrap card resize | [here](https://stackoverflow.com/questions/65616251/how-to-re-size-my-cards-divs-using-bootstrap) |
-| Stack Overflow | relationship with slug and getabsoluteurl | [here](https://stackoverflow.com/questions/35581956/relationship-between-slug-and-get-absolute-url-what-am-i-doing-wrong) |
-| GitHub | fix crispy forms label issue | [here](https://github.com/django-crispy-forms/django-crispy-forms/issues/248) |
-| Sophyia.me | secret key generate from terminal | [here](https://sophyia.me/the-easist-way-to-create-your-secret-key) |
-| Stack Exchange | username length best practice | [here](https://security.stackexchange.com/questions/18516/usernames-should-their-length-be-limited ) |
-| Radu | bootstrap footer bottom | [here](https://radu.link/make-footer-stay-bottom-page-bootstrap/) |
-| Learn Django | slugify post title | [here](https://learndjango.com/tutorials/django-slug-tutorial) |
-| Geeks For Geeks | Django fields | [here](https://www.geeksforgeeks.org/django-model-data-types-and-fields-list/) |
-| Adamj | how to use limit integerfield | [here](https://adamj.eu/tech/2021/05/08/django-check-constraints-limit-range-integerfield/ ) |
-| W3 Schools | github checkbox markdown | [here](https://www.w3schools.io/file/markdown-checkbox-github/) |
-| Geeks For Geeks | how to use typed choice field | [here](https://www.geeksforgeeks.org/typedchoicefield-django-forms/) |
-| Geeks For Geeks | form filed custom widgets | [here](https://www.geeksforgeeks.org/django-form-field-custom-widgets/) |
-| Codeing Gear | add favicon to django | [here](https://codinggear.blog/django-add-favicon/) |
-| Grepper | add class to form field | [here](https://www.grepper.com/answers/564807/Add+class+to+form+field+Django+ModelForm) |
-| Medium | crispy forms | [here](https://levelup.gitconnected.com/how-to-make-your-django-forms-look-crispy-78a68000bc3f) |
-
+| Stack Overflow | (-) | [here](#)
 
 ### Documentation
 
 | Source | Title | URL |
 | --- | --- | --- |
-| Django | working with forms | [here](https://docs.djangoproject.com/en/3.2/topics/forms/) |
-| Django | django's built-in form classes | [here](https://docs.djangoproject.com/en/3.2/ref/forms/api/) |
-| Django | working with model forms | [here](https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/) |
-| Django | writing views | [here](https://docs.djangoproject.com/en/3.2/topics/http/views/) |
-| Django | wandling HTTP requests | [here](https://docs.djangoproject.com/en/3.2/topics/http/) |
-| Django | URL dispatcher | [here](https://docs.djangoproject.com/en/3.2/topics/http/urls/) |
-| Django | django's messages framework | [here](https://docs.djangoproject.com/en/3.2/ref/contrib/messages/) |
-| Django | working with Django templates | [here](https://docs.djangoproject.com/en/3.2/topics/templates/) |
-| Django | 	Using the Django ORM | [here](https://docs.djangoproject.com/en/3.2/topics/db/queries/) |
-| Django | django's QuerySet API reference | [here](https://docs.djangoproject.com/en/3.2/ref/models/querysets/) |
-| Django | template tags and filters | [here](https://docs.djangoproject.com/en/3.2/topics/templates/#tags-and-filters) |
-| Django | integer Field | [here](https://docs.djangoproject.com/en/dev/ref/models/fields/#integerfield ) |
-| Django | for | [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#for) |
-| Django | Django User model | [here](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#django.contrib.auth.models.User) |
-| Django | redirects | [here](https://docs.djangoproject.com/en/3.2/topics/http/shortcuts/#redirect) |
-| Django | messages | [here](https://docs.djangoproject.com/en/3.2/ref/contrib/messages/) |
-| Django | ForeignKey field | [here](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey) |
-| Django | Url dispatcher | [here](https://docs.djangoproject.com/en/3.2/topics/http/urls/ ) |
-| Django | form validation | [here](https://docs.djangoproject.com/en/3.2/ref/forms/validation/ ) |
-| Django | form fields | [here](https://docs.djangoproject.com/en/4.2/ref/forms/fields/ ) |
-| Django | form templates | [here](https://docs.djangoproject.com/en/4.1/topics/forms/#working-with-form-templates) |
-| Django PhoneNumberField | django phonenumberfield docs | [here](https://django-phonenumber-field.readthedocs.io/en/latest/reference.html#validator) |
-| Mozilla | setTimeout | [here](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) |
-| Bootstrap | methods | [here](https://getbootstrap.com/docs/5.0/components/alerts/#methods) |
-| Bootstrap | usage |  [here](https://getbootstrap.com/docs/5.0/components/alerts/#usage ) |
-| Bootstrap | carousel examples | [here](https://getbootstrap.com/docs/4.1/examples/carousel/)|
-| Bootstrap | login page examples | [here](https://mdbootstrap.com/docs/standard/extended/login/) |
-| Bootstrap | blog page examples | [here](https://getbootstrap.com/docs/4.1/examples/blog/) |
-
+| Django | (-) | [here](#) |
 
 ### Tutorials
 
 | Source | Title | URL |
 | --- | --- | --- |
-| YouTube - Web Zone | responsonive grid with bootstrap | [here](https://www.youtube.com/watch?v=ei5-5vcEPz8&t=136s) |
-| YouTube - Codemy| add posts | [here](https://www.youtube.com/watch?v=CnaB4Nb0-R8) |
-| YouTube - Codemy| comment section | [here](https://www.youtube.com/watch?v=hZrlh4qU4eQ) |
-| YouTube - Codemy| delete blog post | [here](https://www.youtube.com/watch?v=8NPOwmtupiI) |
-| YouTube - Codemy| update blog post | [here](https://www.youtube.com/watch?v=J7xaESAddDQ) |
-| YouTube - Coding Entrepreneurs | Ajax likes | [here](https://www.youtube.com/watch?v=pkPRtQf6oQ8) |
-| YouTube - Coding Is Thinking |  delete comments | [here](https://www.youtube.com/watch?v=kuJPMKbN3Yg) |
-| YouTube - Django World |  edit and delete button for blog detail page | [here](https://www.youtube.com/watch?v=wFci3tnRNFw) |
-
+| (-) | (-) | [here](#) |
 
 ### Articles
 
 These article samples were taken from third party resources to prepopulate the website with blogs that present organic content.
 
-- [Jalopnik](https://jalopnik.com/every-car-looks-like-this-thanks-to-a-gigantic-regulato-1849837803): Every Car Looks Like This Thanks to a Gigantic Regulatory Loophole
-- [Car Zone](https://www.carzone.ie/motoring-advice/should-you-buy-a-used-electric-car/2933): Should You Buy A Used Electric Car?
+(-)
 
 
 ### Library Information
-
-- [Car Info](https://www.car.info/en-se/brand): This website presents a database of all car manufacturers in the world. It provided help in preparing the car maker choices tuple that is present in the consultation application submission form.
 
 - [The Python Package Index (PyPI)](https://pypi.org/): PyPI was critical in accessing libraries that added functionality to the project that otherwise would be impossible to feature in the end product.
 
@@ -892,13 +804,13 @@ These article samples were taken from third party resources to prepopulate the w
 
 ## Acknowledgements
 
-I would like to first and foremost thank my mentor, Rohit Sharma, for his dedication to helping me find direction in developing my projects and understand the fundamental considerations in growing as a software developer. Moreover, the tutor support available at Code Institute has been an excellent help in finding solutions to various issues I came across in the development process that I needed help. Lastly, the Slack community at Code Institute has been nothing less than inspirational. I commend their dedication to a constructive culture that strives to help future developers in their struggles towards their software development journey. 
+(-)
 
 --- 
 
 ## Closing Remarks
 
-In closing, the development process in its entirety has doubtless been a highly educative experience. This having been my first time using any kind of full-stack framework to build a web development project, I was introduced to many challenges which at times greatly impeded the development momentum. However, while this may be the case, overcoming the obstacles presented by such issues allowed for understanding how different elements of Django interacted with one another. It is possible to access these learning points through tutorial videos or blog posts. But, my experience shows that one does not truly learn the intricacies of Django until they experience and overcome them themselves. It is possible to argue that this experience isn't unique to the use of Django. The learning points obtained from experiencing and solving problems when using Django provide an opportunity to nurture a development strategy that can translate across many different forms of software development. Thus, if I would take away one key lesson from my experience with this project would be to start from smaller core functionality and slowly expand the project's functional capacity rather than the other way around. If not monitored correctly, the constant addition of tasks and ideas can lead to a long backlog of features that will never become a subject of consideration for the final project.
+(-)
 
 ---
  [Back to Top](#table-of-contents)
