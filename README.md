@@ -401,7 +401,7 @@ Below are the labels used on GitHub to illustrate the various importance levels.
 
 [Draw.io](https://www.drawio.com/) was a highly beneficial resource that provided significant help in building a ERP to illustrate the various table relationships of data models present in the project.
 
-![Data Relationship Diagram](docs/entity-relationship-diagram.png)
+![Data Relationship Diagram](#)
 
 ---
 
@@ -415,43 +415,7 @@ The below elements are available to be experienced by the user across the applic
 
 | Feature | Screenshot |
 | --- | --- |
-| Site Logo | ![screenshot](docs/features/site-logo.png) |
-| Favicon | ![screenshot](docs/features/custom-favicon.png) |
-| Default Post Banner | ![screenshot](docs/features/default-post-banner.png) |
-| Custom Login Banner | ![screenshot](docs/features/login-banner-custom.png) |
-| Navigation (Logged in) | ![screenshot](docs/features/sitenav-1.png) |
-| Navigation (Logged Out) | ![screenshot](docs/features/sitenav-2.png) |
-| Sign Up | ![screenshot](docs/features/signup.png) |
-| Messages | ![screenshot](docs/features/messages.png) |
-| Logout | ![screenshot](docs/features/logout.png) |
-| Login | ![screenshot](docs/features/login.png) |
-| Footer | ![screenshot](docs/features/footer.png) |
-| Featured Blogs | ![screenshot](docs/features/featured-blogs.png) |
-| Comment Content Editing | ![screenshot](docs/features/edit-comment.png) |
-| Blog Content Editing | ![screenshot](docs/features/edit-blog.png) |
-| Application Content Editing | ![screenshot](docs/features/edit-apply.png) |
-| Post Deletion | ![screenshot](docs/features/delete-post.png) |
-| Comment Deletion | ![screenshot](docs/features/delete-comment.png) |
-| Application Deletion | ![screenshot](docs/features/delete-apply.png) |
-| Comment Form | ![screenshot](docs/features/comment-form.png) |
-| No Comments Placeholder | ![screenshot](docs/features/comment-0.png) |
-| Home Page Carousel | ![screenshot](docs/features/carousel.png) |
-| Blog Sidebar | ![screenshot](docs/features/add-post.png) |
-| Blog Sidebar | ![screenshot](docs/features/blog-sidebar.png) |
-| Blog Posts | ![screenshot](docs/features/blog-posts.png) |
-| Blog Content | ![screenshot](docs/features/blog-content.png) |
-| Blog Buttons | ![screenshot](docs/features/blog-buttons.png) |
-| Blog Banner Image | ![screenshot](docs/features/blog-banner.png) |
-| Application Summary | ![screenshot](docs/features/apply-summary.png) |
-| Application Guide | ![screenshot](docs/features/apply-info.png) |
-| Application Page (Logged In) | ![screenshot](docs/features/apply-1.png) |
-| Add Application **(DISCLAIMER: The phone field will not accept any random combination of numbers that match the selected area number format. It needs to be a real number because of the security features that come with PhoneNumberField library.)** | ![screenshot](docs/features/add-apply.png) |
-| Custom 500.html Page | ![screenshot](docs/features/custom-500.png) |
-| Custom 404.html Page | ![screenshot](docs/features/custom-404.png) |
-| Custom 403.html Page | ![screenshot](docs/features/custom-403.png) |
-| Custom 400.html Page | ![screenshot](docs/features/custom-400.png) |
-| Paginate Forward | ![screenshot](docs/features/paginate-1.png) |
-| Paginate Backward | ![screenshot](docs/features/paginate-2.png) |
+| (-) | ![screenshot](#) |
 
 ---
 
@@ -463,27 +427,7 @@ That being said, these features remain relevant to the overall scope of the proj
 
 | Label | Feature |
 | --- | --- |
-| Won't Have | Direct Messaging |
-| Won't Have | Unfollow Users |
-| Won't Have | Admin/Inappropriate Blog Posts#52 |
-| Won't Have | Car Finance Calculator#41 |
-| Won't Have | Car Profile#40 |
-| Won't Have | Comments/Post Card Comment Count#51 |
-| Won't Have | Contact Us/Google Maps and Marker Clusterer#33 |
-| Won't Have | Background Refresh For Post Likes#32 |
-| Won't Have | Authentication/SSO#30 |
-| Won't Have |  Profiles/Private Profiles#28 |
-| Won't Have | Admin/Suspend Users#27 |
-| Won't Have | Direct Messaging/Notifications#26 |
-| Won't Have | Admin/View Reported Posts#24 |
-| Won't Have | Post Report#23 |
-| Won't Have | Follow Users#6 |
-| Won't Have | Notifications/New Follower#22 |
-| Won't Have | Notifications/Post Engagement#21 |
-| Won't Have | Search Users & Posts#20 |
-| Won't Have | Password Reset#9 |
-| Won't Have | Profiles/Create Profile#13 |
-| Won't Have | Profiles/Edit Profile#7 |
+| Won't Have | (-) |
 
 ---
 
@@ -503,31 +447,7 @@ That being said, these features remain relevant to the overall scope of the proj
 
 | **Feature**   |  **Screenshot**          | **Result** |
 | ------------- | ------------------------ | ----------------- |
-| As an admin I can provide a disclaimer at the bottom of the page so that I can specify that all outsourced content (texts, images etc.) is used for purposes of education as a part of this academic project and is in no circumstance to be used for commercial motivations. | ![screenshot](docs/features/footer.png) | Pass |
-|  As a user I can browse a website that incorporates overall cohesion among its various elements so that I have an aesthetically pleasing user experience. | ![screenshot](docs/features/carousel.png) | Pass |
-| As a user I can be directed to an error page so that I know something went wrong with the website. | ![screenshot](docs/features/custom-404.png) | Pass (This is valid for all custom error pages.) | 
-| As a user I can view all the newest posts on the website so that I can directly access the most up-to-date content available on the website. | ![screenshot](docs/features/blog-posts.png) | Pass |
-| As a user I can view the consultation page so that I can learn about the various consultation service that the site offers. | ![screenshot](docs/features/apply-1.png) | Pass |
-| As a registered I can remove comments that I posted so that they are no longer visible on the site. | ![screenshot](docs/features/delete-comment.png) | Pass |
-| As a registered user I can edit the comments I posted so that I can change the content I originally posted in my comment. | ![screenshot](docs/features/edit-comment.png) | Pass |
-| As a registered user I can create new posts so that I can share my thoughts and opinions on the platform. | ![screenshot](docs/features/add-post.png) | Pass |
-| As a registered user I can use a dedicated form to edit my blog so that I can make changes to my content when I feel there is a need to do so. | ![screenshot](docs/features/edit-blog.png) | Pass |
-| As a registered user I can delete my posts so that my published content is removed. | ![screenshot](docs/features/delete-post.png) | Pass |
-| As a user I can view the number of comments on any post so that I see if the post is popular or not and decide if it's worth checking out based on this information. | ![screenshot](docs/features/blog-banner.png) | Pass |
-| As a registered user I can view posts from other users so that I can access and read content posted by others. | ![screenshot](docs/features/blog-list-1.png) | Pass |
-| As a registered user I can like other people's posts so that I inform them that I had a positive experience with their posts. | ![screenshot](docs/features/blog-banner.png) | Pass |
-| As a user I can see special styling for particular usernames in comments so that I can identify which users are admins. | ![screenshot](docs/features/admin-crown.png) | Pass |
-| As a registered user I can clearly see date/time information on a post so that I learn how old or new the post is to determine its relevance. | ![screenshot](docs/features/blog-banner.png) | Pass |
-| As an unregistered I can sign up to create an account so that I can fully access the features available on the website. | ![screenshot](docs/features/signup.png) | Pass |
-| As a registered I can leave comments on other users' blog posts so that I share my thoughts on the content they have posted. | ![screenshot](docs/features/comment-form.png) | Pass |
-| As a registered user I can log out of my account so that I can securely quit the current session active on my device. | ![screenshot](docs/features/logout.png) | Pass |
-| As a registered user I can log in to my account so that I access the full functionality of the website. | ![screenshot](docs/features/login.png) | Pass |
-| As an unregistered user I can use a password and username I choose so that I can securely access the user-exclusive features of the website. | ![screenshot](docs/features/signup.png) | Pass |
-| As a user I can click on a clearly labelled button on a blog card so that I am easily directed to the details of the relevant full blog post. | ![screenshot](docs/features/featured-blogs.png) | Pass |
-| As a registered user I can navigate the site so that I can interact with the available features. | ![screenshot](docs/features/sitenav-1.png) | Pass |
-| As an admin I can approve or reject comments left by registered users so that I can ensure that the content available on the site follows the community guidelines. | ![screenshot](docs/features/comments-approve.png) | Pass |
-| As an admin I can create draft posts so that I can come back to them when I want to. | ![screenshot](docs/features/post-draft.png) | Pass |
-| As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/admin-content-manage.png) | Pass |
+| (-) | ![screenshot](#) | Pass |
 
 ### Performance
 
@@ -535,9 +455,9 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 
 | **Page** | **Screenshot** |
 | -------- | ------ |
-| Home | ![screenshot](docs/features/lighthouse-home.png) |
-| Blog | ![screenshot](docs/features/lighthouse-home.png) |
-| Consultation | ![screenshot](docs/features/lighthouse-consultation.png) |
+| Home | ![screenshot](#) |
+| Blog | ![screenshot](#) |
+| Store | ![screenshot](#) |
 
 ---
 
@@ -547,47 +467,25 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 
 | Page | Screenshot | Result |
 | --- | --- | --- |
-| Home | ![screenshot](docs/validation/html/w3c-index.png) | Pass |
-| Blog | ![screenshot](docs/validation/html/w3c-blog.png) | Pass |
-| Consultation | ![screenshot](docs/validation/html/w3c-apply.png) | Pass |
-| Login | ![screenshot](docs/validation/html/w3c-login.png) | Pass |
-| Logout | ![screenshot](docs/validation/html/w3c-logout.png) | Pass |
-| Signup | ![screenshot](docs/validation/html/w3c-signup.png) | Pass |
-| Add Post | ![screenshot](docs/validation/html/w3c-add-post.png) | Pass |
-| Edit Post | ![screenshot](docs/validation/html/w3c-edit-post.png) | Pass |
-| Add Consultation | ![screenshot](docs/validation/html/w3c-add-app.png) | 1 Error: Caused by widget properties set for the DateTimeField. This input field needs a placeholder, thus the error is allowed to remain. |
-| Edit Consultation | ![screenshot](docs/validation/html/w3c-edit-app.png) | Pass |
+| Home | ![screenshot](#) | Pass |
 
 ### CSS
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| style.css | ![screenshot](docs/validation/css/jigsaw-css.png) | Pass |
+| style.css | ![screenshot](#) | Pass |
 
 ### JavaScript
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| fade.js | ![screenshot](docs/validation/js/jshint.png) | Pass (It is not possible to install Bootstrap in jshint, thus the warning is allowed to remain.) |
+| fade.js | ![screenshot](#) | Pass |
 
 ### PYTHON
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| urls.py (main) | ![screenshot](docs/validation/python/linter-urls-main.png) | Pass |
-| settings.py (main) | ![screenshot](docs/validation/python/linter-settings.png) | Pass |
-| admin.py (blog) | ![screenshot](docs/validation/python/linter-admin-blog.png) | Pass |
-| forms.py (blog) | ![screenshot](docs/validation/python/linter-forms-blog.png) | Pass |
-| tests.py (blog) | ![screenshot](docs/validation/python/linter-tests-blog.png) | Pass |
-| urls.py (blog) | ![screenshot](docs/validation/python/linter-urls-blog.png) | Pass |
-| views.py (blog) | ![screenshot](docs/validation/python/linter-views-blog.png) | Pass |
-| admin.py (consultation) | ![screenshot](docs/validation/python/linter-admin-consultation.png) | Pass |
-| cars.py (consultation) | ![screenshot](docs/validation/python/linter-cars-consultation.png) | Pass |
-| forms.py (consultation) | ![screenshot](docs/validation/python/linter-forms-consultation.png) | Pass |
-| models.py (consultation) | ![screenshot](docs/validation/python/linter-models-consultation.png) | Pass |
-| tests.py (consultation) | ![screenshot](docs/validation/python/linter-tests-consultation.png) | Pass |
-| urls.py (consultation) | ![screenshot](docs/validation/python/linter-urls-consultation.png) | Pass |
-| views.py (consultation) | ![screenshot](docs/validation/python/linter-views-consultation.png) | Pass |
+| urls.py (main) | ![screenshot](#) | Pass |
 
 ---
 
@@ -597,22 +495,8 @@ In this section, all bugs that cased errors that prevented the successful execut
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| SyntaxError on STATIC_ROOT variable. | [here](https://github.com/beratzorlu/AutoMate/commit/70e0273a16c29968d5ed463f5bb69cf63e9aba7e). |
-| Alignment issue for like and comment icons. | [here](https://github.com/beratzorlu/python-quiz/commit/d3fc300dc47d88aecd65f99b7ab7cbb6ca6f13b7). |
-| Comment textfield issue.  | [here](https://github.com/beratzorlu/AutoMate/commit/11c99d53f14d9b4e536b8c5522019e194061ab74) |
-| Delete blog button positioning issue.  | [here](https://github.com/beratzorlu/AutoMate/commit/306849d24d314e52ec4e2bd863d3d56942024e76) |
-| Post detail render issue when logged in as admin.  | [here](https://github.com/beratzorlu/AutoMate/commit/0c606ba4cf32c5a625d95201eff7f06da745ee79) |
-| Unresponsive footer. | [here](https://github.com/beratzorlu/AutoMate/commit/e4d1d7a1d1ffe802e82cacfbc4a05d11dc054a30) |
-| Consultation frontend render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4b531cbddf683782b7168eb66540b3f1bc9e3815) |
-| Consultation form loop render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/c7dbc7f8b35e05e3d286e784872b67a9883f6199) |
-| Card wrap issue. | [here](https://github.com/beratzorlu/AutoMate/commit/162b2bfff80a1ad3b22ee7ec3db0cb2bf798da4c) |
-| Application summary card render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/3b5a304272b4be5ea19373b8770ff78d0a9f56ef) |
-| Edit view frontend content update issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4848f1c68c68774a8ae5dfb947346e9f35a0de50) |
-| cars.py import issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4757863be79691120d3a7a9f841f49b6ebca4b93) |
-| ID text capitalization issue. | [here](https://github.com/beratzorlu/AutoMate/commit/dd9bc150e39562fb02b4859dbd776797e222f288) |
-| Comment security issue. | [here](https://github.com/beratzorlu/AutoMate/commit/23528285f3d115745b90ccd1e67c005294272159) |
-| author_id Null value issue. | [here](https://github.com/beratzorlu/AutoMate/commit/0c0e5e0280444d6805c48daf89c7f92d087b6e3e) |
-| Blog page responsivity issue. | [here](https://github.com/beratzorlu/AutoMate/commit/7b054286b982038cca277428d6955ce95a201ac8) |
+| (-) | [here](#). |
+
 
 ---
 
@@ -755,13 +639,7 @@ DevTools.
 
 ### Repositories
 
-- [Code Institute](#): CI's curriculum provided the main knowledge-base required to create and finalize this project. Various academic modules and the tasks available in them helped understand Django before the start of the development process.
-    - [Hello Django](#): This walkthrough project provided significant practice for understanding how to implement CRUD functionality to a Django application.
-    - [I Think Therefore I Blog](#): While more difficult to fully understand, the concepts demonstrated in this walkthrough project allowed for a deeper understanding of Django admin and site operations. More specifically, pagination was a difficult element to fully implement to this project. The code available here provided the help needed to integrate a pagination system to the project.
-- [beratzorlu](https://github.com/beratzorlu/Portfolio-Project-2): I used one of my previous projects to prepare the README.md file for this project. As I already had established a format for this process, I used it as a template for the documentation of this project.
-- [adamgilroy](https://github.com/adamgilroy22/tribe/): This is an inspirational project that offers an expansive set of features. Beacuse of this I would like to congratualte Adam Gilroy for his excellent work. Reading through his code helped me understand how to compartmentalize code, add security against unauthorized access to published user content, and how to work class based views.
-- [CHCheshire](https://github.com/CHCheshire/Project-blog/tree/main): This project helped me understand managing comments from the frontend when building associated CRUD functionality.
-- [stephaniecrocker91](https://github.com/stephaniecrocker91/for-the-love-of-food): This project provided a live perspective towards connecting models from different applications with each other.
+(-)
 
 
 ### Code Troubleshooting
