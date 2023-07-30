@@ -415,7 +415,70 @@ The below elements are available to be experienced by the user across the applic
 
 | Feature | Screenshot |
 | --- | --- |
-| (-) | ![screenshot](#) |
+| (Toasts) | ![screenshot](docs/features/toasts.png) |
+| (Homepage) | ![screenshot](docs/features/storefront.png) |
+| (Homepage Banner) | ![screenshot](docs/features/storefront-banner.png) |
+| (Homepage Cards) | ![screenshot](docs/features/storefront-cards.png) |
+| (Navbar) | ![screenshot](docs/features/navbar.png) |
+| (Navbar Links) | ![screenshot](docs/features/navbar-links.png) |
+| (Navbar Search) | ![screenshot](docs/features/navbar-searchbar.png) |
+| (Navbar Login/Logout) | ![screenshot](docs/features/navbar-auth.png) |
+| (Navbar Admin) | ![screenshot](docs/features/navbar-auth-admin.png) |
+| (Navbar Basket) | ![screenshot](docs/features/navbar-basket.png) |
+| (Navbar Full Basket) | ![screenshot](docs/features/navbar-basket-full.png) |
+| (Navbar Active User) | ![screenshot](docs/features/navbar-activeuser.png) |
+| (Navbar Logo) | ![screenshot](docs/features/navbar-logo.png) |
+| (Footer) | ![screenshot](docs/features/footer.png) |
+| (Footer Links) | ![screenshot](docs/features/footer-links.png) |
+| (Footer Newsletter) | ![screenshot](docs/features/footer-newsletter.png) |
+| (Footer Social Media) | ![screenshot](docs/features/footer-socialmedia.png) |
+| (Footer Copyright) | ![screenshot](docs/features/footer-copyright.png) |
+| (Store) | ![screenshot](docs/features/store.png) |
+| (Store Sort) | ![screenshot](docs/features/store-sort.png) |
+| (Store Sort Active) | ![screenshot](docs/features/store-sort-active.png) |
+| (Store Item Count) | ![screenshot](docs/features/store-itemcount.png) |
+| (Store Item Count Active) | ![screenshot](docs/features/store-itemcount-active.png) |
+| (Store Categories) | ![screenshot](docs/features/store-categories.png) |
+| (Store Categories Reset) | ![screenshot](docs/features/store-categories-reset.png) |
+| (Store Card) | ![screenshot](docs/features/store-card.png) |
+| (Store Card Admin) | ![screenshot](docs/features/store-card-admin.png) |
+| (Store Alert) | ![screenshot](docs/features/store-alert.png) |
+| (Back to top button) | ![screenshot](docs/features/btt-btn.png) |
+| (Store Item) | ![screenshot](docs/features/item.png) |
+| (Store Item Quantity) | ![screenshot](docs/features/item-qty.png) |
+| (Store Item Update/Remove) | ![screenshot](docs/features/item-operation.png) |
+| (Store Item Info) | ![screenshot](docs/features/item-info.png) |
+| (Store Item Edit) | ![screenshot](docs/features/item-edit.png) |
+| (Store Item Create) | ![screenshot](docs/features/item-create.png) |
+| (Blog) | ![screenshot](docs/features/blog.png) |
+| (Blog Introduction) | ![screenshot](docs/features/blog-content-intro.png) |
+| (Blog Edit) | ![screenshot](docs/features/blog-content-edit.png) |
+| (Blog Delete) | ![screenshot](docs/features/blog-content-delete.png) |
+| (Blog Create) | ![screenshot](docs/features/blog-content-create.png) |
+| (Blog Body) | ![screenshot](docs/features/blog-content-body.png) |
+| (Blog Comments) | ![screenshot](docs/features/blog-comments.png) |
+| (Blog Comments Edit) | ![screenshot](docs/features/blog-comments-edit.png) |
+| (Blog Comments Delete) | ![screenshot](docs/features/blog-comments-delete.png) |
+| (Blog Comments Create) | ![screenshot](docs/features/blog-comments-create.png) |
+| (Blog Card) | ![screenshot](docs/features/blog-card.png) |
+| (Blog Admin) | ![screenshot](docs/features/blog-admin.png) |
+| (Contact) | ![screenshot](docs/features/contact.png) |
+| (Contact Success) | ![screenshot](docs/features/contact-success.png) |
+| (Profile) | ![screenshot](docs/features/profile.png) |
+| (Profile User Details) | ![screenshot](docs/features/profile-userinfo.png) |
+| (Profile Order History) | ![screenshot](docs/features/profile-history.png) |
+| (Basket) | ![screenshot](docs/features/basket.png) |
+| (Basket Quantity) | ![screenshot](docs/features/basket-qty.png) |
+| (Basket Payment) | ![screenshot](docs/features/basket-pay.png) |
+| (Basket Quantity) | ![screenshot](docs/features/basket-info.png) |
+| (Checkout) | ![screenshot](docs/features/checkout.png) |
+| (Checkout Order Summary) | ![screenshot](docs/features/checkout-summary.png) |
+| (Checkout Success) | ![screenshot](docs/features/checkout-success.png) |
+| (Checkout Payment Form w/ Stripe) | ![screenshot](docs/features/checkout-paymentstripe.png) |
+| (Authentication Login) | ![screenshot](docs/features/auth-login.png) |
+| (Authentication Logout) | ![screenshot](docs/features/auth-logout.png) |
+| (Authentication Signup) | ![screenshot](docs/features/auth-register.png) |
+| (Authentication Verify Email) | ![screenshot](docs/features/auth-verify.png) |
 
 ---
 
@@ -426,8 +489,17 @@ This section documents the features that were taken out of consideration for the
 That being said, these features remain relevant to the overall scope of the project and it would see them expand its functional capacity in the future if the situation allowed it.
 
 | Label | Feature |
-| --- | --- |
-| Won't Have | (-) |
+|---|---|
+| Won't Have | As a Shopper, I can view available booking times for workshops so that I can decide if they fit my schedule. |
+| Won't Have | As a Shopper, I can view a list of workshop classes so that I can easily inform myself of the experiences available on offer. |
+| Won't Have | As a Shopper, I can view a page with all the relevant details of a workshop so that I can decide if it fits my interests. |
+| Won't Have | As an Admin, I can add a workshop so that users can view new experiences.                                  |
+| Won't Have | As an Admin, I can change the details of a workshop as needed so that they represent the most accurate and relevant information to the users. |
+| Won't Have | As an Admin, I can remove a redundant workshop from the website so that users are not misled into inactive workshops. |
+| Won't Have | As an Admin, I can add more time slots to workshops so that users can benefit from added time availability. |
+| Won't Have | As an Admin, I can change booking time slot information so that users have the most accurate information. |
+| Won't Have | As an Admin, I can remove time slots as needed so that workshop details represent the most accurate availability information. |
+
 
 ---
 
