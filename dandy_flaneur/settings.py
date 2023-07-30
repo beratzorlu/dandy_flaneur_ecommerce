@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'daterangefilter',
     'babel',
     'django_summernote',
-    'coverage',
 ]
 
 MIDDLEWARE = [
