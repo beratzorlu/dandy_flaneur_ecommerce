@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     '8000-beratzorlu-dandyflaneur-swk1h6l4lmf.ws-eu101.gitpod.io',
     '8000-beratzorlu-dandyflaneur-gzpivg5i470.ws-eu101.gitpod.io',
     '8000-beratzorlu-dandyflaneur-gzpivg5i470.ws-eu102.gitpod.io',
+    '8000-beratzorlu-dandyflaneur-nroipdx1fmb.ws-eu102.gitpod.io',
     'dandy-flaneur-08cda80edeb8.herokuapp.com',
     'localhost',
 ]
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
     'daterangefilter',
     'babel',
     'django_summernote',
+    'coverage',
 ]
 
 MIDDLEWARE = [
