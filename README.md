@@ -404,7 +404,7 @@ More importantly, this colour combination consists of items designed to motivate
 
 ### MoSCoW Prioritization System
 
-This project relies on agile methodology for its task management. This allows for more accurate estimation of time needed for successful task completion. You can access the kanban board used for this project [here](https://github.com/users/beratzorlu/projects/4/views/1)
+This project relies on agile methodology for its task management. This allows for more accurate estimation of time needed for successful task completion. You can access the kanban board used for this project [here](https://github.com/users/beratzorlu/projects/6)
 
 Below are the labels used on GitHub to illustrate the various importance levels.
 
