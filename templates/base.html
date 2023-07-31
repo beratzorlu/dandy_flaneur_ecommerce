@@ -61,9 +61,6 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="container-fluid fixed-top"></header>
-
     <!-- Toasts -->
     {% if messages %}
     <div class="message-container">
@@ -82,135 +79,139 @@
         {% endfor %}
     </div>
     {% endif %}
+    <header>
+    </header>
 
     <!-- Navbar -->
     <nav
         class="navbar border-1 border-bottom border-bottom-dark border-top border-top-dark navbar-expand-lg bg-body-tertiary my-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="#" width="30" height="24"
-                    class="d-inline-block align-text-top">
-                Dandy Flaneur
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid text-center">
+            <div class="col-3">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'img/dandy-logo.jpg' %}" alt="Dandy Flaneur Company Logo"
+                        class="d-inline-block rounded-circle dandy-logo">
+                </a>
+            </div>
+            <button class="navbar-toggler rounded-0 dandy-border" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="container-md">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav text-center mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link btn rounded-0 text-dark" aria-current="page"
-                                href="{% url 'home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn rounded-0 text-dark" href="{% url 'store' %}">Store</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn rounded-0 text-dark" href="{% url 'blog_list' %}">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn rounded-0 text-dark" href="{% url 'contact' %}">Contact Us</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0">
-                        <form class="d-flex" method="GET" action="{% url 'store' %}">
-                            <input class="form-control me-2 rounded-0" type="text" name="q"
-                                placeholder="Search Dandy Flaneur" aria-label="Search">
-                            <button class="btn btn-outline-dark rounded-0" type="submit"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
-                    </ul>
-                    <ul
-                        class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
-                        {% if user.is_authenticated and user.is_superuser or user.is_staff %}
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}"
-                                id="navbar-secondary">Signed in as:
-                                {{ user.username }}</a>
-                        </li>
-                        <div class="d-flex">
-                            <div class="dropdown-center">
-                                <button id="navbar-primary" class="btn me-2 rounded-0 float-end" type="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Manage
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark rounded-0 dandy-bg dandy-border fs-7">
-                                    <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
-                                </ul>
-                            </div>
+            <div class="collapse navbar-collapse" id="navbarNav" aria-labelledby="user-options">
+                <ul class="navbar-nav space-between">
+                    <li class="nav-item">
+                        <a class="nav-link btn rounded-0 text-dark" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn rounded-0 text-dark" href="{% url 'store' %}">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn rounded-0 text-dark" href="{% url 'blog_list' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn rounded-0 text-dark" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                </ul>
 
-                            <li class="nav-item">
-                                <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}"
-                                    id="navbar-primary">My
-                                    Profile</a>
-                            </li>
+                <ul
+                    class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+                    {% if user.is_authenticated and user.is_superuser or user.is_staff %}
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-secondary">Signed
+                            in as:
+                            {{ user.username }}</a>
+                    </li>
+                    <div class="d-flex">
+                        <div class="dropdown-center" aria-labelledby="admin-options">
+                            <button id="navbar-primary" class="btn me-2 rounded-0 float-end" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark rounded-0 dandy-bg dandy-border fs-7">
+                                <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
+                            </ul>
                         </div>
-
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
-                                id="navbar-primary">Logout</a>
-                        </li>
-
-                        {% elif user.is_authenticated %}
-
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}"
-                                id="navbar-secondary">Signed in as:
-                                {{ user.username }}</a>
-                        </li>
 
                         <li class="nav-item">
                             <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
                                 Profile</a>
                         </li>
+                    </div>
 
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
-                                id="navbar-primary">Logout</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
+                            id="navbar-primary">Logout</a>
+                    </li>
 
-                        {% else %}
+                    {% elif user.is_authenticated %}
 
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'account_login' %}"
-                                id="navbar-primary">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'account_signup' %}"
-                                id="navbar-secondary">Register</a>
-                        </li>
-                        {% endif %}
-                    </ul>
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-secondary">Signed
+                            in as:
+                            {{ user.username }}</a>
+                    </li>
 
-                    <!-- Shopping Basket -->
-                    <ul
-                        class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
-                        <li class="nav-item">
-                            <a class="text-center border text-dark nav-link" href="{% url 'view_basket' %}">
-                                <div>
-                                    <div><i class="fa-solid fa-basket-shopping {% if grand_total %}bg-warning p-2 border border-dark {% endif %}"
-                                            aria-hidden="true"></i></div>
-                                    <p class="my-0 pt-1">
-                                        {% if grand_total %}
-                                        €{{ grand_total|floatformat:2 }}
-                                        {% else %}
-                                        ~ €0.00 ~
-                                        {% endif %}
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
+                            Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
+                            id="navbar-primary">Logout</a>
+                    </li>
+
+                    {% else %}
+
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'account_login' %}"
+                            id="navbar-primary">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'account_signup' %}"
+                            id="navbar-secondary">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <!-- Shopping Basket -->
+                <ul
+                    class="navbar-nav me-5 me-lg-5 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <a class="text-center border text-dark nav-link" href="{% url 'view_basket' %}">
+                            <div>
+                                <div><i class="fa-solid fa-basket-shopping {% if grand_total %}bg-warning p-2 border border-dark {% endif %}"
+                                        aria-hidden="true"></i></div>
+                                <p class="my-0 pt-1">
+                                    {% if grand_total %}
+                                    €{{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    ~ €0.00 ~
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+
+    <div class="row">
+        <div class="text-center col-9 col-md-6 mx-auto mb-3 bg-light rounded-start-pill">
+            <form class="d-flex" method="GET" action="{% url 'store' %}">
+                <input class="form-control me-2 rounded-0 dandy-border rounded-start-pill" type="text" name="q" placeholder="Search Dandy Flaneur"
+                    aria-label="Search">
+                <button class="btn btn-outline-dark rounded-0" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
 
     {% block content %}
     {% endblock %}
@@ -220,12 +221,10 @@
         <div class="container p-4">
             <!-- Social Media Links -->
             <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button" rel="nofollow"><i
-                        class="fab fa-facebook-f"></i></a>
                 <!-- Instagram -->
-                <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="#" role="button" rel="nofollow"><i
-                        class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light rounded-0 btn-floating m-1"
+                    href="https://www.instagram.com/dandy_flaneur/?igshid=MzRlODBiNWFlZA%3D%3D" role="button"
+                    rel="nofollow" target="_blank"><i class="fab fa-instagram"></i></a>
                 <!-- Github -->
                 <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="https://github.com/beratzorlu"
                     role="button" rel="nofollow"><i class="fab fa-github"></i></a>
