@@ -54,6 +54,11 @@ a {
     margin-bottom: 4rem;
 }
 
+.divider-extra {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
 
 /* ANIMATIONS */
 @keyframes navButtonAnimation {
@@ -129,11 +134,32 @@ a {
     border-color: var(--dandy-black) !important;
 }
 
+.dandy-logo {
+    border-top: 2px solid var(--dandy-black);
+    height: auto !important;
+    width: 6rem !important;
+}
+
+.dandy-logo:hover {
+    border-top: 2px solid var(--dandy-gold);
+}
+
+.dandy-logo:active {
+    border: 1px dashed var(--dandy-gold) !important;
+    margin-right: 0.2rem;
+
+}
+
+.dandy-border.rounded-start-pill:not(:placeholder-shown) {
+    border: 2px solid var(--dandy-gold) !important;
+}
+
+
 /* INDEX.HTML */
 
 #banner-image {
     height: 50vh;
-    min-height: 500px;
+    min-height: 750px;
     background-image: url('/media/banner-image1.jpg');
     background-size: cover;
     background-position: center;
