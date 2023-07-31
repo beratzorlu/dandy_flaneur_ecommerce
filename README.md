@@ -500,6 +500,7 @@ The below elements are available to be experienced by the user across the applic
 | (Authentication Logout) | ![screenshot](docs/features/auth-logout.png) |
 | (Authentication Signup) | ![screenshot](docs/features/auth-register.png) |
 | (Authentication Verify Email) | ![screenshot](docs/features/auth-verify.png) |
+| (404 Page - Also represents 403 and 500 error templates) | ![screenshot](docs/features/404-error-page.png) |
 
 ---
 
