@@ -435,6 +435,7 @@ The below elements are available to be experienced by the user across the applic
 
 | Feature | Screenshot |
 | --- | --- |
+| (Favicon) | ![screenshot](static/img/favicon-16x16.png) |
 | (Toasts) | ![screenshot](docs/features/toasts.png) |
 | (Homepage) | ![screenshot](docs/features/storefront.png) |
 | (Homepage Banner) | ![screenshot](docs/features/storefront-banner.png) |
