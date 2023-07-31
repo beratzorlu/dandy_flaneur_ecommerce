@@ -519,17 +519,55 @@ That being said, these features remain relevant to the overall scope of the proj
 
 | **Feature**   |  **Screenshot**          | **Result** |
 | ------------- | ------------------------ | ----------------- |
-| (-) | ![screenshot](#) | Pass |
+| As a user, I can login and logout so that I can access a personal account on the site for rapid access to relevant shop features. | ![screenshot](docs/features/navbar-auth.png) | Pass |
+| As a user, I can create and view a profile page so that I input and save relevant personal information for faster checkouts. | ![screenshot](docs/features/profile.png) | Pass |
+| As a user, I can register an account on the site so that I have a personal account with a unique profile. | ![screenshot](docs/features/auth-register.png) | Pass |
+| As a user, I can reset my password so that I can set a new password for my account whenever I need to do so. | ![screenshot](docs/features/auth-login.png) | Pass |
+| As a user, I can be sent a confirmation email from the site once I create an account so that I am notified that my account registration was successful. | ![screenshot](docs/features/auth-email.png) | Pass |
+| As a shopper, I can navigate across the site so that I can access all relevant elements of the site. | ![screenshot](docs/features/navbar) | Pass |
+| As a shopper, I can use the header and footer to access navigation, menus, and Social Media links. | ![screenshot](docs/features/footer.png) | Pass |
+| As a shopper, I can receive a dedicated notification in response to my actions so that I get real-time feedback about the status of my actions. | ![screenshot](docs/features/toasts.png) | Pass |
+| As a shopper, I can access a list of products available so that I can choose an item to buy. | ![screenshot](docs/features/store.png) | Pass |
+| As a shopper, I can view a welcome page so that I am introduced to the business and its products. | ![screenshot](docs/features/storefront) | Pass |
+| As a shopper, I can access details for a specific product so that I can better inform myself about the item to help with making a purchase decision. | ![screenshot](docs/features/item.png) | Pass |
+| As a shopper, I can view a readout of my login status that is visible at all times so that I can confirm my authentication whenever I want. | ![screenshot](docs/features/navbar-activeuser.png) | Pass |
+| As a shopper, I can add new items to my basket so that I list the items that I want to buy. | ![screenshot](docs/features/basket.png) | Pass |
+| As a shopper, I can make changes in my basket so that I can make the exact purchase that I want. | ![screenshot](docs/features/basket-qty.png) | Pass |
+| As a shopper, I can remove items so that I don't accidentally purchase items that I don't want. | ![screenshot](docs/features/basket-qty.png) | Pass |
+| As a shopper, I can submit my email with a message attached so that I can establish a personal correspondence with the company about a specific topic. | ![screenshot](docs/features/contact.png) | Pass |
+| As an admin, I can post, edit, and remove blog content so that users can read about various topics relevant to the context of the site. | ![screenshot](docs/features/blog-card.png) | Pass |
+| As a user, I can view well-formatted layouts so that I can have a coherent visual experience while using the website. | ![screenshot](docs/features/blog.png) | Pass |
+| As a user, I can leave comments on blog articles so that I can share my views and opinions about the matters discussed in the blog posts. | ![screenshot](docs/features/blog-comments.png) | Pass |
+| As a viewer, I can leave likes so that I can express my fondness for a blog post anonymously. | ![screenshot](docs/features/blog-like.png) | Pass |
+| As a shopper, I can put in keywords into a search bar so that I receive a page with all relevant products to my interests. | ![screenshot](docs/features/search-results.png) | Pass |
+| As a shopper, I can search for a specific item by entering its name or description so that I can precisely find the product that I am looking for. | ![screenshot](docs/features/search-name.png) | Pass |
+| As a shopper, I can sort products on the basis of their assigned categories so that I can focus on items that fit into categories that I am interested in. | ![screenshot](docs/features/store-categories.png) | Pass |
+| As a shopper, I can sort products by price so that I can easily view products that are appropriate to my financial capabilities. | ![screenshot](docs/features/store-sort.png) | Pass |
+| As a shopper, I can easily access my shopping bag so that I can check the items that I will be purchasing whenever I need to. | ![screenshot](docs/features/navbar-basket.png) | Pass |
+| As a shopper, I can receive a notification about the status of my order confirmation so that I am sure my payment went through and my order was placed successfully. | ![screenshot](docs/features/toasts.png) | Pass |
+| As a shopper, I can use my card to pay for my order so that I don't have to worry about alternative payment methods. | ![screenshot](docs/features/checkout-paymentstripe.png) | Pass |
+| As a shopper, I can select the specific size and quantity preferences on the product page so that I can put exactly what I want in my shopping basket. | ![screenshot](docs/features/item.png) | Pass |
+| As a shopper, I can increase or decrease the quantities of items in my basket so that I can buy more or less of the product I want. | ![screenshot](docs/features/basket-qty.png) | Pass |
+| As a shopper, I can receive an email confirming my order with relevant details so that I can be sure that my order was processed successfully. | ![screenshot](docs/features/checkout-success-email.png) | Pass |
+| As an admin, I can add a new product so that I can update items available in the shop. | ![screenshot](docs/features/item-create.png) | Pass |
+| As an admin, I can remove a product item from the store so that users don't have access to inactive products. | ![screenshot](docs/features/store-card-admin.png) | Pass |
+| As an admin, I can change product details so that the relevant item has the most accurate and up-to-date information associated with it on the website. | ![screenshot](docs/features/item-edit.png) | Pass |
+| As an admin, I can optimise user's Google searches to help them land the correct website. | ![screenshot](https://github.com/beratzorlu/dandy_flaneur_ecommerce/blob/ac2a8c23ad9c20df693b61965a43cf1fc7eb0d91/templates/base.html#L11C1-L15C47) | Pass |
+| As a shopper, I can submit my email so that I can receive information about deals and product insights from the company. | ![screenshot](docs/features/footer-newsletter.png) | Pass |
 
 ### Performance
 
-The Lighthouse tests returned an overall acceptable result considering the scope and purpose of the project. Most notably, the performance value appears to be the more lacking area compared to the rest of the parameters available on Lighthouse. Information gathered from the testing process indicates that these scores are a result of Cloudinary slowing down the loading times of the images. In future projects, more effective cloud solutions such AWS will help prevent the recurrance of similar results.
+The Lighthouse tests returned an overall acceptable result considering the scope and purpose of the project.
 
 | **Page** | **Screenshot** |
 | -------- | ------ |
-| Home | ![screenshot](#) |
-| Blog | ![screenshot](#) |
-| Store | ![screenshot](#) |
+| Home | ![screenshot](docs/testing/lighthouse-home.png) |
+| Blog | ![screenshot](docs/testing/lighthouse-blog.png) |
+| Store | ![screenshot](docs/testing/lightroom-store.png) |
+| Profile | ![screenshot](docs/testing/lighthouse-profile.png) |
+| Basket | ![screenshot](docs/testing/checkout-basket.png) |
+| Checkout | ![screenshot](docs/testing/lighthouse-checkout.png) |
+| Contact | ![screenshot](docs/testing/lighthouse-contact.png) |
 
 ---
 
@@ -567,7 +605,18 @@ In this section, all bugs that cased errors that prevented the successful execut
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| (-) | [here](#). |
+| Incorrect url name for edit_store url. | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/fb23142ad9c7aa590fd9259179633cd580a6bbfa) |
+| Back-to-top button position and visibility. | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/1311e593fb1156c38ea690b02edcf40a385a3837) |
+| Footer animation issue. | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/647411bae32894d500ca936823e636907d54d578) |
+| Stripe 500 error. | [here](https://8000-beratzorlu-dandyflaneur-nroipdx1fmb.ws-eu102.gitpod.io/blog/) |
+| Order summary item photo render issue.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/115a399865018bf8d89a7a36e020819560c12e4a) |
+| Form object creation issue in the admin view.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/036540dfcf85102249b7cea19fd844f210e45d7e) |
+| Account name display.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/4d9422fef02ce801c1a438e4f903decb8d59d13d) |
+| Confirmation content render issue.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/3728806b30c3bb4077316ab7d3533661a27a4770) |
+| Error message render issue when submitting comment form.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/07c8668a27bd2adb157c7d84c43813dde8ac6cae) |
+| Mailchimp contact registration issue.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/b29ae1adf921753f2d4788cc5d8984cae31858e7) |
+| Unexpected 'postcode' attribute.  | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/451c91079f20ab4b0b081b6111b592fbb44218c1) |
+| Item cards single column wrap issue. | [here](https://github.com/beratzorlu/dandy_flaneur_ecommerce/commit/9d0269c836d8ee6eb804d5fc6c77c4e6ac512122) |
 
 
 ---
@@ -588,6 +637,22 @@ If you wish to make copy of this repository locally, you can clone it by inputti
 As anoher method, you can click below button to create your own workspace using this repository if you are using Gitpod.e
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/beratzorlu/python-quiz)
+
+### ElephantSQL Database Setup
+
+This project utilizes [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
+
+To set up your own Postgres Database, follow these steps:
+
+1. Sign up with your GitHub account on the ElephantSQL website.
+2. Click on **Create New Instance** to create a new database.
+3. Provide a name for your database (you can use the name of your project, e.g., retro-reboot).
+4. Choose the **Tiny Turtle (Free)** plan.
+5. You can leave the **Tags** field blank.
+6. Select the **Region** and **Data Center** closest to your location.
+7. Once the database is created, click on its name to view the database URL and Password.
+
+With these steps, you'll have your own PostgreSQL database set up and ready to use for your project.
 
 ### Heroku Deployment
 
