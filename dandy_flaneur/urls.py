@@ -19,6 +19,7 @@ from django.conf import settings
 from django.shortcuts import redirect
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
+from .views import handler_404
 
 @login_required
 def redirect_admin(request):
@@ -40,3 +41,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'dandy_flaneur.views.handler_404'
+handler500 = 'dandy_flaneur.views.handler_500'
