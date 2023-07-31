@@ -749,20 +749,21 @@ Alternatively, you can connect to your Github account by following the below ste
 - Microsoft Snipping Tool: Fallback screen capture software when MS Snip & Sketched became unresponsive.
 - DiffChecker: Comparing code to identify issues, solutions and ideas.
 - Python Checker: Checking the syntax of Python code.
-- ElephantSQL: PosgresSQL database resource.
 - Django: Fullstack framework used to build the project
 - Bootstrap: Responsive frontend CSS framework used to design the visual aspects of the project.
 - Cloudinary: Cloud storage for static files.
 - Balsamiq: Wireframe design and rendering.
 - Draw.io: Diagram design and rendering.
+- AWS S3 Buckets: For static file cloud storage.
+- Stripe (Test mode API): For processing online payments.
+- ElephantSQL: Cloud database platform based on a PosgreSQL structure.
 
 ### Platforms
 
 - GitHub: Version control and site deployment.
 - GitPod: Integrated Development Environment (IDE) chosen for this project.
 - Google Fonts: Finding and exporting third-party fonts for the website.
-- CodePen: For quickly testing out ideas before carrying them to 
-DevTools.
+- CodePen: For quickly testing out ideas before carrying them to DevTools.
 - Coolors: For creating a matching colour palette that has appropriate contrast.
 - Heroku: Cloud platform used for deploying project.
 - Canva: Graphic design platform used for custom visual elements.
@@ -806,44 +807,75 @@ DevTools.
 
 ### Repositories
 
-(-)
-
+| Repository            | Purpose                                                                              |
+|-----------------------|--------------------------------------------------------------------------------------|
+| [Boutique Ado - Code Institute](https://github.com/ckz8780/boutique_ado_v1) | Code Institute's tutorial walkthrough project was essential in allowing the successful completion of this project. The lessons available allowed me to implementing CRUD operations for store management, user profile, Stripe payments, checkout and basket functionality to my project.|
+| [Arron Beale - Tee Time](https://github.com/ArronBeale/CI_PP5_tee_time)     | Arron's project was mainly helpful in understanding how to implement a contact us feature.|
+| [Adam Gilroy - Retro Reboot](https://github.com/adamgilroy22/retro-reboot)  | Adam's approach to unittests was highly inspirational for my project's development process. His implementation of error handling provided great value in helping me understand how to add this feature to my project as well.|
+| [Berat Zorlu - AutoMate](https://github.com/beratzorlu/AutoMate)            | I used one of my previous projects to prepare the README.md file for this project. As I already had established a format for this process, I used it as a template for the documentation of this project. The blog functionality available here helped me revaluate my previous approach to similar functionality and seek avenues of improvement for my portfolio project 5.|
 
 ### Code Troubleshooting
 
-| Source | Title | URL |
-| --- | --- | --- |
-| Stack Overflow | (-) | [here](#)
+| Source         | Title                                               | URL                                                        |
+|----------------|-----------------------------------------------------|------------------------------------------------------------|
+| Stack Overflow | Uncaught TypeError                                  | [here](https://stackoverflow.com/questions/38793723/uncaught-typeerror-post-is-not-a-function)|
+| Stack Overflow | Implementing Django Bootstrap Crispy Forms          | [here](https://stackoverflow.com/questions/71641974/implementing-django-bootstrap-crispy-forms-into-default-signup-login-pages)                      |
+| Stack Overflow | Stripe Stripe Don't Have Attribute Charge           | [here](https://stackoverflow.com/questions/36617081/stripe-stripe-dont-have-attribute-charge)|
+| Stack Overflow | Change Mailchimp's Success Error Message            | [here](https://stackoverflow.com/questions/47798027/change-mailchimps-success-error-message)|
+| Stack Overflow | Django Model Conditional Validations                | [here](https://stackoverflow.com/questions/67546218/django-model-conditional-validations)|
+| Stack Overflow | ModuleNotFoundError: No module named phonenumbers   | [here](https://stackoverflow.com/questions/68607689/modulenotfounderror-no-module-named-phonenumbers)            |
+| Stack Overflow | How do I change the Django form errors display text | [here](https://stackoverflow.com/questions/73683939/how-do-i-change-the-django-form-errors-display-text)|
+| Stack Overflow | Django Postgres Relation Does Not Exist Error       | [here](https://stackoverflow.com/questions/36087664/django-postgres-relation-does-not-exist-error)|
+| Stack Overflow | Change Color of Close Button in Bootstrap Modal     | [here](https://stackoverflow.com/questions/26917759/change-color-of-close-button-in-bootstrap-modal-window)|
+| Stack Overflow | How to Convert a Title to a URL Slug in jQuery      | [here](https://stackoverflow.com/questions/1053902/how-to-convert-a-title-to-a-url-slug-in-jquery)|
+| Stack Overflow | Prevent Django Admin from Escaping HTML             | [here](https://stackoverflow.com/questions/3298083/prevent-django-admin-from-escaping-html)|
+| Stack Overflow | Safe Template Tag in Django Admin                   | [here](https://stackoverflow.com/questions/57073880/safe-template-tag-in-django-admin)|
+| Stack Overflow | How Can I Customize Summernote Text Editor Width    | [here](https://stackoverflow.com/questions/24598213/how-can-i-customize-summernote-text-editor-width)|
+| Stack Overflow | Django Forms Unwanted Error Message on First Display| [here](https://stackoverflow.com/questions25907949django-forms-unwanted-error-message-on-first-display-of-the-form)|
+| Stack Overflow | How to Cancel a Local Git Commit                    | [here](https://stackoverflow.com/questions/4850717/how-to-cancel-a-local-git-commit)|
+| GitHub         | Django Summernote Plugin                            | [here](https://github.com/summernote/django-summernote)|
 
 ### Documentation
 
-| Source | Title | URL |
-| --- | --- | --- |
-| Django | (-) | [here](#) |
+| Source                    | Title                    | URL                                                        |
+|---------------------------|--------------------------|------------------------------------------------------------|
+| Django Model Clean        | Django Model Clean       | [here](https://docs.djangoproject.com/en/3.2/ref/models/instances/#django.db.models.Model.clean)|
+| Mozilla Developer Network | JavaScript Errors        | [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default)|
+| Mozilla Developer Network | CSS Selectors            | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)|
+| Mozilla Developer Network | CSS Notes                | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:notes:)|
+| Mozilla Developer Network | CSS Placeholder Shown    | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown)|
+| Django-Allauth            | Django Allauth           | [here](https://django-allauth.readthedocs.io/en/latest/installation.html)|
+| PyPI                      | Django DateRange Filter  | [here](https://pypi.org/project/django-daterange-filter/#history)|
+| PyPI                      | Django DateRange Filter  | [here](https://pypi.org/project/django-daterange-filter/#histor)|
 
 ### Tutorials
 
-| Source | Title | URL |
-| --- | --- | --- |
-| (-) | (-) | [here](#) |
+| Source      | Title                                      | URL                                                                                            |
+|-------------|--------------------------------------------|------------------------------------------------------------------------------------------------|
+| aGuideHub   | How to align a form in center in bootstrap?| [here](https://aguidehub.com/blog/how-to-align-a-form-in-center-in-bootstrap/?expand_article=1)|
+| Think Thank | Custom 404 Page in Django                  | [here](https://www.youtube.com/watch?v=oX_XKlPJAQk) |
 
 ### Articles
 
-These article samples were taken from third party resources to prepopulate the website with blogs that present organic content.
+These article samples were taken from third party resources to learn about various subject that were not direct relevant to the code of this project.
 
-(-)
-
+| Source      | Title                                                     | URL                                                         |
+|-------------|-----------------------------------------------------------|-------------------------------------------------------------|
+| Wikipedia   | Universal Product Code                                    | [here](https://en.wikipedia.org/wiki/Universal_Product_Code)|
+| Saatchi Art | Reference Website For Feature and Aesthetic Project Design| [here](https://www.saatchiart.com/ )                        |
 
 ### Library Information
 
-- [The Python Package Index (PyPI)](https://pypi.org/): PyPI was critical in accessing libraries that added functionality to the project that otherwise would be impossible to feature in the end product.
-
-- [Code Insitute](https://codeinstitute.net/ie/): The theory available in the Code Institute curriculum has been central in successfully setting up and utilizing Google Cloud API services for this project.
-
+| Source                                              | Learning Points                                                                                                                                            |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Code Insitute](https://codeinstitute.net/ie/)      | The theory available in the Code Institute curriculum has been central in successfully setting up and utilizing Google Cloud API services for this project.|
+| [The Python Package Index (PyPI)](https://pypi.org/)| PyPI was critical in accessing libraries that added functionality to the project that otherwise would be impossible to feature in the end product.         |
 
 ### Theory
 
-- [UCD Professional Academy](https://www.ucd.ie/professionalacademy/): I would like to thank UCD PA for their facilitator and masterclass sessions in partnership with Code Insitute. These have been invaluable in better understanding relevant theory and practice elements.
+| Source                                                               | Learning Points                                                                                                                                  |
+|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [UCD Professional Academy](https://www.ucd.ie/professionalacademy/)  | I would like to thank UCD PA for their facilitator and masterclass sessions in partnership with Code Insitute. These have been invaluable in better understanding relevant theory and practice elements.|
 
 ---
 
