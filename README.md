@@ -20,6 +20,9 @@
     -   [Colour Palette](#colour-palette)
     -   [Wireframes](#wireframes)
 
+-   [Web Marketing](#web-marketing)
+    -   [Social Media](#social-media)
+
 -   [Agile Development](#agile-development)
     -   [MoSCow](#moscow-prioritization-system)
 
@@ -377,6 +380,23 @@ More importantly, this colour combination consists of items designed to motivate
 ![screenshot](docs/wireframes/desktop-profile.png)
 
 </details>
+
+---
+
+## Web Marketing
+
+### Social Media
+
+| Platform | Screenshot |
+|------|------|
+| Facebook |![Facebook Mock](docs/fb-mock.png)|
+| Instagram |![Instagram Page](docs/instagram.png)|
+
+### Email Newsletter
+
+| Platform | Screenshot |
+|------|------|
+| Mailchimp |![Mailchimp](docs/features/footer-newsletter.png)|
 
 ---
 
