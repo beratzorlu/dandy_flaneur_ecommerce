@@ -427,7 +427,7 @@ The below elements are available to be experienced by the user across the applic
 | (Navbar Basket) | ![screenshot](docs/features/navbar-basket.png) |
 | (Navbar Full Basket) | ![screenshot](docs/features/navbar-basket-full.png) |
 | (Navbar Active User) | ![screenshot](docs/features/navbar-activeuser.png) |
-| (Navbar Logo) | ![screenshot](docs/features/navbar-logo.png) |
+| (Navbar Logo) | ![screenshot](static/img/dandy-logo.jpg) |
 | (Footer) | ![screenshot](docs/features/footer.png) |
 | (Footer Links) | ![screenshot](docs/features/footer-links.png) |
 | (Footer Newsletter) | ![screenshot](docs/features/footer-newsletter.png) |
