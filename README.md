@@ -874,8 +874,8 @@ These article samples were taken from third party resources to learn about vario
 
 ### Theory
 
-| Source                                                               | Learning Points                                                                                                                                  |
-|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Source                                                               | Learning Points                                                |
+|----------- ---------------------------------------------------------------------------------------------------------------------------|
 | [UCD Professional Academy](https://www.ucd.ie/professionalacademy/)  | I would like to thank UCD PA for their facilitator and masterclass sessions in partnership with Code Insitute. These have been invaluable in better understanding relevant theory and practice elements.|
 
 ---
