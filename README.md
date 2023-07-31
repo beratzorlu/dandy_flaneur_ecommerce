@@ -769,27 +769,36 @@ DevTools.
 
 ### External Modules
 
-| **Name** | **Version** |
-| ------- | ------- |
-| asgiref | 3.6.0 |
-| Babel | 2.12.1 |
-| cloudinary | 1.32.0 |
-| dj-database-url | 0.5.0 |
-| dj3-cloudinary-storage | 0.0.6 |
-| Django | 3.2.18 |
-| django-allauth | 0.54.0 |
-| django-crispy-forms | 1.14.0 |
-| django-phonenumber-field | 7.1.0 |
-| django-summernote | 0.8.20.0 |
-| gunicorn | 20.1.0 |
-| oauthlib | 3.2.2 |
-| phonenumbers | 8.13.11 |
-| psycopg2 | 2.9.6 |
-| PyJWT | 2.6.0 |
-| python3-openid | 3.2.0 |
-| pytz | 2023.3 |
-| requests-oauthlib | 1.3.1 |
-| sqlparse | 0.4.4 |
+| Package                 | Version   |
+|-------------------------|-----------|
+| asgiref                 | 3.7.2     |
+| Babel                   | 2.12.1    |
+| boto3                   | 1.28.6    |
+| botocore                | 1.31.6    |
+| crispy-bootstrap5       | 0.7       |
+| dj-database-url         | 0.5.0     |
+| Django                  | 3.2.20    |
+| django-allauth          | 0.41.0    |
+| django-countries        | 7.2.1     |
+| django-crispy-forms     | 1.14.0    |
+| django-daterangefilter  | 1.0.0     |
+| django-phonenumber-field| 7.1.0     |
+| django-phonenumbers     | 1.0.1     |
+| django-storages         | 1.13.2    |
+| django-summernote       | 0.8.20.0  |
+| gunicorn                | 21.2.0    |
+| jmespath                | 1.0.1     |
+| oauthlib                | 3.2.2     |
+| phonenumbers            | 8.13.16   |
+| Pillow                  | 10.0.0    |
+| psycopg2                | 2.9.6     |
+| python3-openid          | 3.2.0     |
+| pytz                    | 2023.3    |
+| requests-oauthlib       | 1.3.1     |
+| s3transfer              | 0.6.1     |
+| sqlparse                | 0.4.4     |
+| stripe                  | 5.5.0     |
+| urllib3                 | 1.26.16   |
 
 ---
 
