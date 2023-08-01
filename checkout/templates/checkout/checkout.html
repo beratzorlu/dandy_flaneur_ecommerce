@@ -110,24 +110,32 @@
                 </fieldset>
 
                 <div class="submit-button text-right mt-5 mb-2">
-                    <a href="{% url 'view_basket' %}" class="btn btn-outline-black rounded-0">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="font-weight-bold">Adjust Bag</span>
-                    </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="font-weight-bold">Complete Order</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </button>
-                    <p class="small text-danger my-0">
-                        <span class="icon">
-                            <i class="fas fa-exclamation-circle"></i>
-                        </span>
-                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                    </p>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p class="small text-danger my-0">
+                                <span class="icon">
+                                    <i class="fas fa-exclamation-circle fa-fade pb-5 text-center"
+                                        style="--fa-animation-duration: 4s"></i>
+                                </span>
+                                <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <a href="{% url 'view_basket' %}" class="btn rounded-0 mx-2 dandy-border-alt">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Adjust Bag</span>
+                            </a>
+                            <button id="submit-button" class="dandy-border-alt btn rounded-0 mx-2">
+                                <span class="font-weight-bold">Complete Order <i
+                                        class="fa-solid fa-palette fa-flip" style="--fa-animation-duration: 4s;"></i></span>
+        
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -140,6 +148,10 @@
         </span>
     </h1>
 </div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
 {% endblock %}
 
 {% block postloadjs %}
