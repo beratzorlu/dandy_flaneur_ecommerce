@@ -71,18 +71,18 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="5" class="text-right">
+                                            <td colspan="5">
                                                 <a href="{% url 'store' %}"
-                                                    class="btn rounded-0 btn-lg m-2" id="navbar-secondary">
+                                                    class="btn dandy-border-alt dandy-bg text-white rounded-0 m-2">
                                                     <span class="icon">
-                                                        <i class="fas fa-arrow-left"></i>
+                                                        <i class="fa-solid fa-caret-left"></i>
                                                     </span>
-                                                    <span class="text-uppercase">Back</span>
+                                                    <span>Back</span>
                                                 </a>
-                                                <a href="{% url 'store_checkout' %}" class="btn dandy-border-alt dandy-bg-alt rounded-0 btn-lg m-2">
-                                                    <span class="text-uppercase">Secure Checkout</span>
+                                                <a href="{% url 'store_checkout' %}" class="btn dandy-border-alt dandy-bg-alt rounded-0 m-2">
+                                                    <span>Secure Checkout</span>
                                                     <span class="icon">
-                                                        <i class="fas fa-lock"></i>
+                                                        <i class="fa-solid fa-shield-halved fa-flip" style="--fa-animation-iteration-count: 1;"></i>
                                                     </span>
                                                 </a>
                                             </td>
@@ -102,8 +102,10 @@
             </div>
         </div>
     </div>
+
     <!-- Content Divider -->
     <div class="divider"></div>
+    
 </div>
 {% endblock %}
 
