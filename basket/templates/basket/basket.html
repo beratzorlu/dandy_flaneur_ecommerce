@@ -54,6 +54,9 @@
                                                 <p class="my-0"><strong>Subtotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</strong>
                                                 </p>
                                             </td>
+                                            <td>
+                                                {% include "basket/item_quantity_form.html" %}
+                                            </td>
                                         </tr>
                                         {% endfor %}
                                         <tr>
