@@ -198,7 +198,7 @@
 <div class="row">
     <div class="col-12 col-md-12 text-center ">
         {% if from_profile %}
-        <a href="{% url 'profiles' %}" class="btn btn-black rounded-0 my-2">
+        <a href="{% url 'profiles' %}" class="dandy-border-alt btn rounded-0 mx-2 my-5 w-50">
             <span class="icon mr-2">
                 <i class="fas fa-angle-left"></i>
             </span>
@@ -206,10 +206,10 @@
         </a>
         {% else %}
         <a href="{% url 'store' %}" class="dandy-border-alt btn rounded-0 mx-2 my-5 w-50">
-            <span class="icon mr-2">
-                <i class="fas fa-gifts"></i>
-            </span>
             <span class="text-uppercase">Browse our art!</span>
+            <span class="icon mr-2">
+                <i class="fas fa-brush fa-flip"></i>
+            </span>
         </a>
         {% endif %}
     </div>
