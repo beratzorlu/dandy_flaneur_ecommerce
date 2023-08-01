@@ -34,7 +34,7 @@ def add_to_basket(request, item_id):
         if item_id in list(basket.keys()):
             if dimentions in basket[item_id]['items_by_size'].keys():
                 basket[item_id]['items_by_size'][dimentions] += quantity
-                messages.success(request, f'Updated size {dimentions.upper()} {product.name} to {basket[item_id]["items_by_size"][dimentions]}')
+                messages.success(request, f'{product.name}: Updated size {dimentions.upper()} quantity to {basket[item_id]["items_by_size"][dimentions]}')
             else:
                 basket[item_id]['items_by_size'][dimentions] = quantity
                 messages.success(request, f'Added size {dimentions.upper()} {product.name} to your basket')
