@@ -417,3 +417,9 @@ a {
         justify-content: center !important;
     }
 }
+
+@media (max-width: 349px) {
+    .dandy-border-alt.btn.rounded-0.mx-2 {
+        margin-top: 1.5rem;
+      }      
+}
