@@ -820,6 +820,7 @@ Alternatively, you can connect to your Github account by following the below ste
 | Source         | Title                                               | URL                                                        |
 |----------------|-----------------------------------------------------|------------------------------------------------------------|
 | Stack Overflow | Uncaught TypeError                                  | [here](https://stackoverflow.com/questions/38793723/uncaught-typeerror-post-is-not-a-function)|
+| Stack Overflow | Vertical Align Bootstrap Table                                  | [here](https://stackoverflow.com/questions/27747072/vertical-align-in-bootstrap-table)|
 | Stack Overflow | Implementing Django Bootstrap Crispy Forms          | [here](https://stackoverflow.com/questions/71641974/implementing-django-bootstrap-crispy-forms-into-default-signup-login-pages)                      |
 | Stack Overflow | Stripe Stripe Don't Have Attribute Charge           | [here](https://stackoverflow.com/questions/36617081/stripe-stripe-dont-have-attribute-charge)|
 | Stack Overflow | Change Mailchimp's Success Error Message            | [here](https://stackoverflow.com/questions/47798027/change-mailchimps-success-error-message)|
