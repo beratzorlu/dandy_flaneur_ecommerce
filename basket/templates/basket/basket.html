@@ -13,6 +13,7 @@
         <h1 class="mb-3">~ Your Basket ~</h1>
         <hr>
     </div>
+
     <div class="row dandy-bg-faded px-2 py-3 rounded-0">
         <div class="col">
             <div class="row">
@@ -45,55 +46,50 @@
                                                 <p class="my-0">{{ item.product.name }}</p>
                                                 <p class="my-0"><small>PSU: {{ item.product.upc }}</small></p>
                                                 <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
+                                                {% if item.dimentions %}
                                                 <p class="my-0"><strong>Size:</strong> {{ item.dimentions|upper }}</p>
+                                                {% else %}
+                                                <p class="my-0"><strong>Size:</strong> N/A</p>
+                                                {% endif %}
                                                 <p class="my-0"><strong>Subtotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</strong>
                                                 </p>
                                             </td>
-                                            <td>
-                                                {% include "basket/item_quantity_form.html" %}
-                                            </td>
-                                            <td></td>
-                                            <td></td>
                                         </tr>
                                         {% endfor %}
                                         <tr>
-                                            <td colspan="5" class="pt-5 text-right">
+                                            <td colspan="2" class="pt-5 text-right">
                                                 <h4><strong>Basket Total: €{{ total|floatformat:2 }}</strong></h4>
                                                 <h5>Shipping: €{{ delivery|floatformat:2 }}</h5>
-                                                <h5 class="mt-4"><strong>Grand Total:
-                                                        €{{ grand_total|floatformat:2 }}</strong></h5>
+                                                <h5 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h5>
                                                 {% if free_delivery_delta > 0 %}
                                                 <p class="mb-1 text-danger">
-                                                    Spend <strong>€{{ free_delivery_delta }}</strong> to get free
-                                                    shipping!
+                                                    Spend <strong>€{{ free_delivery_delta }}</strong> to get free shipping!
                                                 </p>
                                                 {% endif %}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="5">
-                                                <a href="{% url 'store' %}"
-                                                    class="btn dandy-border-alt dandy-bg text-white rounded-0 m-2">
-                                                    <span class="icon">
-                                                        <i class="fa-solid fa-caret-left"></i>
-                                                    </span>
-                                                    <span>Back</span>
-                                                </a>
-                                                <a href="{% url 'store_checkout' %}" class="btn dandy-border-alt dandy-bg-alt rounded-0 m-2">
-                                                    <span>Secure Checkout</span>
-                                                    <span class="icon">
-                                                        <i class="fa-solid fa-shield-halved fa-flip" style="--fa-animation-iteration-count: 1;"></i>
-                                                    </span>
-                                                </a>
+                                                <div class="col-12">
+                                                    <a href="{% url 'store' %}"
+                                                        class="btn dandy-border-alt dandy-bg text-white rounded-0 m-2">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-caret-left"></i>
+                                                        </span>
+                                                        <span>Back</span>
+                                                    </a>
+                                                    <a href="{% url 'store_checkout' %}"
+                                                        class="btn dandy-border-alt dandy-bg-alt rounded-0 m-2">
+                                                        <span>Secure Checkout</span>
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-shield-halved fa-flip" style="--fa-animation-iteration-count: 1;"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
                                 {% else %}
-                                    <h5 class="fst-italic fw-light mb-3"><strong>Your basket is currently empty.</strong>
-                                        </h5>
-                                    <a href="{% url 'store' %}" class="dandy-bg-alt text-black dandy-border-alt p-1 mt-4">Return to
-                                        Shop</a>
+                                <h5 class="fst-italic fw-light mb-3"><strong>Your basket is currently empty.</strong></h5>
+                                <a href="{% url 'store' %}"
+                                    class="dandy-bg-alt text-black dandy-border-alt p-1 mt-4">Return to Shop</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -102,10 +98,11 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Content Divider -->
     <div class="divider"></div>
-    
+
 </div>
 {% endblock %}
 
