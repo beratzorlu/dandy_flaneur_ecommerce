@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-12 col-lg-7">
-            <div class="order-confirmation-wrapper p-2 border">
+            <div class="order-confirmation-wrapper p-3 dandy-border">
                 <div class="row">
                     <div class="col">
                         <small class="text-muted">Order Info:</small>
@@ -196,7 +196,7 @@
 </div>
 </div>
 <div class="row">
-    <div class="col-12 col-lg-7 text-right">
+    <div class="col-12 col-md-12 text-center ">
         {% if from_profile %}
         <a href="{% url 'profiles' %}" class="btn btn-black rounded-0 my-2">
             <span class="icon mr-2">
@@ -205,7 +205,7 @@
             <span class="text-uppercase">Back to Profile</span>
         </a>
         {% else %}
-        <a href="{% url 'store' %}" class="btn btn-black rounded-0 my-2">
+        <a href="{% url 'store' %}" class="dandy-border-alt btn rounded-0 mx-2 my-5 w-50">
             <span class="icon mr-2">
                 <i class="fas fa-gifts"></i>
             </span>
@@ -214,6 +214,8 @@
         {% endif %}
     </div>
 </div>
-</div>
-</div>
+
+<!-- Content Divider -->
+<div class="divider"></div>
+
 {% endblock %}
