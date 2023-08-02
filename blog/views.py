@@ -22,7 +22,7 @@ class BlogList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(is_published=True).order_by('-created_on')
     template_name = 'blog/blog.html'
-    paginate_by = 6
+    paginate_by = 8
     context_object_name = "blog_list"
 
     def get_context_data(self, **kwargs):
