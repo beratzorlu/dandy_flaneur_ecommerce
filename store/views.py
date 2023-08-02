@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.contrib import messages
 from django.db.models import Q  # is used to generate a search query
 from django.core.paginator import Paginator
+from django.views.generic import ListView
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
@@ -10,60 +11,50 @@ from .models import Product, Category
 from .forms import ItemForm
 
 
-def products_list(request):
-    """View for listing all products and sorting."""
+class ProductListView(ListView):
+    """
+    *Displays store product cards in a list format.
+    *Allows for content sorting and searching.
+    *Paginates content 10 products per page.
+    """
+    model = Product
+    template_name = 'store/store_products.html'
+    context_object_name = 'products'
+    paginate_by = 10
 
-    products = Product.objects.all()
-    all_categories = Category.objects.all()
-    query = None
-    category = None
-    sort = None
-    direction = None
+    def get_queryset(self):
+        products = Product.objects.all()
+        query = self.request.GET.get('q')
+        category = self.request.GET.getlist('category')
+        sort_key = self.request.GET.get('sort')
+        direction = self.request.GET.get('direction')
 
-    if request.GET:
-        if 'sort' in request.GET:
-            sort_key = request.GET['sort']
-            sort = sort_key
+        if query:
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(country__icontains=query) | Q(artist__icontains=query)
+            products = products.filter(queries)
+
+        if category:
+            products = products.filter(category__name__in=category)
+
+        if sort_key:
             if sort_key == 'category':
                 sort_key = 'category__name'
             if sort_key == 'name':
-                sort_key = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sort_key = f'-{sort_key}'
+                sort_key = 'name_lower'
+                products = products.annotate(name_lower=Lower('name'))
+            if direction == 'desc':
+                sort_key = f'-{sort_key}'
             products = products.order_by(sort_key)
 
-    if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+        return products
 
-    if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, "Please input search criteria")
-                return redirect(reverse('store'))
-
-            queries = Q(name__icontains=query) | Q(
-                description__icontains=query) | Q(
-                    country__icontains=query) | Q(
-                        artist__icontains=query)
-            products = products.filter(queries)
-
-    current_sort = f'{sort}_{direction}'
-
-    context = {
-        'products': products,
-        'all_categories': all_categories,
-        'search_term': query,
-        'current_sort': current_sort
-    }
-
-    return render(request, 'store/store_products.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['all_categories'] = Category.objects.all()
+        context['search_term'] = self.request.GET.get('q', '')
+        context['current_sort'] = f"{self.request.GET.get('sort', '')}_{self.request.GET.get('direction', '')}"
+        
+        return context
 
 
 def store_detail(request, product_id):
