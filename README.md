@@ -841,14 +841,17 @@ Alternatively, you can connect to your Github account by following the below ste
 
 | Source                    | Title                    | URL                                                        |
 |---------------------------|--------------------------|------------------------------------------------------------|
-| Django Model Clean        | Django Model Clean       | [here](https://docs.djangoproject.com/en/3.2/ref/models/instances/#django.db.models.Model.clean)|
+| Django | Django Model Clean                          | [here](https://docs.djangoproject.com/en/3.2/ref/models/instances/#django.db.models.Model.clean)|
+| Django | Pagination       | [here](https://docs.djangoproject.com/en/stable/topics/pagination/)|
+| Django | List View | [here](https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#listview)|
+| Django | Object-Relational Mapping | [here](https://docs.djangoproject.com/en/stable/topics/db/queries/)|
+| Django | Template Tags for Pagination | [here](https://docs.djangoproject.com/en/stable/topics/pagination/#template-tags-for-pagination)|
+| Django-Allauth            | Django Allauth           | [here](https://django-allauth.readthedocs.io/en/latest/installation.html)|
 | Mozilla Developer Network | JavaScript Errors        | [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default)|
 | Mozilla Developer Network | CSS Selectors            | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)|
 | Mozilla Developer Network | CSS Notes                | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:notes:)|
 | Mozilla Developer Network | CSS Placeholder Shown    | [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown)|
-| Django-Allauth            | Django Allauth           | [here](https://django-allauth.readthedocs.io/en/latest/installation.html)|
 | PyPI                      | Django DateRange Filter  | [here](https://pypi.org/project/django-daterange-filter/#history)|
-| PyPI                      | Django DateRange Filter  | [here](https://pypi.org/project/django-daterange-filter/#histor)|
 
 ### Tutorials
 
@@ -868,7 +871,7 @@ These article samples were taken from third party resources to learn about vario
 
 ### Library Information
 
-| Source                                              | Learning Points                                                                                                                                            |
+| Source                                              | Learning Points                                                                                     |
 |-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Code Insitute](https://codeinstitute.net/ie/)      | The theory available in the Code Institute curriculum has been central in successfully setting up and utilizing Google Cloud API services for this project.|
 | [The Python Package Index (PyPI)](https://pypi.org/)| PyPI was critical in accessing libraries that added functionality to the project that otherwise would be impossible to feature in the end product.         |
