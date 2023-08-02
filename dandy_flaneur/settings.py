@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'blog',
     'contact',
     'store',
-    'workshop',
     'basket',
     'checkout',
     'profiles',
