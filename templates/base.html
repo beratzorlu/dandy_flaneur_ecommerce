@@ -98,7 +98,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav" aria-labelledby="user-options">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav space-between">
                     <li class="nav-item">
                         <a class="nav-link btn rounded-0 text-dark" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -221,7 +221,7 @@
     <footer class="dandy-bg text-center text-white dandy-border">
         <div class="container p-4">
             <!-- Social Media Links -->
-            <section class="mb-4">
+            <div class="mb-4">
                 <!-- Instagram -->
                 <a class="btn btn-outline-light rounded-0 btn-floating m-1"
                     href="https://www.instagram.com/dandy_flaneur/?igshid=MzRlODBiNWFlZA%3D%3D" role="button"
@@ -229,10 +229,10 @@
                 <!-- Github -->
                 <a class="btn btn-outline-light rounded-0 btn-floating m-1" href="https://github.com/beratzorlu"
                     role="button" rel="nofollow"><i class="fab fa-github"></i></a>
-            </section>
+            </div>
 
             <!-- Newsletter Header -->
-            <section>
+            <div>
                 <div class="container p4">
                     <div class="col-auto">
                         <p class="pt-2">
@@ -240,7 +240,7 @@
                         </p>
                     </div>
                 </div>
-            </section>
+            </div>
 
             <!-- Newsletter Form -->
             <div id="mc_embed_shell">
@@ -282,7 +282,7 @@
             </div>
 
             <!-- Site Links -->
-            <section class="text-sm-center text-md-start">
+            <div class="text-sm-center text-md-start">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h5 class="text-uppercase">Links <i class="fa-solid fa-link"></i></h5>
@@ -343,7 +343,7 @@
                     </div>
                 </div>
                 <hr>
-            </section>
+            </div>
         </div>
 
         <!-- Copyright Information -->
@@ -369,20 +369,20 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <div class="btt-button shadow-sm rounded-0 border border-black">
+    <div>
         <a href="" class="btt-link d-flex h-100">
             <i class="fa-solid fa-chevron-up text-black mx-auto my-auto"></i>
         </a>
     </div>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         // Back-to-top button js logic
         $(".btt-link").click(function (e) {
             window.scrollTo(0, 0)
         })
     </script>
-    <script type="text/javascript">
+    <script>
         // Adds scale-up animation to navbar buttons when clicked.
         $(document).ready(function () {
             $('#navbar-primary, #navbar-secondary').click(toggleActiveClass);
@@ -392,7 +392,7 @@
             }
         });
     </script>
-    <script type="text/javascript">
+    <script>
         // Initiates toast message pop-ups from Bootstrap v5.3
         let toastElList = [].slice.call(document.querySelectorAll('.toast'))
         let toastList = toastElList.map(function (toastEl) {
@@ -406,9 +406,9 @@
         })
     </script>
     <!-- Mailchimp Scripts -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
-    <script type="text/javascript">
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
