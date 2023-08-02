@@ -1,15 +1,11 @@
 # Dandy Flaneur – Portfolio Project 5
 
-![A screenshot of the application in action]()
+![A screenshot of the application in action](docs/am-i-responsive.png)
 
-## [Link to live web application](#)
-
----
+***[Link to live web application](https://dandy-flaneur-08cda80edeb8.herokuapp.com/)***
 
 ## Project Documentation
-### Welcome to [Dandy Flaneur](#)
-
----
+### Welcome to [Dandy Flaneur](https://dandy-flaneur-08cda80edeb8.herokuapp.com/)
 
 ## Table of Contents
 
@@ -421,7 +417,7 @@ Below are the labels used on GitHub to illustrate the various importance levels.
 
 [Draw.io](https://www.drawio.com/) was a highly beneficial resource that provided significant help in building a ERP to illustrate the various table relationships of data models present in the project.
 
-![Data Relationship Diagram](#)
+![Data Relationship Diagram](docs/entity-relationship.png)
 
 ### Data Models
 
@@ -661,12 +657,12 @@ That being said, these features remain relevant to the overall scope of the proj
 | As a user, I can create and view a profile page so that I input and save relevant personal information for faster checkouts. | ![screenshot](docs/features/profile.png) | Pass |
 | As a user, I can register an account on the site so that I have a personal account with a unique profile. | ![screenshot](docs/features/auth-register.png) | Pass |
 | As a user, I can reset my password so that I can set a new password for my account whenever I need to do so. | ![screenshot](docs/features/auth-login.png) | Pass |
-| As a user, I can be sent a confirmation email from the site once I create an account so that I am notified that my account registration was successful. | ![screenshot](docs/features/auth-email.png) | Pass |
-| As a shopper, I can navigate across the site so that I can access all relevant elements of the site. | ![screenshot](docs/features/navbar) | Pass |
+| As a user, I can be sent a confirmation email from the site once I create an account so that I am notified that my account registration was successful. | ![screenshot](docs/features/auth-register-email.png) | Pass |
+| As a shopper, I can navigate across the site so that I can access all relevant elements of the site. | ![screenshot](docs/features/navbar.png) | Pass |
 | As a shopper, I can use the header and footer to access navigation, menus, and Social Media links. | ![screenshot](docs/features/footer.png) | Pass |
 | As a shopper, I can receive a dedicated notification in response to my actions so that I get real-time feedback about the status of my actions. | ![screenshot](docs/features/toasts.png) | Pass |
 | As a shopper, I can access a list of products available so that I can choose an item to buy. | ![screenshot](docs/features/store.png) | Pass |
-| As a shopper, I can view a welcome page so that I am introduced to the business and its products. | ![screenshot](docs/features/storefront) | Pass |
+| As a shopper, I can view a welcome page so that I am introduced to the business and its products. | ![screenshot](docs/features/storefront.png) | Pass |
 | As a shopper, I can access details for a specific product so that I can better inform myself about the item to help with making a purchase decision. | ![screenshot](docs/features/item.png) | Pass |
 | As a shopper, I can view a readout of my login status that is visible at all times so that I can confirm my authentication whenever I want. | ![screenshot](docs/features/navbar-activeuser.png) | Pass |
 | As a shopper, I can add new items to my basket so that I list the items that I want to buy. | ![screenshot](docs/features/basket.png) | Pass |
@@ -690,7 +686,7 @@ That being said, these features remain relevant to the overall scope of the proj
 | As an admin, I can add a new product so that I can update items available in the shop. | ![screenshot](docs/features/item-create.png) | Pass |
 | As an admin, I can remove a product item from the store so that users don't have access to inactive products. | ![screenshot](docs/features/store-card-admin.png) | Pass |
 | As an admin, I can change product details so that the relevant item has the most accurate and up-to-date information associated with it on the website. | ![screenshot](docs/features/item-edit.png) | Pass |
-| As an admin, I can optimise user's Google searches to help them land the correct website. | ![screenshot](https://github.com/beratzorlu/dandy_flaneur_ecommerce/blob/ac2a8c23ad9c20df693b61965a43cf1fc7eb0d91/templates/base.html#L11C1-L15C47) | Pass |
+| As an admin, I can optimise user's Google searches to help them land the correct website. | ![Meta Keyword and Description Elements](https://github.com/beratzorlu/dandy_flaneur_ecommerce/blob/ac2a8c23ad9c20df693b61965a43cf1fc7eb0d91/templates/base.html#L11C1-L15C47) | Pass |
 | As a shopper, I can submit my email so that I can receive information about deals and product insights from the company. | ![screenshot](docs/features/footer-newsletter.png) | Pass |
 
 ### Performance
@@ -784,13 +780,160 @@ To set up your own Postgres Database, follow these steps:
 
 1. Sign up with your GitHub account on the ElephantSQL website.
 2. Click on **Create New Instance** to create a new database.
-3. Provide a name for your database (you can use the name of your project, e.g., retro-reboot).
+3. Provide a name for your database (you can use the name of your project, e.g., example-name).
 4. Choose the **Tiny Turtle (Free)** plan.
 5. You can leave the **Tags** field blank.
 6. Select the **Region** and **Data Center** closest to your location.
 7. Once the database is created, click on its name to view the database URL and Password.
 
 With these steps, you'll have your own PostgreSQL database set up and ready to use for your project.
+
+### Stripe Integration
+
+This project utilizes [Stripe](https://stripe.com) to handle ecommerce payments securely.
+
+To connect your project with Stripe, follow these steps:
+
+1. Create a Stripe account and log in to the Stripe dashboard.
+
+2. In the dashboard, click to expand "Get your test API keys."
+
+3. You'll find two keys:
+   - `STRIPE_PUBLIC_KEY` = Publishable Key (starts with **pk**)
+   - `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
+
+As a backup measure in case users prematurely close the purchase order page during payment, we can implement Stripe Webhooks.
+
+4. In the Stripe dashboard, navigate to **Developers** and select **Webhooks**.
+
+5. Click on **Add Endpoint** and provide the following URL:
+   - `https://retro-reboot.herokuapp.com/checkout/wh/`
+
+6. Click **Receive all events** to ensure all relevant events are captured.
+
+7. Click **Add Endpoint** to complete the process.
+
+8. After adding the endpoint, you'll receive a new key:
+   - `STRIPE_WH_SECRET` = Signing Secret (Webhook) Key (starts with **wh**)
+
+By integrating Stripe into your project, you can securely process payments and handle various payment-related events with ease. The Stripe API offers a robust set of features to manage transactions, handle card payments, and support multiple currencies, making it an excellent choice for handling ecommerce transactions in your application.
+
+### Amazon AWS
+
+This project uses [AWS](https://aws.amazon.com) to store media and static files online because Heroku does not persist this type of data.
+
+To connect your project to AWS, follow these steps after creating an AWS account and logging in. Make sure you are on the **AWS Management Console** page.
+
+***S3 Bucket***
+
+1. Search for **S3**.
+2. Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
+3. Uncheck **Block all public access** and acknowledge that the bucket will be public (required for it to work on Heroku).
+4. From **Object Ownership**, ensure **ACLs enabled** and **Bucket owner preferred** are selected.
+5. From the **Properties** tab, turn on static website hosting, and type `index.html` and `error.html` in their respective fields, then click **Save**.
+6. From the **Permissions** tab, paste in the following CORS configuration:
+
+```json
+[
+	{
+		"AllowedHeaders": ["Authorization"],
+		"AllowedMethods": ["GET"],
+		"AllowedOrigins": ["*"],
+		"ExposeHeaders": []
+	}
+]
+```
+
+7. Copy your ARN string.
+8. From the Bucket Policy tab, select the Policy Generator link and use the following steps:
+- Policy Type: S3 Bucket Policy
+- Effect: Allow
+- Principal: *
+- Actions: GetObject
+- Amazon Resource Name (ARN): paste-your-ARN-here
+- Click Add Statement
+- Click Generate Policy
+- Copy the entire Policy and paste it into the Bucket Policy Editor
+
+```json
+{
+	"Id": "Policy1234567890",
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Stmt1234567890",
+			"Action": ["s3:GetObject"],
+			"Effect": "Allow",
+			"Resource": "arn:aws:s3:::your-bucket-name/*",
+			"Principal": "*"
+		}
+	]
+}
+```
+
+9. Before you click "Save," add /* to the end of the Resource key in the Bucket Policy Editor (like above).
+10. Click Save.
+11. From the Access Control List (ACL) section, click "Edit" and enable List for Everyone (public access), and accept the warning box.
+
+- If the edit button is disabled, change the Object Ownership section above to ACLs enabled (mentioned above).
+
+***IAM (Identity and Access Management)***
+
+1. Back on the AWS Services Menu, search for and open IAM (Identity and Access Management).
+2. From User Groups, click Create New Group.
+- Suggested Name: group-example-name (group + the project name)
+3. Tags are optional, but you must click it to get to the review policy page.
+4. From User Groups, select your newly created group and go to the Permissions tab.
+5. Open the Add Permissions dropdown and click Attach Policies.
+6. Select the policy, then click Add Permissions at the bottom when finished.
+7. From the JSON tab, select the Import Managed Policy link.
+- Search for S3, select the AmazonS3FullAccess policy, and then Import.
+- You'll need your ARN from the S3 Bucket copied again, which is pasted into the "Resources" key on the Policy.
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "s3:*",
+			"Resource": [
+				"arn:aws:s3:::your-bucket-name",
+				"arn:aws:s3:::your-bucket-name/*"
+			]
+		}
+	]
+}
+```
+
+8. Click Review Policy.
+9. Suggested Name: policy-example-name (policy + the project name)
+10. Provide a description: "Access to S3 Bucket for example-name static files."
+11. Click Create Policy.
+12. From User Groups, click your "group-example-name".
+13. Click Attach Policy.
+14. Search for the policy you've just created ("policy-example-name") and select it, then Attach Policy.
+15. From User Groups, click Add User.
+
+- Suggested Name: exampleuser-project-name (user + the project name)
+
+16. For "Select AWS Access Type," select Programmatic Access.
+17. Select the group to add your new user to: group-example-name
+20. Tags are optional, but you must click it to get to the review user page.
+21. Click Create User once done.
+22. You should see a button to Download .csv, so click it to save a copy on your system.
+- IMPORTANT: once you pass this page, you cannot come back to download it again, so do it immediately!
+- This contains the user's Access key ID and Secret access key.
+- AWS_ACCESS_KEY_ID = Access key ID
+- AWS_SECRET_ACCESS_KEY = Secret access key
+
+***Final AWS Setup***
+
+1. If Heroku Config Vars has DISABLE_COLLECTSTATIC still, this can be removed now so that AWS will handle the static files.
+2. Back within S3, create a new folder called: media.
+3. Select any existing media images for your project to prepare them for being uploaded into the new folder.
+4. Under Manage Public Permissions, select Grant public read access to this object(s).
+5. No further settings are required, so click Upload.
 
 ### Heroku Deployment
 
