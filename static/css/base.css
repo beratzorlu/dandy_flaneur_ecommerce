@@ -102,6 +102,12 @@ a {
     font-size: 0.9rem !important;
 }
 
+.dandy-button {
+    background-color: var(--dandy-black);
+    border: 2px solid var(--dandy-gold);
+    color: var(--dandy-white);
+}
+
 #navbar-primary {
     background-color: var(--dandy-black);
     border: 2px solid var(--dandy-gold);
@@ -115,13 +121,15 @@ a {
 }
 
 #navbar-primary.active,
-#navbar-secondary.active {
+#navbar-secondary.active,
+.dandy-button.active {
     animation-name: navButtonAnimation;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
 }
 
-#navbar-primary:hover {
+#navbar-primary:hover,
+.dandy-button:hover {
     border: 2px dashed var(--dandy-black);
 }
 
