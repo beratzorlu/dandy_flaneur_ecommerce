@@ -27,8 +27,8 @@
     -   [MoSCow](#moscow-prioritization-system)
 
 - [Technical Design](#technical-design)
-    -   [Flowchart](#flowchart)
-    -   [Data Model](#data-model)
+    -   [Entity Relationship Diagram](#entity-relationship-diagram)
+    -   [Data Model](#data-models)
 
 -   [Website Features](#website-features)
     -   [Application Elements](#application-elements)
@@ -417,11 +417,127 @@ Below are the labels used on GitHub to illustrate the various importance levels.
 
 ## Technical Design
 
-### Data Model - Entity Relationship Diagram
+### Entity Relationship Diagram
 
 [Draw.io](https://www.drawio.com/) was a highly beneficial resource that provided significant help in building a ERP to illustrate the various table relationships of data models present in the project.
 
 ![Data Relationship Diagram](#)
+
+### Data Models
+
+#### Blog/Post
+
+| Field       | Type               | Description                       |
+|-------------|--------------------|-----------------------------------|
+| id          | Integer (Auto)     | Primary Key                       |
+| author      | ForeignKey (User)  | Author of the post                |
+| is_liked    | ManyToManyField    | Users who liked the post          |
+| title       | CharField (200)    | Title of the post (Unique)        |
+| slug        | SlugField (200)    | Unique slug for URL               |
+| image       | ImageField         | Post image (nullable)             |
+| excerpt     | TextField          | Excerpt of the post               |
+| content     | TextField          | Content of the post               |
+| created_on  | DateTimeField (auto)| Date and time of creation        |
+| updated_on  | DateTimeField (auto)| Date and time of last update     |
+| is_published| BooleanField       | Whether the post is published     |
+
+#### Blog/Comment
+
+| Field       | Type               | Description                       |
+|-------------|--------------------|-----------------------------------|
+| id          | Integer (Auto)     | Primary Key                       |
+| name        | CharField (32)     | Name of the commenter             |
+| post        | ForeignKey (Post)  | Post the comment belongs to       |
+| author      | ForeignKey (User)  | Author of the comment             |
+| content     | TextField          | Content of the comment            |
+| created_on  | DateTimeField (auto)| Date and time of creation        |
+| is_approved | BooleanField       | Whether the comment is approved   |
+
+#### Checkout/Order
+
+| Field           | Type                  | Description                                |
+|-----------------|-----------------------|--------------------------------------------|
+| id              | Integer (Auto)        | Primary Key                                |
+| order_number    | CharField (32)        | Unique order number (generated with UUID)  |
+| account_profile | ForeignKey (Profile)  | Account profile for the order (it is nullable)|
+| full_name       | CharField (50)        | User's full name                       |
+| email           | EmailField            | User's email                           |
+| phone_number    | CharField (20)        | User's phone number                    |
+| country         | CountryField          | Country of the User                    |
+| eircode         | CharField (20)        | User's Eircode (it is nullable)        |
+| town_or_city    | CharField (40)        | User's town/city                       |
+| street_address1 | CharField (80)        | User's street address line 1           |
+| street_address2 | CharField (80)        | User's street address line 2 (it is nullable)|
+| county          | CharField (80)        | User's county (it is nullable)         |
+| date            | DateTimeField (auto)  | Date and time of the order                 |
+| delivery_cost   | DecimalField (6, 2)   | Delivery cost of the order                 |
+| order_total     | DecimalField (10, 2)  | Total cost of the order                    |
+| grand_total     | DecimalField (10, 2)  | Grand total (order_total + delivery_cost)  |
+| original_basket | TextField             | Serialized original basket (it is nullable)|
+| stripe_pid      | CharField (254)       | Stripe payment ID                          |
+
+#### Checkout/OrderLineItem
+
+| Field         | Type                  | Description                            |
+|---------------|-----------------------|----------------------------------------|
+| id            | Integer (Auto)        | Primary Key                            |
+| order         | ForeignKey (Order)    | Order the line item belongs to         |
+| product       | ForeignKey (Product)  | Product in the line item               |
+| product_size  | CharField (8)         | Size of the product (Small, Medium, Large, Oversize) (it is nullable)|
+| quantity      | IntegerField          | Quantity of the product                |
+| lineitem_total| DecimalField (6, 2)   | Total cost of the line item            |
+
+#### Profiles/AccountProfile 
+
+| Field                | Type                  | Description                              |
+|----------------------|-----------------------|------------------------------------------|
+| id                   | Integer (Auto)        | Primary Key                              |
+| user                 | OneToOneField (User)  | User associated with the profile         |
+| default_phone_number | CharField (20)        | Default phone number of the user (it is nullable)|
+| default_street_address1 | CharField (80)     | Default street address line 1 (it is nullable)|
+| default_street_address2 | CharField (80)     | Default street address line 2 (it is nullable)|
+| default_town_or_city | CharField (40)        | Default town/city of the user (it is nullable)|
+| default_eircode      | CharField (20)        | Default Eircode of the user (it is nullable)|
+| default_county       | CharField (80)        | Default county of the user (nullable)|
+| default_country      | CountryField          | Default country of the user (it is nullable)|
+
+#### Store/Category
+
+| Field           | Type               | Description                         |
+|-----------------|--------------------|-------------------------------------|
+| id              | Integer (Auto)     | Primary Key                         |
+| name            | CharField (254)    | Name of the category                |
+| friendly_name   | CharField (254)    | Friendly name of the category       |
+
+
+#### Store/Product
+
+| Field           | Type               | Description                         |
+|-----------------|--------------------|-------------------------------------|
+| id              | Integer (Auto)     | Primary Key                         |
+| upc             | CharField (50)     | Universal Product Code              |
+| artist          | CharField (50)     | Artist name (nullable)              |
+| country         | CharField (254)    | Country of the product (nullable)   |
+| name            | CharField (254)    | Name of the product (Unique)        |
+| description     | TextField          | Description of the product          |
+| has_dimentions  | BooleanField       | Whether the product has dimensions  |
+| price           | DecimalField (6, 2)| Price of the product                |
+| category        | ForeignKey (Category)| Category of the product (nullable)|
+| rating          | DecimalField (6, 1)| Rating of the product (nullable)    |
+| image           | ImageField         | Product image (nullable)            |
+
+#### Contact/ContactForm
+
+| Field        | Type                  | Description                            |
+|--------------|-----------------------|----------------------------------------|
+| id           | Integer (Auto)        | Primary Key                            |
+| user         | ForeignKey (User)     | User submitting the contact form (nullable)|
+| form_id      | AutoField (Primary Key) | ID of the form (Auto-generated)      |
+| date_created | DateTimeField (auto)  | Date and time of form submission       |
+| sender_name  | CharField (50)        | Name of the sender                     |
+| email_address| EmailField            | Email address of the sender            |
+| phone_num    | PhoneNumberField      | Phone number of the sender (nullable)  |
+| message      | TextField             | Content of the message                 |
 
 ---
 
