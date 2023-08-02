@@ -12,7 +12,7 @@
 
 <div class="overlay"></div>
 <div class="text-center">
-    <h1 class="mb-4">My Profile</h2>
+    <h1 class="mb-4">My Profile</h1>
     <hr>
 </div>
 <div class="container">
@@ -73,5 +73,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript" src="{% static 'profiles/js/countryfieldscript.js' %}"></script>
+<script src="{% static 'profiles/js/countryfieldscript.js' %}"></script>
 {% endblock %}

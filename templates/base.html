@@ -118,41 +118,43 @@
                     class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
                     {% if user.is_authenticated and user.is_superuser or user.is_staff %}
                     <li class="nav-item">
-                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-secondary">Signed
+                        <a class="btn me-2 rounded-0 float-end dandy-border rounded-pill" href="{% url 'profiles' %}">Signed
                             in as:
                             {{ user.username }}</a>
                     </li>
-                    <div class="d-flex">
-                        <div class="dropdown-center" aria-labelledby="admin-options">
-                            <button id="navbar-primary" class="btn me-2 rounded-0 float-end" type="button"
+                    <li class="d-flex">
+                        <div class="dropdown-center">
+                            <button class="btn dandy-button me-2 rounded-0 float-end" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Manage
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark rounded-0 dandy-bg dandy-border fs-7">
-                                <li><a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a>
+                                <li>
+                                    <a class="dropdown-item active" href="{% url 'add_store' %}">Item Management</a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'blog_add' %}">Blog Posts</a>
+                                </li>
                             </ul>
                         </div>
 
-                        <li class="nav-item">
-                            <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
-                                Profile</a>
-                        </li>
-                    </div>
+                    <li class="nav-item">
+                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-primary">My
+                            Profile</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
-                            id="navbar-primary">Logout</a>
+                            id="navbar-secondary">Logout</a>
                     </li>
 
                     {% elif user.is_authenticated %}
 
                     <li class="nav-item">
-                        <a class="btn me-2 rounded-0 float-end" href="{% url 'profiles' %}" id="navbar-secondary">Signed
+                        <a class="btn me-2 rounded-0 float-end border rounded-pill" href="{% url 'profiles' %}">Signed
                             in as:
                             {{ user.username }}</a>
                     </li>
@@ -164,7 +166,7 @@
 
                     <li class="nav-item">
                         <a class="btn me-2 rounded-0 float-end" href="{% url 'account_logout' %}"
-                            id="navbar-primary">Logout</a>
+                            id="navbar-secondary">Logout</a>
                     </li>
 
                     {% else %}
@@ -181,8 +183,7 @@
                 </ul>
 
                 <!-- Shopping Basket -->
-                <ul
-                    class="navbar-nav me-lg-5 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+                <ul class="navbar-nav me-lg-5 ms-lg-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
                     <li class="nav-item">
                         <a class="text-center border text-dark nav-link" href="{% url 'view_basket' %}">
                             <div>
@@ -206,8 +207,8 @@
     <div class="row">
         <div class="text-center col-9 col-md-6 mx-auto mb-3 bg-light rounded-start-pill">
             <form class="d-flex" method="GET" action="{% url 'store' %}">
-                <input class="form-control me-2 rounded-0 dandy-border rounded-start-pill" type="text" name="q" placeholder="Search Dandy Flaneur"
-                    aria-label="Search">
+                <input class="form-control me-2 rounded-0 dandy-border rounded-start-pill" type="text" name="q"
+                    placeholder="Search Dandy Flaneur" aria-label="Search">
                 <button class="btn btn-outline-dark rounded-0" type="submit"><i
                         class="fa-solid fa-magnifying-glass"></i></button>
             </form>

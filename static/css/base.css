@@ -98,6 +98,15 @@ a {
     color: var(--dandy-black);
 }
 
+
+.btn.me-2.rounded-0.float-end.dandy-border.rounded-pill:hover {
+    border-top: 2px dashed var(--dandy-gold) !important;
+}
+
+.btn.me-2.rounded-0.float-end.dandy-border.rounded-pill:active {
+    border-top: 1px solid var(--dandy-gold) !important;
+}
+
 .fs-7 {
     font-size: 0.9rem !important;
 }
