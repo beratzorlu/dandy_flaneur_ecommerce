@@ -15,6 +15,7 @@ django-storages==1.13.2
 django-summernote==0.8.20.0
 gunicorn==21.2.0
 jmespath==1.0.1
+mailchimp-marketing==3.0.80
 oauthlib==3.2.2
 phonenumbers==8.13.16
 Pillow==10.0.0
