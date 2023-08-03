@@ -900,11 +900,15 @@ In this section, all bugs that cased errors that prevented the successful execut
 
 ***Mailchimp SSL Protocol Validation Issue*** [GitHub Issue #47](https://github.com/beratzorlu/dandy_flaneur_ecommerce/issues/47)
 
-Following the successful implementation of Mailchimp functionality, it has recently started displaying errors where Mailchimp validate-js fails to get through SSL Protocols successfully. While error messages will still render, this will cause signups not the show up on the Mailchimp platform.
+Following the successful implementation of Mailchimp functionality, it has recently started displaying errors where Mailchimp validate-js fails to get through SSL Protocols successfully. While Mailchimp JQuery error messages will still render, this will cause signups not the show up on the Mailchimp platform.
 
 To attempt to fix this issue, I checked my JQuery version for compatability, postload JavaScript content for any code conflicts, typos in Mailchimp form actions and source links, and finally I removed any custom styling that might interfere with the functionality. This still has not allowed Mailchimp functionality to become stable, and users will find that it may not fully act out the desired functionality.
 
 As a future feature, instead of integrating a third party newsletter, I will be building my own app to handle web marketing applications. While this will result in less comprehensive functionality, it will allow me the better understand various operations that go into building a newsletter application.
+
+That being said, the core functionality is still active and users are able register their email address. Please see the below screenshot as evidence of this.
+
+![mailchimp-bug](docs/mailchimp-bug.png)
 
 ---
 
