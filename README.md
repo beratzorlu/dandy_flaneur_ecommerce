@@ -83,27 +83,27 @@
 
 Dandy Flaneur is an innovative and customer-centric company that specializes in the sale of exquisite paintings and artwork, with a particular focus on oil paintings. We also offer a wide selection of high-quality painting equipment to cater to the diverse needs of artists and art enthusiasts. Our primary goal is to establish Dandy Flaneur as a common destination for shoppers in Ireland seeking quality artwork and reliable painting supplies.
 
-### Mission and Vision:
+### Mission and Vision
 Our mission at Dandy Flaneur is to enrich people's lives by providing them with beautiful and inspiring artwork that enhances their living spaces and personal aesthetics. We envision fostering a vibrant and inclusive community of artists and art lovers, where creativity and passion are on the forefront.
 
-### Target Market:
+### Target Market
 Our primary target market includes art enthusiasts, interior designers, collectors, and aspiring artists across Ireland. By offering a mix of traditional and contemporary artwork, we aim to capture a broad audience that appreciates art's beauty and value. Dandy Flaneur repsresents a niche market with a dedicated customer-base. Establishing a meaningful connection with the members of the art industry will allow for more sales and a positive consistency in B2C relationships.
 
-### Financial Outlook:
+### Financial Outlook
 Our revenue model centers on store sales, ensuring a stable and sustainable income stream. As Dandy Flaneur gains traction and establishes itself as a reputable brand in Ireland, we anticipate steady growth and expanded market reach.
 
-### Product Offerings:
+### Product Offerings
 We curate a diverse collection of paintings, spanning various styles and genres, to cater to different tastes and preferences. Our handpicked selection of oil paintings showcases the skill and craftsmanship of talented artists from around the world. Additionally, we offer a comprehensive range of top-notch painting equipment, ensuring artists have access to the finest tools to bring their visions to life.
 
-### Sales Strategy:
+### Sales Strategy
 Dandy Flaneur operates an online platform, providing customers with convenient access to our offerings. Our store is designed to provide an immersive and welcoming experience. We aim to offer competitive pricing and exceptional customer service to ensure customer satisfaction and loyalty.
 
-### Community and Blog:
+### Community and Blog
 Dandy Flaneur is not just a place to buy artwork and supplies but also a hub for artistic inspiration and education. Our blog features engaging content, including artist spotlights, art techniques, and insightful articles. By fostering a strong community around our brand, we aim to connect with our customers on a deeper level and create lasting relationships.
 
 To conclude, Dandy Flaneur is dedicated to becoming a trusted provider of quality artwork and painting equipment in Ireland. Through our commitment to quality, creativity, and community-building, we aim to enrich lives with art while creating a vibrant and enduring business venture.
 
-### Marketing Strategy:
+### Marketing Strategy
 
 ***Web Marketing:***
 
