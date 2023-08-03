@@ -44,6 +44,7 @@
     -   [Automated Testing](#automated-tests)
         -   [Unit Tests](#unit-tests)
     -   [Performance](#performance)
+    -   [Browser Compatability](#browser-compatability)
     -   [Responsivity](#responsivity)
 
 -   [Validation](#validation)
@@ -751,7 +752,14 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 | Contact | ![screenshot](docs/testing/lighthouse-contact.png) |
 
 
+### Browser Compatability
+
+| **Page** | ***Chrome*** | ***Firefox*** | ***Edge*** |
+| -------- | --------- | ------ | ----- |
+| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/home-firefox.png) | ![screenshot](docs/responsivity/home-edge.png) |
+
 ### Responsivity
+
 | **Page** | ***Desktop*** | ***Tablet*** | ***Phone*** |
 | -------- | --------- | ------ | ----- |
 | Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/tablet-home.jpg) | ![screenshot](docs/responsivity/mobile-home.jpg) |
