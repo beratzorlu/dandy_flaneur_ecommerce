@@ -754,22 +754,22 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 
 ### Browser Compatability
 
-| **Page** | ***Chrome*** | ***Firefox*** | ***Edge*** |
+| **Page** | ***Chrome*** | ***Firefox*** | ***Edge*** | ***Result*** |
 | -------- | --------- | ------ | ----- |
-| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/home-firefox.png) | ![screenshot](docs/responsivity/home-edge.png) |
+| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/home-firefox.png) | ![screenshot](docs/responsivity/home-edge.png) | Works as intended |
 
 ### Responsivity
 
-| **Page** | ***Desktop*** | ***Tablet*** | ***Phone*** |
-| -------- | --------- | ------ | ----- |
-| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/tablet-home.jpg) | ![screenshot](docs/responsivity/mobile-home.jpg) |
-| Store | ![screenshot](docs/features/store.png) | ![screenshot](docs/responsivity/tablet-store.jpg) | ![screenshot](docs/responsivity/mobile-store.jpg) |
-| Blog | ![screenshot](docs/features/blog.png) | ![screenshot](docs/responsivity/tablet-blog.jpg) | ![screenshot](docs/responsivity/mobile-blog.jpg) |
-| Contact | ![screenshot](docs/features/contact.png) | ![screenshot](docs/responsivity/tablet-contact.jpg) | ![screenshot](docs/responsivity/mobile-contact.jpg) |
-| Profile | ![screenshot](docs/features/profile.png) | ![screenshot](docs/responsivity/tablet-profile.jpg) | ![screenshot](docs/responsivity/mobile-profile.jpg) |
-| Checkout | ![screenshot](docs/features/checkout.png) | ![screenshot](docs/responsivity/tablet-checkout.jpg) | ![screenshot](docs/responsivity/mobile-checkout.jpg) |
-| Checkout Success | ![screenshot](docs/features/checkout-success.png) | ![screenshot](docs/responsivity/tablet-checkout-success.jpg) | ![screenshot](docs/responsivity/mobile-checkout-success.jpg) |
-| Basket | ![screenshot](docs/features/basket.png) | ![screenshot](docs/responsivity/tablet-basket.jpg) | ![screenshot](docs/responsivity/mobile-basket.jpg) |
+| **Page** | ***Desktop*** | ***Tablet*** | ***Phone*** | ***Result*** |
+| -------- | --------- | ------ | ----- | ----- |
+| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/tablet-home.jpg) | ![screenshot](docs/responsivity/mobile-home.jpg) | Works as intended |
+| Store | ![screenshot](docs/features/store.png) | ![screenshot](docs/responsivity/tablet-store.jpg) | ![screenshot](docs/responsivity/mobile-store.jpg) | Works as intended |
+| Blog | ![screenshot](docs/features/blog.png) | ![screenshot](docs/responsivity/tablet-blog.jpg) | ![screenshot](docs/responsivity/mobile-blog.jpg) | Works as intended |
+| Contact | ![screenshot](docs/features/contact.png) | ![screenshot](docs/responsivity/tablet-contact.jpg) | ![screenshot](docs/responsivity/mobile-contact.jpg) | Works as intended |
+| Profile | ![screenshot](docs/features/profile.png) | ![screenshot](docs/responsivity/tablet-profile.jpg) | ![screenshot](docs/responsivity/mobile-profile.jpg) | Works as intended |
+| Checkout | ![screenshot](docs/features/checkout.png) | ![screenshot](docs/responsivity/tablet-checkout.jpg) | ![screenshot](docs/responsivity/mobile-checkout.jpg) | Works as intended |
+| Checkout Success | ![screenshot](docs/features/checkout-success.png) | ![screenshot](docs/responsivity/tablet-checkout-success.jpg) | ![screenshot](docs/responsivity/mobile-checkout-success.jpg) | Works as intended |
+| Basket | ![screenshot](docs/features/basket.png) | ![screenshot](docs/responsivity/tablet-basket.jpg) | ![screenshot](docs/responsivity/mobile-basket.jpg) | Works as intended |
 
 ---
 
