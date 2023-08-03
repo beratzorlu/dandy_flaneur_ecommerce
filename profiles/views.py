@@ -6,7 +6,9 @@ from checkout.models import Order
 
 
 def profiles(request):
-    """ Display the user's profile. """
+    """
+    Display the user's profile.
+    """
     profiles = get_object_or_404(AccountProfile, user=request.user)
 
     if request.method == 'POST':
@@ -29,6 +31,9 @@ def profiles(request):
 
 
 def account_order_history(request, order_number):
+    """
+    Queries the previous purchases of the user.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

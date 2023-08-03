@@ -20,7 +20,7 @@ def send_email_confirmation(complete_form):
     """
     user_email = complete_form.email_address
 
-    subject = render_to_string('contact/confirmation_emails/conf_email_subj.txt')
+    subject = render_to_string('contact/confirmation_emails/conf_email_subj.txt')  # noqa
     body = render_to_string('contact/confirmation_emails/conf_email_body.txt',
                             {'contact_email': settings.DEFAULT_FROM_EMAIL,
                              'complete_form': complete_form}
@@ -79,7 +79,7 @@ def contact_view(request):
         user_contact_form = UserContactForm(initial={
             'email_address': user.email if user.is_authenticated else '',
             'sender_name': user.username if user.is_authenticated else '',
-            'phone_num': profile.default_phone_number if user.is_authenticated else ''
+            'phone_num': profile.default_phone_number if user.is_authenticated else ''  # noqa
         })
 
     template = 'contact/contact.html'

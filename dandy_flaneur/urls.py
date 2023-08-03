@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
 from .views import handler_404
 
+
 @login_required
 def redirect_admin(request):
     return redirect('/admin/blog/post/')

@@ -30,7 +30,7 @@ class ProductListView(ListView):
         direction = self.request.GET.get('direction')
 
         if query:
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(country__icontains=query) | Q(artist__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(country__icontains=query) | Q(artist__icontains=query)  # noqa
             products = products.filter(queries)
 
         if category:
@@ -52,8 +52,8 @@ class ProductListView(ListView):
         context = super().get_context_data(**kwargs)
         context['all_categories'] = Category.objects.all()
         context['search_term'] = self.request.GET.get('q', '')
-        context['current_sort'] = f"{self.request.GET.get('sort', '')}_{self.request.GET.get('direction', '')}"
-        
+        context['current_sort'] = f"{self.request.GET.get('sort', '')}_{self.request.GET.get('direction', '')}"  # noqa
+
         return context
 
 
@@ -74,20 +74,23 @@ def add_store(request):
     """Add new product object to store"""
 
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        messages.error(request, 'You do not have administrator \
+            previliges to perform this action.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'New product added to store successfully.')
+            messages.success(request, 'New product added \
+            to store successfully.')
             return redirect(reverse('store_detail', args=[product.id]))
         else:
             if 'rating' in form.errors:
                 messages.error(request, form.errors['rating'][0])
-            else: 
-                messages.error(request, 'A problem occured when trying to add new item. Please ensure details are correct.')
+            else:
+                messages.error(request, 'A problem occured when trying to \
+                    add new item. Please ensure details are correct.')
     else:
         form = ItemForm()
 
@@ -104,12 +107,13 @@ def delete_store(request, product_id):
     """Delete product from store"""
 
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        messages.error(request, 'You do not have administrator \
+            previliges to perform this action.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, f'Product (ID: {product.id}) successfully deleted!')
+    messages.success(request, f'Product successfully deleted!')
     return redirect(reverse('store'))
 
 
@@ -118,7 +122,8 @@ def edit_store(request, product_id):
     """ Edit a product in the store """
 
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have administrator previliges to perform this action.')
+        messages.error(request, 'You do not have administrator \
+            previliges to perform this action.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -129,7 +134,8 @@ def edit_store(request, product_id):
             messages.success(request, 'Item edit form submitted successfully.')
             return redirect(reverse('store_detail', args=[product.id]))
         else:
-            messages.error(request, 'A problem occured when trying to edit item. Please ensure details are valid.')
+            messages.error(request, 'A problem occured when trying to edit \
+                item. Please ensure details are valid.')
     else:
         form = ItemForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

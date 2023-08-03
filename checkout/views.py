@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  # noqa
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -67,7 +67,7 @@ def store_checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items():  # noqa
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -77,21 +77,23 @@ def store_checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your basket wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "One of the products in your basket wasn't found in \
+                            our database." "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(request, "There's nothing in your \
+                           basket at the moment")
             return redirect(reverse('store'))
 
         current_basket = basket_items(request)
@@ -165,7 +167,8 @@ def checkout_success(request, order_number):
                 'default_street_address2': order.street_address2,
                 'default_county': order.county,
             }
-            account_profile_form = AccountProfileForm(profile_data, instance=profiles)
+            account_profile_form = AccountProfileForm(profile_data,
+                                                      instance=profiles)
             if account_profile_form.is_valid():
                 account_profile_form.save()
 

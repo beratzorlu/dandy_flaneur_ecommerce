@@ -46,7 +46,7 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(is_approved=True).order_by("-created_on")
+        comments = post.comments.filter(is_approved=True).order_by("-created_on")  # noqa
         is_liked = False
 
         if post.is_liked.filter(id=self.request.user.id).exists():
@@ -67,7 +67,7 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(is_published=True)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(is_approved=True).order_by("-created_on")
+        comments = post.comments.filter(is_approved=True).order_by("-created_on")  # noqa
         comment_form = CommentForm(data=request.POST)
         is_liked = False
 
@@ -142,7 +142,7 @@ class DeleteBlog(LoginRequiredMixin, generic.DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser
+        return self.request.user == post.author or self.request.user.is_superuser  # noqa
 
     def get_queryset(self, *args, **kwargs):
         return Post.objects.filter(is_published=True)
@@ -150,7 +150,8 @@ class DeleteBlog(LoginRequiredMixin, generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         post = self.get_object()
         if self.request.user == post.author or self.request.user.is_superuser:
-            messages.success(self.request, 'Success! Blog has been successfully deleted.')
+            messages.success(self.request, 'Success! Blog has been \
+                             successfully deleted.')
             return super(DeleteBlog, self).delete(request, *args, **kwargs)
         else:
             messages.warning(self.request, "You do not have the privileges to \

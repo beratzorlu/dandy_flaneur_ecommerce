@@ -182,7 +182,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 16px;
-    border: 2px 2px solid var(--dandy-black);
+    border: 2px solid var(--dandy-black);
 }
 
 .banner-card {

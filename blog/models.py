@@ -7,8 +7,10 @@ class Post(models.Model):
     """
     Defines the db models for blog posts.
     """
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_blog")
-    is_liked = models.ManyToManyField(User, related_name='post_like', blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="post_blog")
+    is_liked = models.ManyToManyField(User, related_name='post_like',
+                                      blank=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     image = models.ImageField(null=True, blank=True)

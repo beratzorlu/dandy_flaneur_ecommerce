@@ -7,7 +7,8 @@ class ContactForm(models.Model):
     """
     Defines the db models for user contact form submissions.
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="form_contact_user", null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="form_contact_user", null=True)
     form_id = models.AutoField(primary_key=True)
     date_created = models.DateTimeField(auto_now_add=True)
     sender_name = models.CharField(max_length=50, null=True)

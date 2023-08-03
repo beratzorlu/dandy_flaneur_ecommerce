@@ -15,12 +15,16 @@ class BlogForm(forms.ModelForm):
                   'excerpt', 'image', 'is_published')
 
     widgets = {
-            'title': forms.TextInput(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
-            'excerpt': forms.TextInput(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
-            'content': forms.Textarea(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
+            'title': forms.TextInput(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
+            'excerpt': forms.TextInput(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
+            'content': forms.Textarea(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
         }
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image', required=False, 
+                             widget=CustomClearableFileInput)
     content = forms.CharField(widget=SummernoteWidget())
 
 
@@ -33,12 +37,16 @@ class EditForm(forms.ModelForm):
         fields = ('is_published', 'title', 'excerpt', 'content', 'image')
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
-            'excerpt': forms.TextInput(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
-            'content': forms.Textarea(attrs={'class': 'mb-4 rounded-0 dandy-border form-control'}),
+            'title': forms.TextInput(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
+            'excerpt': forms.TextInput(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
+            'content': forms.Textarea(attrs={'class': 'mb-4 rounded-0 \
+                dandy-border form-control'}),
         }
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image', required=False,
+                             widget=CustomClearableFileInput)
     content = forms.CharField(widget=SummernoteWidget())
 
 

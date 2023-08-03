@@ -29,7 +29,8 @@ class UserContactForm(forms.ModelForm):
 
     phone_num = PhoneNumberField(
         error_messages={
-            'invalid': 'Please enter a valid phone number in international format (eg. +353 87 000 00 00).',
+            'invalid': 'Please enter a valid phone number in \
+                international format (eg. +353 87 000 00 00).',
             'required': 'This field is required.',
         },
     )
