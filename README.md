@@ -711,25 +711,101 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 
 | Page | Screenshot | Result |
 | --- | --- | --- |
-| Home | ![screenshot](#) | Pass |
+| Home | ![screenshot](docs/validation/html/html-store.png) | Pass |
+| Store (Edit) | ![screenshot](docs/validation/html/html-store-edit.png) | Pass |
+| Store (Detail) | ![screenshot](docs/validation/html/html-store-detail.png) | Pass |
+| Store (Add) | ![screenshot](docs/validation/html/html-store-add.png) | Pass |
+| Signup | ![screenshot](docs/validation/html/html-signup.png) | Pass |
+| Register (Success) | ![screenshot](docs/validation/html/html-register-success.png) | Pass |
+| Register (Confirm) | ![screenshot](docs/validation/html/html-register-confirm.png) | Pass |
+| Profile | ![screenshot](docs/validation/html/html-profile.png) | Pass |
+| Logout | ![screenshot](docs/validation/html/html-logout.png) | Pass |
+| Login | ![screenshot](docs/validation/html/html-login.png) | Pass |
+| Home | ![screenshot](docs/validation/html/html-home.png) | Pass |
+| Contact | ![screenshot](docs/validation/html/html-contact.png) | Pass |
+| Checkout | ![screenshot](docs/validation/html/html-checkout.png) | Pass |
+| Blog | ![screenshot](docs/validation/html/html-blog.png) | Pass |
+| Blog (Edit) | ![screenshot](docs/validation/html/html-blog-edit.png) | Pass |
+| Blog (Detail) | ![screenshot](docs/validation/html/html-blog-detail.png) | Pass |
+| Blog Comment (Edit) | ![screenshot](docs/validation/html/html-blog-comment-edit.png) | Pass |
+| Blog (Add) | ![screenshot](docs/validation/html/html-blog-add.png) | Pass |
+| Basket (Full) | ![screenshot](docs/validation/html/html-basket-full.png) | Pass |
+| Basket (Empty) | ![screenshot](docs/validation/html/html-basket-empty.png) | Pass |
 
 ### CSS
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| style.css | ![screenshot](#) | Pass |
+| checkout.css | ![screenshot](docs/validation/css/w3c-checkout.png) | Pass |
+| base.css | ![screenshot](docs/validation/css/w3c-mailchimp-parseerror.png) | Pass (1 error caused by config code provided by Mailchimp form generator) |
+| profiles.css | ![screenshot](docs/validation/css/w3c-profiles.png) | Pass |
+| store.css | ![screenshot](docs/validation/css/w3c-store.png) | Pass |
+
 
 ### JavaScript
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| fade.js | ![screenshot](#) | Pass |
+| country field script | ![screenshot](docs/validation/js/country-field-script.png) | Pass |
+| item quantity input | ![screenshot](docs/validation/js/item-quantity-input.png) | Pass |
+| basket (postloadjs) | ![screenshot](docs/validation/js/postload-basket.png) | Pass |
+| blog add (postloadjs) | ![screenshot](docs/validation/js/postload-blog-add.png) | Pass |
+| blog edit (postloadjs) | ![screenshot](docs/validation/js/postload-blog-edit.png) | Pass |
+| store products (postloadjs) | ![screenshot](docs/validation/js/postload-store-products.png) | Pass |
+| base (postloadjs) | ![screenshot](docs/validation/js/postloadjs-base-mailchimp.png) | Pass (Errors caused by Mailchimp code generated with the mail form creator) |
+| stripe elements | ![screenshot](docs/validation/js/stripe-elements.png) | Pass |
 
 ### PYTHON
 
 | File | Screenshot | Result |
 | --- | --- | --- |
-| urls.py (main) | ![screenshot](#) | Pass |
+| Basket (apps.py)| ![screenshot](docs/validation/python/basket-apps.png) | Pass |
+| Basket (basket-tools.py)| ![screenshot](docs/validation/python/basket-baskettools.png) | Pass |
+| Basket (contexts.py)| ![screenshot](docs/validation/python/basket-contexts.png) | Pass |
+| Basket (tests.py)| ![screenshot](docs/validation/python/basket-tests.png) | Pass |
+| Basket (urls.py)| ![screenshot](docs/validation/python/basket-urls.png) | Pass |
+| Basket (views.py)| ![screenshot](docs/validation/python/basket-views.png) | Pass |
+| Blog (admin.py)| ![screenshot](docs/validation/python/blog-admin.png) | Pass |
+| Blog (apps.py)| ![screenshot](docs/validation/python/blog-apps.png) | Pass |
+| Blog (forms.py)| ![screenshot](docs/validation/python/blog-forms.png) | Pass |
+| Blog (models.py)| ![screenshot](docs/validation/python/blog-models.png) | Pass |
+| Blog (tests.py)| ![screenshot](docs/validation/python/blog-tests.png) | Pass |
+| Blog (urls.py)| ![screenshot](docs/validation/python/blog-urls.png) | Pass |
+| Blog (views.py)| ![screenshot](docs/validation/python/blog-views.png) | Pass |
+| Checkout (admin.py)| ![screenshot](docs/validation/python/checkout-admin.png) | Pass |
+| Checkout (apps.py)| ![screenshot](docs/validation/python/checkout-apps.png) | Pass |
+| Checkout (forms.py)| ![screenshot](docs/validation/python/checkout-forms.png) | Pass |
+| Checkout (models.py)| ![screenshot](docs/validation/python/checkout-models.png) | Pass |
+| Checkout (signals.py)| ![screenshot](docs/validation/python/checkout-signals.png) | Pass |
+| Checkout (tests.py)| ![screenshot](docs/validation/python/checkout-tests.png) | Pass |
+| Checkout (urls.py)| ![screenshot](docs/validation/python/checkout-urls.png) | Pass |
+| Checkout (views.py)| ![screenshot](docs/validation/python/checkout-views.png) | Pass |
+| Checkout (views.py)| ![screenshot](docs/validation/python/checkout-webhookhandler.png) | Pass |
+| Checkout (views.py)| ![screenshot](docs/validation/python/checkout-webhooks.png) | Pass |
+| custom-storages.py| ![screenshot](docs/validation/python/custom-storages.png) | Pass |
+| dandy_flaneur (settings.py)| ![screenshot](docs/validation/python/df-settings.png) | Pass |
+| dandy_flaneur (asgi.py)| ![screenshot](docs/validation/python/df-asgi.png) | Pass |
+| dandy_flaneur (urls.py)| ![screenshot](docs/validation/python/df-urls.png) | Pass |
+| dandy_flaneur (views.py)| ![screenshot](docs/validation/python/df-views.png) | Pass |
+| dandy_flaneur (wsgi.py)| ![screenshot](docs/validation/python/df-wsgi.png) | Pass |
+| Home (apps.py)| ![screenshot](docs/validation/python/home-apps.png) | Pass |
+| Home (tests.py)| ![screenshot](docs/validation/python/home-tests.png) | Pass |
+| Home (urls.py)| ![screenshot](docs/validation/python/home-urls.png) | Pass |
+| Home (views.py)| ![screenshot](docs/validation/python/home-views.png) | Pass |
+| manage.py | ![screenshot](docs/validation/python/manage-py.png) | Pass |
+| Profiles (apps.py)| ![screenshot](docs/validation/python/profiles-apps.png) | Pass |
+| Profiles (forms.py)| ![screenshot](docs/validation/python/profiles-forms.png) | Pass |
+| Profiles (models.py)| ![screenshot](docs/validation/python/profiles-models.png) | Pass |
+| Profiles (tests.py)| ![screenshot](docs/validation/python/profiles-tests.png) | Pass |
+| Profiles (urls.py)| ![screenshot](docs/validation/python/profiles-urls.png) | Pass |
+| Profiles (views.py)| ![screenshot](docs/validation/python/profiles-views.png) | Pass |
+| Store (admin.py)| ![screenshot](docs/validation/python/store-admin.png) | Pass |
+| Store (apps.py)| ![screenshot](docs/validation/python/store-apps.png) | Pass |
+| Store (forms.py)| ![screenshot](docs/validation/python/store-forms.png) | Pass |
+| Store (models.py)| ![screenshot](docs/validation/python/store-models.png) | Pass |
+| Store (tests.py)| ![screenshot](docs/validation/python/store-tests.png) | Pass |
+| Store (views.py)| ![screenshot](docs/validation/python/store-views.png) | Pass |
+| Store (widgets.py)| ![screenshot](docs/validation/python/store-widgets.png) | Pass |
 
 ---
 
@@ -1137,8 +1213,8 @@ These article samples were taken from third party resources to learn about vario
 
 ### Theory
 
-| Source                                                               | Learning Points                                                |
-|----------- ---------------------------------------------------------------------------------------------------------------------------|
+| Source                                                               | Learning Points                                             |
+|----------------------------------------------------------------------|-------------------------------------------------------------|
 | [UCD Professional Academy](https://www.ucd.ie/professionalacademy/)  | I would like to thank UCD PA for their facilitator and masterclass sessions in partnership with Code Insitute. These have been invaluable in better understanding relevant theory and practice elements.|
 
 ---
