@@ -105,7 +105,7 @@ To conclude, Dandy Flaneur is dedicated to becoming a trusted provider of qualit
 
 ### Marketing Strategy
 
-***Web Marketing:***
+***Web Marketing***
 
 We recognize the significance of our website as the digital storefront for Dandy Flaneur. To maximize its impact, we have implemented a strategic web marketing plan. This includes employing search engine optimization (SEO) techniques to enhance our online visibility, ensuring that art enthusiasts can easily find our platform when searching for quality artwork and painting equipment. Additionally, we prioritize creating engaging and informative content that showcases our curated collection of paintings, spotlighting talented artists, and providing insights into various art styles and techniques.
 
@@ -1267,13 +1267,13 @@ These article samples were taken from third party resources to learn about vario
 
 ## Acknowledgements
 
-(-)
+I would like to extend my most sincere appreciation for all the time and support of everyone involved in the development process of this project. The help I received from my mentor, Rohit Sharma, has been inspirational where he introduced me to alternative angles to issues that were seemingly difficult to overcome. Code Institute's Slack community was an invaluable resource for my project as well, especially during troubleshooting. Being a part of this community motivated me to keep going during times where I felt stuck. Lastly, the tutor support that Code Institute offers has been an invaluable asset for understand the more challenging aspects of building the code of my project.
 
 --- 
 
 ## Closing Remarks
 
-(-)
+This project marks the end of my journey as a student at Code Instutite. Since the course has started, I have experienced a variety of hurdles that often felt daunting to deal with. Designing, developing and documenting a web application is an arduous but equally rewarding experience. This is exactly why I am looking forward to my career in this field. It is a career path filled with ups and downs, problems to solve, issues to fix, and content to learn. While the course was doubtless fruitful in learning full-stack web development, there is still much more to be learned. However, I can say with confidence that it is worth it to go through the struggle because, development essentially allows you to create something out of nothing. Somenthing you can truly call your own. I have come to find that there is a certain sense of accomplishment in building a project. Watching a mere idea come to life in the form of an application everyone can make use of is truly an inpirational experience. 
 
 ---
  [Back to Top](#table-of-contents)
