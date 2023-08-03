@@ -44,6 +44,7 @@
     -   [Automated Testing](#automated-tests)
         -   [Unit Tests](#unit-tests)
     -   [Performance](#performance)
+    -   [Responsivity](#responsivity)
 
 -   [Validation](#validation)
     -   [HTML](#html)
@@ -748,6 +749,19 @@ The Lighthouse tests returned an overall acceptable result considering the scope
 | Basket | ![screenshot](docs/testing/checkout-basket.png) |
 | Checkout | ![screenshot](docs/testing/lighthouse-checkout.png) |
 | Contact | ![screenshot](docs/testing/lighthouse-contact.png) |
+
+
+### Responsivity
+| **Page** | ***Desktop*** | ***Tablet*** | ***Phone*** |
+| -------- | --------- | ------ | ----- |
+| Home | ![screenshot](docs/responsivity/home-chrome.png) | ![screenshot](docs/responsivity/tablet-home.jpg) | ![screenshot](docs/responsivity/mobile-home.jpg) |
+| Store | ![screenshot](docs/features/store.png) | ![screenshot](docs/responsivity/tablet-store.jpg) | ![screenshot](docs/responsivity/mobile-store.jpg) |
+| Blog | ![screenshot](docs/features/blog.png) | ![screenshot](docs/responsivity/tablet-blog.jpg) | ![screenshot](docs/responsivity/mobile-blog.jpg) |
+| Contact | ![screenshot](docs/features/contact.png) | ![screenshot](docs/responsivity/tablet-contact.jpg) | ![screenshot](docs/responsivity/mobile-contact.jpg) |
+| Profile | ![screenshot](docs/features/profile.png) | ![screenshot](docs/responsivity/tablet-profile.jpg) | ![screenshot](docs/responsivity/mobile-profile.jpg) |
+| Checkout | ![screenshot](docs/features/checkout.png) | ![screenshot](docs/responsivity/tablet-checkout.jpg) | ![screenshot](docs/responsivity/mobile-checkout.jpg) |
+| Checkout Success | ![screenshot](docs/features/checkout-success.png) | ![screenshot](docs/responsivity/tablet-checkout-success.jpg) | ![screenshot](docs/responsivity/mobile-checkout-success.jpg) |
+| Basket | ![screenshot](docs/features/basket.png) | ![screenshot](docs/responsivity/tablet-basket.jpg) | ![screenshot](docs/responsivity/mobile-basket.jpg) |
 
 ---
 
