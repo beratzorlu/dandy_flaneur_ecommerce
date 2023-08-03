@@ -8,9 +8,16 @@
 ### Welcome to [Dandy Flaneur](https://dandy-flaneur-08cda80edeb8.herokuapp.com/)
 
 ## Table of Contents
+- [Proof of Concept](#proof-of-concept)
+    -   [Mission and Vision](#mission-and-vision)
+    -   [Target Market](#target-market)
+    -   [Financial Outlook](#financial-outlook)
+    -   [Product Offerings](#product-offerings)
+    -   [Sales Strategy](#sales-strategy)
+    -   [Community and Blog](#community-and-blog)
+    -   [Marketing Strategy](#marketing-strategy)
 
 -   [User Experience (UX)](#user-experience-ux)
-    -   [Target Audiance](#target-audiance)
     -   [User Stories](#user-stories)
     -   [Typography](#typography)
     -   [Colour Palette](#colour-palette)
@@ -70,13 +77,52 @@
 -   [Closing Remarks](#closing-remarks)
 
 ---
+## Proof of Concept
 
+### Executive Summary: Dandy Flaneur
+
+Dandy Flaneur is an innovative and customer-centric company that specializes in the sale of exquisite paintings and artwork, with a particular focus on oil paintings. We also offer a wide selection of high-quality painting equipment to cater to the diverse needs of artists and art enthusiasts. Our primary goal is to establish Dandy Flaneur as a common destination for shoppers in Ireland seeking quality artwork and reliable painting supplies.
+
+### Mission and Vision:
+Our mission at Dandy Flaneur is to enrich people's lives by providing them with beautiful and inspiring artwork that enhances their living spaces and personal aesthetics. We envision fostering a vibrant and inclusive community of artists and art lovers, where creativity and passion are on the forefront.
+
+### Target Market:
+Our primary target market includes art enthusiasts, interior designers, collectors, and aspiring artists across Ireland. By offering a mix of traditional and contemporary artwork, we aim to capture a broad audience that appreciates art's beauty and value. Dandy Flaneur repsresents a niche market with a dedicated customer-base. Establishing a meaningful connection with the members of the art industry will allow for more sales and a positive consistency in B2C relationships.
+
+### Financial Outlook:
+Our revenue model centers on store sales, ensuring a stable and sustainable income stream. As Dandy Flaneur gains traction and establishes itself as a reputable brand in Ireland, we anticipate steady growth and expanded market reach.
+
+### Product Offerings:
+We curate a diverse collection of paintings, spanning various styles and genres, to cater to different tastes and preferences. Our handpicked selection of oil paintings showcases the skill and craftsmanship of talented artists from around the world. Additionally, we offer a comprehensive range of top-notch painting equipment, ensuring artists have access to the finest tools to bring their visions to life.
+
+### Sales Strategy:
+Dandy Flaneur operates an online platform, providing customers with convenient access to our offerings. Our store is designed to provide an immersive and welcoming experience. We aim to offer competitive pricing and exceptional customer service to ensure customer satisfaction and loyalty.
+
+### Community and Blog:
+Dandy Flaneur is not just a place to buy artwork and supplies but also a hub for artistic inspiration and education. Our blog features engaging content, including artist spotlights, art techniques, and insightful articles. By fostering a strong community around our brand, we aim to connect with our customers on a deeper level and create lasting relationships.
+
+To conclude, Dandy Flaneur is dedicated to becoming a trusted provider of quality artwork and painting equipment in Ireland. Through our commitment to quality, creativity, and community-building, we aim to enrich lives with art while creating a vibrant and enduring business venture.
+
+### Marketing Strategy:
+
+***Web Marketing:***
+
+We recognize the significance of our website as the digital storefront for Dandy Flaneur. To maximize its impact, we have implemented a strategic web marketing plan. This includes employing search engine optimization (SEO) techniques to enhance our online visibility, ensuring that art enthusiasts can easily find our platform when searching for quality artwork and painting equipment. Additionally, we prioritize creating engaging and informative content that showcases our curated collection of paintings, spotlighting talented artists, and providing insights into various art styles and techniques.
+
+***Social Media Marketing***
+
+Social media platforms play a pivotal role in our marketing efforts. Through thoughtfully crafted social media marketing campaigns, we connect directly with our target audience, art enthusiasts, collectors, and aspiring artists. By leveraging popular platforms like Facebook and Instagram, we share captivating visuals, behind-the-scenes glimpses into our art curation process, and interactive content that fosters a sense of community. Building a strong social media presence enables us to spark conversations, gather valuable feedback, and establish Dandy Flaneur as a common destination for art enthusiasts in Ireland.
+
+***Customer Queries***
+
+We place great emphasis on addressing customer queries promptly and professionally. By valuing each customer interaction, we aim to build trust and loyalty, ensuring that our clients feel valued and supported throughout their purchasing journey. Our commitment to responsive customer service strengthens our reputation and fosters positive word-of-mouth recommendations.
+
+***Newsletter Emails***
+
+Staying connected with our audience is vital to nurturing relationships and driving repeat business. Our newsletter emails powered by Mailchimp serve as a powerful tool to keep subscribers informed about new arrivals, upcoming promotions, exciting events, and captivating blog content. Through personalized and segmented email campaigns, we deliver content that resonates with individual preferences, further deepening engagement with our brand.
+
+---
 ## User Experience (UX)
-
-### Target Audiance
-
-This project primarily focuses on art enthusiasts that are looking to purchase a painting and related products online.
-
 
 ### User Stories
 
